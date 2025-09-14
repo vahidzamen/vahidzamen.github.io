@@ -28,13 +28,13 @@ body{
     text-align: center;
   }
   
-  img{
-    max-width: 50%;
+  img {
+    max-width: 100%;
     width: 50%;
     height: auto;
     display: block;
     margin: 0.5rem auto;
-  }  
+  }   
 ul {
     margin: 1em auto;
     padding-left: 1.5em; 
