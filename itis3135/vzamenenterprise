@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VZamen Enterprise — Web Design & Development</title>
+
+  <!-- Coolors palette: paste URL here -->
+
+  <style>
+    :root {
+      --ink: #0b132b;
+      --mid-ink: #1c2541;
+      --accent: #5bc0be;
+      --paper: #f3f7f0;
+      --highlight: #3a506b;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.6;
+    }
+    header, footer { padding: 1rem clamp(1rem, 3vw, 2rem); }
+    main { padding: clamp(1rem, 3vw, 2rem); max-width: 72rem; margin: 0 auto; }
+
+    .brand {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.875rem 1rem;
+      align-items: center;
+    }
+    .brand a { text-decoration: none; color: inherit; }
+    .logo {
+      width: 64px; height: 64px;
+      display: block;
+      border-radius: 14px;
+      box-shadow: 0 1px 6px color-mix(in srgb, var(--highlight) 10%, transparent);
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(1.25rem, 2.2vw + 1rem, 2rem);
+      letter-spacing: 0.2px;
+    }
+    .tag {
+      display: inline-block;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      background: color-mix(in srgb, var(--accent) 20%, white);
+      color: var(--mid-ink);
+      border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+    }
+    .lede {
+      font-size: clamp(1rem, 0.9rem + 0.5vw, 1.15rem);
+      max-width: 65ch;
+    }
+    ul.awesome { list-style: none; padding: 0; margin: 0.75rem 0 0 0; }
+    ul.awesome li { 
+      padding-left: 0.6rem;
+      margin: 0.35rem 0;
+    }
+    ul.awesome li::marker { content: ""; }
+    ul.awesome li::before {
+      content: "◆";
+      display: inline-block;
+      width: 1.1rem;
+      margin-left: -1.1rem;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    address {
+      margin-top: 1rem;
+      padding: 0.85rem 1rem;
+      border: 1px solid color-mix(in srgb, var(--highlight) 18%, white);
+      border-radius: 12px;
+      background: white;
+      box-shadow: 0 1px 8px color-mix(in srgb, var(--highlight) 8%, transparent);
+      font-style: normal;
+    }
+    address a { color: var(--highlight); }
+    h2 { 
+      margin: 1rem 0 0.5rem; 
+      font-size: clamp(1.125rem, 1.2rem + 0.5vw, 1.5rem);
+      color: var(--mid-ink);
+    }
+    footer {
+      border-top: 1px solid color-mix(in srgb, var(--mid-ink) 10%, transparent);
+      color: color-mix(in srgb, var(--mid-ink) 80%, white);
+      background: linear-gradient(180deg, color-mix(in srgb, var(--highlight) 6%, var(--paper)), color-mix(in srgb, var(--highlight) 12%, var(--paper)));
+      font-size: 0.96rem;
+    }
+    .foot-inner { max-width: 72rem; margin: 0 auto; display: flex; gap: 0.75rem; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+    a:hover, a:focus-visible { text-decoration: underline; }
+    @media (prefers-reduced-motion: no-preference) {
+      .logo { transition: transform 300ms ease; }
+      .logo:hover { transform: rotate(6deg) scale(1.03); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand" role="banner">
+      <img
+        class="logo"
+        src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0%200%2064%2064'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%235bc0be'/><stop offset='1' stop-color='%233a506b'/></linearGradient></defs><rect rx='14' ry='14' width='64' height='64' fill='url(%23g)'/><text x='50%25' y='52%25' dominant-baseline='middle' text-anchor='middle' font-family='Inter,%20system-ui,%20-apple-system' font-size='28' font-weight='700' fill='white'>VZ</text></svg>"
+        width="64" height="64"
+        alt="VZamen Enterprise logo" />
+      <div>
+        <h1><a href="./">VZamen Enterprise</a></h1>
+        <span class="tag" aria-label="tagline">Clean, accessible, fast web builds.</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="content" tabindex="-1">
+    <h2>VZamen Enterprise — Services</h2>
+    <p class="lede">We help small businesses, student orgs, and creators launch standards‑based websites that are fast, accessible, and easy to maintain. From rapid prototypes to production deployments, we deliver with clarity and craftsmanship.</p>
+
+    <ul class="awesome">
+      <li>Semantic, accessible HTML with WCAG‑conscious patterns</li>
+      <li>Mobile‑first layouts and responsive type scales</li>
+      <li>Performance budgets with Core Web Vitals focus</li>
+      <li>Reusable design tokens & lightweight component systems</li>
+      <li>SEO‑ready structure and social share cards (OG/Twitter)</li>
+      <li>Simple CMS hand‑off and short how‑to docs</li>
+      <li>Privacy‑respecting analytics and cookie consent UX</li>
+      <li>Git/GitHub workflows and static hosting pipelines</li>
+      <li>Clear SLAs for support and iterative improvements</li>
+    </ul>
+
+    <p>Tell us about your goals, audience, and timeline—we’ll craft a focused proposal with milestones, deliverables, and success metrics that match your budget.</p>
+
+    <address>
+      <strong>Contact</strong><br />
+      <a href="mailto:hello@vzamenenterprise.com">hello@vzamenenterprise.com</a><br />
+      (704) 555‑0146<br />
+      9201 University City Blvd, Charlotte, NC 28223
+    </address>
+  </main>
+
+  <footer>
+    <div class="foot-inner">
+      <div>© <span id="year"></span> VZamen Enterprise • "Clean, accessible, fast."</div>
+      <nav aria-label="Utility">
+        <a href="#content">Back to top</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

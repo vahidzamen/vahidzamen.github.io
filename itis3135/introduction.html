@@ -8,75 +8,37 @@
   <link rel="stylesheet" href="styles/default.css" />
 </head>
 <body>
-  <header>
-    <h1>Welcome to my ITIS-3135 course page.</h1>
-    <nav>
-      <a href="./">Home</a> ||
-      <a href="introduction.html">Introduction</a> ||
-      <a href="contract.html">Contract</a>
-    </nav>
-  </header>
+  <div data-include="components/header.html"></div>
 
   <main>
     <h2>Introduction</h2>
 
-    <!-- Make sure this path and filename exactly match your image -->
     <figure>
       <img src="images/IMG_5973.JPG" alt="Me and my friend at the beach on Labor Day 2025" />
       <figcaption>Hi! I’m Vahid—welcome to my page.</figcaption>
     </figure>
+
     <ul>
-        <li><b>Personal Background:</b> I come from a close-knit family of five siblings. Moving from Afghanistan to the U.S. in 2015 was a big change, but it gave me the chance to grow, adapt, and pursue education in technology.</li>
-    
-        <li><b>Professional Background:</b> I have worked in diverse roles, including Tech Consultant at Target, Production Operator at Pfizer, and Photographer at Westgate Chrysler Jeep Dodge RAM, gaining skills in customer service, technology, and teamwork.</li>
-    
-        <li><b>Academic Background:</b> I earned my Associate of Arts in Computer Science from Wake Tech with a GPA of 3.4, and transferred to UNC Charlotte to focus on Computer Science (Information Technology). I am pursuing a B.A. in Computer Science with a concentration in Information Technology, planning to graduate in May 2026.</li>
-    
-        <li><b>Primary Computer:</b> MacBook Pro M3 (macOS), which I use primarily at home and on campus.</li>
-    
-        <li><b>Courses:</b>
-          <ul>
-            <li><b>ITIS 3135 – Front-End Web Application Development:</b> This course is a degree requirement that will strengthen my skills in web design and development.</li>
-            <li><b>ITCS 3166 – Intro to Computer Networks:</b> A required course that gives me a solid foundation in networking concepts and prepares me for IT-focused roles.</li>
-            <li><b>ITIS 3200 – Intro to Info Security & Privacy:</b> As a degree requirement, this course helps me understand core cybersecurity and privacy issues, which are vital in today’s tech world.</li>
-            <li><b>ITSC 3155 – Software Engineering:</b> A required course that teaches teamwork and project-based software design, preparing me for real-world software development.</li>
-            <li><b>ITCS 3050 – Computational Thinking & AI Literacy in K-12:</b> This degree-required course gives me a broader perspective on the role of computing and AI in education.</li>
-          </ul>
-        </li>
-      </ul>
-    
-      <blockquote>
-        “Don’t count the days, make the days count.” — Muhammad Ali
-      </blockquote>
-    </main>
+      <li><b>Personal Background:</b> I come from a close-knit family of five siblings. Moving from Afghanistan to the U.S. in 2015 was a big change, but it gave me the chance to grow, adapt, and pursue education in technology.</li>
+      <li><b>Professional Background:</b> I have worked in diverse roles, including Tech Consultant at Target, Production Operator at Pfizer, and Photographer at Westgate Chrysler Jeep Dodge RAM, gaining skills in customer service, technology, and teamwork.</li>
+      <li><b>Academic Background:</b> I earned my Associate of Arts in Computer Science from Wake Tech with a GPA of 3.4, and transferred to UNC Charlotte to focus on Computer Science (Information Technology). I am pursuing a B.A. in Computer Science with a concentration in Information Technology, planning to graduate in May 2026.</li>
+      <li><b>Primary Computer:</b> MacBook Pro M3 (macOS), which I use primarily at home and on campus.</li>
+      <li><b>Courses:</b>
+        <ul>
+          <li><b>ITIS 3135 – Front-End Web Application Development:</b> This course is a degree requirement that will strengthen my skills in web design and development.</li>
+          <li><b>ITCS 3166 – Intro to Computer Networks:</b> A required course that gives me a solid foundation in networking concepts and prepares me for IT-focused roles.</li>
+          <li><b>ITIS 3200 – Intro to Info Security & Privacy:</b> As a degree requirement, this course helps me understand core cybersecurity and privacy issues, which are vital in today’s tech world.</li>
+          <li><b>ITSC 3155 – Software Engineering:</b> A required course that teaches teamwork and project-based software design, preparing me for real-world software development.</li>
+          <li><b>ITCS 3050 – Computational Thinking & AI Literacy in K-12:</b> This degree-required course gives me a broader perspective on the role of computing and AI in education.</li>
+        </ul>
+      </li>
+    </ul>
 
-  <footer>
-    <nav class="footer-nav">
-      <a href="https://github.com/vahidzamen">GitHub</a> ||
-      <a href="https://webpages.charlotte.edu/vzamen/">Charlotte.edu</a> ||
-      <a href="https://www.linkedin.com/in/vahid-zamen-8a1092278/">LinkedIn</a> ||
-      <a href="https://www.freecodecamp.org/vzamen">FreeCodeCamp</a> ||
-      <a href="https://www.codecademy.com/profiles/vzamen">CodeCademy</a>
-    </nav>
-    <p>Page made by <a href="https://webpages.charlotte.edu/vzamen/">Vahid Zamen</a> &copy; 2024</p>
+    <blockquote>“Don’t count the days, make the days count.” — Muhammad Ali</blockquote>
+  </main>
 
-    <a href="https://validator.w3.org/check?uri=referer" id="validation_link_html_intro">
-      <img style="border:0;width:88px;height:31px"
-           src="https://mytienhoang.github.io/itis3135/z_archives/html_validation.png"
-           alt="Valid HTML!" />
-    </a>
-    <a href="https://jigsaw.w3.org/css-validator/check/referer" id="validation_link_css_intro">
-      <img style="border:0;width:88px;height:31px"
-           src="https://jigsaw.w3.org/css-validator/images/vcss"
-           alt="Valid CSS!" />
-    </a>
-  </footer>
+  <div data-include="components/footer.html"></div>
 
-  <script>
-    document.getElementById("validation_link_html_intro")
-      .setAttribute("href", "https://validator.w3.org/check?uri=" + location.href);
-    document.getElementById("validation_link_css_intro")
-      .setAttribute("href", "https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);
-  </script>
+  <script src="scripts/HTMLInclude.min.js"></script>
 </body>
 </html>
