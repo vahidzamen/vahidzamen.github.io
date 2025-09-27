@@ -1,13 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Vahid Zamen / Homepage</title>
+  <meta name="description" content="Personal home page for Vahid Zamen — links to school site, GitHub Pages, and professional profiles." />
+  
   <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+
+  <style>
+    /* Color palette (saved at coolors.co):
+       https://coolors.co/0b0e14-1f2937-334155-10b981-f8fafc
+       Base: 0B0E14 (near-black), Slate: 1F2937/334155, Accent: 10B981, Text on dark: F8FAFC
+    */
+
+    :root {
+      --bg: #0b0e14;
+      --panel: #1f2937;
+      --muted: #334155;
+      --text: #f8fafc;
+      --accent: #10b981;
+      --accent-2: #8b5cf6; /* optional secondary */
+      --maxw: 900px; /* between 600–1000 per spec */
+    }
+
+    /* Typography: two distinct stacks (system sans for body, classic serif for headings) */
+    html {
+      box-sizing: border-box;
+    }
+    *, *::before, *::after { box-sizing: inherit; }
+
+    body {
+      margin: 0 auto;               /* center */
+      width: 90%;                    /* 80–95% per spec */
+      max-width: var(--maxw);        /* 600–1000 per spec */
+      background: linear-gradient(180deg, var(--bg), #121826 35%, var(--panel) 100%);
+      color: var(--text);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+      line-height: 1.6;
+    }
+
+    header, main, footer {
+      padding: 1.25rem 0;
+    }
+
+    header {
+      padding-top: 2rem;
+    }
+
+    /* Headings use a contrasting serif stack */
+    h1, h2 {
+      font-family: Georgia, "Times New Roman", Times, serif;
+      line-height: 1.25;
+      margin: 0 0 0.5rem 0;
+      color: var(--text);
+    }
+
+    h1 {
+      font-size: clamp(1.75rem, 3vw + 1rem, 2.5rem);
+      letter-spacing: 0.3px;
+    }
+
+    h2 {
+      font-size: clamp(1.25rem, 2vw + 0.75rem, 1.75rem);
+      color: #e5f9f3;
+    }
+
+    p {
+      margin: 0 0 1rem 0;
+      color: #e5e7eb;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 1rem 1.25rem;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.25);
+    }
+
+    .accent {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* Footer nav */
+    .footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1rem;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 0 2rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin-top: 1.25rem;
+    }
+
+    .footer-nav a {
+      text-decoration: none;
+      color: var(--text);
+      padding: 0.25rem 0.5rem;
+      border-radius: 8px;
+      transition: transform 160ms ease, background-color 160ms ease;
+    }
+
+    .footer-nav a:hover,
+    .footer-nav a:focus {
+      background: rgba(16,185,129,0.12);
+      outline: none;
+      transform: translateY(-1px);
+    }
+
+    .separator { color: var(--muted); opacity: 0.7; }
+
+    /* Accessibility helpers */
+    a:focus-visible { outline: 2px dashed var(--accent); outline-offset: 3px; }
+
+    /* Small screens fine by default; widen spacing a bit on larger */
+    @media (min-width: 768px) {
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+    }
+  
+    /* Simple call-to-action button for the ITIS-3135 link */
+    .cta { display:inline-block; padding:0.55rem 0.9rem; border-radius:10px; text-decoration:none; font-weight:600; background: var(--accent); color: var(--bg); box-shadow: 0 4px 14px rgba(0,0,0,0.25); transition: transform 160ms ease, opacity 160ms ease; }
+    .cta:hover, .cta:focus { transform: translateY(-1px); opacity: 0.95; outline: none; }
+  </style>
 </head>
 <body>
-  <h1>Welcome to my Homepage.</h1> 
-  <a href="itis3135">Click here to go to my ITIS-3135 coursepage!</a>
+  <header>
+    <h1>Vahid Zamen</h1>
+  </header>
+
+  <main>
+    <h2>Personal Home Page</h2>
+
+    <p>Welcome to my Homepage.</p>
+
+    <section class="grid">
+      <div class="card">
+        <p>Hello! I’m <span class="accent">Vahid</span>, a Computer Science student at UNC Charlotte focused on building practical, human‑centered technology. I enjoy web development, cybersecurity, and data structures, and I like turning ideas into clean, usable interfaces.</p>
+        <p>Use this page as a hub to reach my school site, GitHub/GitHub Pages, and professional profiles. Course‑specific materials live inside the <strong>ITIS3135</strong> folder so this page stays professional and general‑purpose.</p>
+      </div>
+      <p><a class="cta" href="itis3135">Click here to go to my ITIS-3135 coursepage!</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <nav class="footer-nav" aria-label="Primary">
+      <a href="https://github.com/vzamen" target="_blank" rel="noopener">GitHub.com</a>
+      <span class="separator">~</span>
+      <a href="http://webpages.charlotte.edu/vzamen/" target="_blank" rel="noopener">CLT Web</a>
+      <span class="separator">~</span>
+      <a href="https://vzamen.github.io/" target="_blank" rel="noopener">GitHub.io</a>
+      <span class="separator">~</span>
+      <a href="itis3135/">ITIS3135</a>
+      <span class="separator">~</span>
+      <a href="https://www.linkedin.com/in/vahid-zamen/" target="_blank" rel="noopener">LinkedIn</a>
+    </nav>
+  </footer>
 </body>
 </html>
