@@ -1,14 +1,22 @@
 <footer>
-  <footer>
-    <nav class="footer-nav">
-      <a href="https://github.com/vahidzamen" target="_blank" rel="noopener">GitHub</a> ||
-      <a href="https://webpages.charlotte.edu/vzamen/" target="_blank" rel="noopener">Charlotte.edu</a> ||
-      <a href="https://www.linkedin.com/in/vahid-zamen-8a1092278/" target="_blank" rel="noopener">LinkedIn</a> ||
-      <a href="https://www.freecodecamp.org/vzamen" target="_blank" rel="noopener">FreeCodeCamp</a> ||
-      <a href="https://www.codecademy.com/profiles/vzamen" target="_blank" rel="noopener">Codecademy</a>
-    </nav>
-  
-    <p>
-      Page made by <a href="vzamenenterprise.com" target="_blank" rel="noopener">Vahid Zamen</a> &copy; 2024
-    </p>
-  </footer>  
+  <nav class="footer-nav">
+    <a href="https://github.com/vahidzamen" target="_blank" rel="noopener">GitHub</a>
+    <span class="separator">||</span>
+    <a href="https://webpages.charlotte.edu/vzamen/" target="_blank" rel="noopener">Charlotte.edu</a>
+    <span class="separator">||</span>
+    <a href="https://www.linkedin.com/in/vahid-zamen-8a1092278/" target="_blank" rel="noopener">LinkedIn</a>
+    <span class="separator">||</span>
+    <a href="https://www.freecodecamp.org/vzamen" target="_blank" rel="noopener">FreeCodeCamp</a>
+    <span class="separator">||</span>
+    <a href="https://www.codecademy.com/profiles/vzamen" target="_blank" rel="noopener">Codecademy</a>
+  </nav>
+
+  <p>
+    Page made by
+    <a href="https://vzamenenterprise.com" target="_blank" rel="noopener">Vahid Zamen</a>
+    &copy; <span id="year"></span>
+  </p>
+</footer>
+<script>
+  document.getElementById('year')?.textContent = new Date().getFullYear();
+</script>
