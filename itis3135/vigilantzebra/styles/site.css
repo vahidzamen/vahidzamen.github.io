@@ -36,7 +36,19 @@
   }
   
   /* Define headings once */
-  h1,h2,h3{margin:0 0 .5rem}
+  h1{
+    margin:0 0 .5rem;
+    letter-spacing:.3px;
+  }
+  
+  h2{
+    margin:0 0 .5rem; /* keep the base margin */
+    margin-top:.25rem; /* extra top space for h2 */
+  }
+  
+  h3{
+    margin:0 0 .5rem;
+  }  
   h1{letter-spacing:.3px}
   h2{margin-top:.25rem}
   
