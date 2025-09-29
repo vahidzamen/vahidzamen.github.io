@@ -61,7 +61,7 @@ nav a{
 nav a:hover{background:var(--stripe)}
 nav a[aria-current="page"]{text-decoration:underline}
 
-.tagline{margin:0.35rem 0 0;opacity:.9}
+.tagline{margin:0.35rem 0 0;opacity:0.9}
 
 .grid{
   display:grid;
