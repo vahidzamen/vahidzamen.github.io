@@ -3,299 +3,211 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Cars — My Hobby</title>
+  <title>Cars — Hobby</title>
 
-  <!-- Embedded stylesheet (keep it simple) -->
   <style>
-    /* basic colors (different from main site), no pure white/black */
-    :root{
-      --bg:#f3f5f7;         /* soft gray-blue page background */
-      --ink:#213547;        /* dark slate text */
-      --accent:#e4572e;     /* orange-red for links/buttons */
-      --muted:#5b7083;      /* subdued text */
-      --card:#ffffff;       /* cards/sections */
-      --line:#d9e0e6;       /* thin borders */
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: Arial, Helvetica, sans-serif; /* not Times New Roman */
-      line-height:1.6;
-      background:var(--bg);
-      color:var(--ink);
-    }
-    header, footer { padding: 1rem; }
-    header{
-      background:#eaf0f5;
-      border-bottom:1px solid var(--line);
-    }
-    main{ max-width: 950px; margin: 0 auto; padding: 1rem; }
-
-    h1{ margin:.2rem 0; font-size:1.8rem; }
-    .tagline{ margin:.2rem 0 .6rem; color:var(--muted); }
-
-    /* simple nav */
-    nav[aria-label="Primary"]{
-      display:flex; flex-wrap:wrap; gap:.4rem .6rem; align-items:center;
-    }
-    nav a{
-      text-decoration:none;
-      color:var(--ink);
-      padding:.25rem .5rem;
-      border:1px solid var(--line);
-      border-radius:8px;
-      background:#fff;
-    }
-    nav a[aria-current="page"]{ border-color:var(--accent); }
-    .divider{ color:var(--muted); padding:0 .2rem; }
-
-    /* sections as pages */
-    section{
-      display:none;
-      background:var(--card);
-      border:1px solid var(--line);
-      border-radius:10px;
-      padding:1rem;
-      margin:1rem 0;
-    }
+    body{ margin:0; font-family: Arial, Helvetica, sans-serif; background:#f4f6f8; color:#24323d; line-height:1.6; }
+    header, footer{ padding:12px; background:#e8eef3; }
+    main{ padding:12px; max-width:900px; margin:0 auto; }
+    h1{ margin:.2rem 0; font-size:1.6rem; } h2{ margin:.2rem 0 .6rem; font-size:1.25rem; }
+    nav a{ display:inline-block; margin:2px 6px; padding:4px 8px; text-decoration:none; color:#e4572e; border:1px solid #cfd8e1; border-radius:6px; background:#fff; }
+    .divider{ color:#8091a1; margin:0 2px; }
+    section{ display:none; background:#ffffff; border:1px solid #d9e2ea; border-radius:8px; padding:12px; margin:12px 0; }
     section.active{ display:block; }
-    section h2{ margin-top:0; }
-
-    /* simple layout */
-    .grid{ display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); }
-    figure{ margin:0; }
-    figure img{ width:100%; height:auto; border-radius:8px; }
-    figcaption{ font-weight:bold; margin:.4rem 0 .2rem; }
-    .prompt{ font-style:italic; color:var(--muted); margin:.2rem 0 .6rem; }
-
-    table{ width:100%; border-collapse:collapse; background:#fff; border:1px solid var(--line); }
-    th,td{ padding:.55rem .6rem; border-bottom:1px solid var(--line); text-align:left; }
-    th{ background:#f6f9fb; }
-
-    a{ color:var(--accent); }
-
-    footer{
-      background:#eaf0f5;
-      border-top:1px solid var(--line);
-      display:flex; flex-wrap:wrap; gap:.6rem 1rem; align-items:center; justify-content:space-between;
-    }
-    .badges{ display:flex; gap:.5rem; flex-wrap:wrap; }
-    .badge{
-      display:inline-block; padding:.35rem .55rem; border-radius:6px; background:#fff; border:1px solid var(--line);
-      text-decoration:none; color:var(--ink); font-weight:bold; font-size:.95rem;
-    }
+    figure{ margin:0 0 10px; } img{ max-width:100%; height:auto; border-radius:6px; }
+    figcaption{ font-weight:bold; margin-top:6px; }
+    .prompt{ font-style:italic; color:#6b7c8c; margin:.25rem 0 .5rem; }
+    table{ width:100%; border-collapse:collapse; margin:.5rem 0; background:#fff; border:1px solid #d9e2ea; }
+    th,td{ padding:.45rem .5rem; border-top:1px solid #eef2f6; text-align:left; } th{ background:#f5f8fb; }
+    .badges a{ display:inline-block; margin:4px 6px 0 0; padding:.35rem .55rem; text-decoration:none; color:#24323d; background:#fff; border:1px solid #cfd8e1; border-radius:6px; font-weight:bold; }
+    .gallery{ display:grid; gap:10px; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); padding:0; list-style:none; margin:0; }
+    .gallery li{ margin:0; }
   </style>
 </head>
 <body>
   <header>
     <h1>Cars</h1>
-    <p class="tagline">Tuning, daily driving, and enjoying great builds.</p>
+    <p>Simple site about my car hobby.</p>
 
-    <!-- simple nav with unique divider • -->
-    <nav aria-label="Primary">
-      <a href="#what" data-section="what" aria-current="page">What</a><span class="divider">•</span>
-      <a href="#who" data-section="who">Who</a><span class="divider">•</span>
-      <a href="#when" data-section="when">When</a><span class="divider">•</span>
+    <nav>
+      <a href="#what"  data-section="what">What</a><span class="divider">•</span>
+      <a href="#who"   data-section="who">Who</a><span class="divider">•</span>
+      <a href="#when"  data-section="when">When</a><span class="divider">•</span>
       <a href="#where" data-section="where">Where</a><span class="divider">•</span>
-      <a href="#how" data-section="how">How</a><span class="divider">•</span>
-      <a href="#why" data-section="why">Why</a><span class="divider">•</span>
-      <a href="#ai" data-section="ai">AI Prompts</a>
+      <a href="#how"   data-section="how">How</a><span class="divider">•</span>
+      <a href="#why"   data-section="why">Why</a><span class="divider">•</span>
+      <a href="#ai"    data-section="ai">AI Prompts</a>
     </nav>
   </header>
 
   <main>
-    <!-- WHAT (home/default) -->
+    <!-- WHAT -->
     <section id="what" class="active">
       <h2>What</h2>
-      <div class="grid">
-        <div>
-          <p>I’m a car enthusiast who enjoys German performance cars and modern V8s. I follow builds, learn about maintenance, and like simple, tasteful mods that make a car drive better.</p>
-          <ul>
-            <li>Performance sedans and coupes</li>
-            <li>Light mods (intake, tune, suspension)</li>
-            <li>Enjoying weekend drives and car meets</li>
-          </ul>
-        </div>
-        <figure>
-          <img src="images/what-cars.jpg" alt="Clean BMW and Mustang parked side by side at sunset">
-          <figcaption>Cars I like</figcaption>
-          <p class="prompt"><em>AI prompt (image): “photorealistic BMW sport sedan and Ford Mustang parked at golden hour, simple composition, stock look”</em></p>
-        </figure>
-        <div>
-          <h3>My past cars (high level)</h3>
-          <table aria-label="Past cars">
-            <thead><tr><th>Year</th><th>Model</th><th>Note</th></tr></thead>
-            <tbody>
-              <tr><td>2018</td><td>BMW 340i</td><td>B58 turbo, great daily</td></tr>
-              <tr><td>2017</td><td>BMW 340i 6MT</td><td>Manual, driver’s choice</td></tr>
-              <tr><td>2008</td><td>BMW M3 (E92)</td><td>V8 sound, classic</td></tr>
-              <tr><td>2020</td><td>BMW M340i</td><td>Modern tech + speed</td></tr>
-              <tr><td>2020</td><td>Mustang GT</td><td>Whipple supercharged</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+      <p>I enjoy performance cars and simple mods that improve driving. I follow builds, go to meets, and like weekend drives.</p>
+      <ul>
+        <li>Cars I’ve owned: BMW 340i (2018), BMW 340i 6MT (2017), BMW M3 E92 (2008), BMW M340i (2020), Mustang GT Whipple (2020)</li>
+        <li>Favorite mods: tires, brakes, mild tune</li>
+      </ul>
+      <figure>
+        <img src="../images/what-cars.JPG" alt="Red Ford Mustang GT parked at a gas station at night.">
+        <figcaption>My Mustang GT</figcaption>
+        <p class="prompt"><em>Photo by me; no AI used.</em></p>
+      </figure>
+      <table aria-label="Past cars">
+        <thead><tr><th>Year</th><th>Model</th><th>Note</th></tr></thead>
+        <tbody>
+          <tr><td>2018</td><td>BMW 340i</td><td>Great daily, B58</td></tr>
+          <tr><td>2017</td><td>BMW 340i 6MT</td><td>Manual fun</td></tr>
+          <tr><td>2020</td><td>Mustang GT</td><td>Whipple supercharged</td></tr>
+        </tbody>
+      </table>
     </section>
 
     <!-- WHO -->
     <section id="who">
       <h2>Who</h2>
-      <div class="grid">
-        <div>
-          <p>I’m Vahid. I like learning from owners, DIY resources, and local meetups. The car community is helpful if you’re respectful and curious.</p>
-          <ul>
-            <li>Friends who wrench and drive</li>
-            <li>Local meet groups</li>
-            <li>Online forums and how-to guides</li>
-          </ul>
-        </div>
-        <figure>
-          <img src="images/who-community.jpg" alt="Small car group talking in a parking lot">
-          <figcaption>Community</figcaption>
-          <p class="prompt"><em>AI prompt (image): “photorealistic small car meet, friendly people, evening light, casual parking lot scene”</em></p>
-        </figure>
-        <div>
-          <h3>How I participate</h3>
-          <p>Mostly weekend drives, light mods, and sharing tips with friends.</p>
-        </div>
-      </div>
+      <p>I’m Vahid. I learn from friends, forums, and local meets. The car community is helpful if you’re respectful.</p>
+      <ul>
+        <li>Friends who wrench and drive</li>
+        <li>Local meet groups / Cars & Coffee</li>
+      </ul>
+      <figure>
+        <img src="../images/who-community.jpg" alt="Car meet with a green Lamborghini and a purple Mercedes-AMG parked with people talking at a gas station.">
+        <figcaption>Car community</figcaption>
+        <p class="prompt"><em>Photo by me; no AI used.</em></p>
+      </figure>
     </section>
 
     <!-- WHEN -->
     <section id="when">
       <h2>When</h2>
-      <div class="grid">
-        <div>
-          <p>Best times are weekend mornings or cool evenings. Bigger meets usually pop up in spring and fall.</p>
-          <ul>
-            <li>Sat/Sun mornings: drives & coffee</li>
-            <li>Weeknights: quick DIY tasks</li>
-            <li>Spring/Fall: most events</li>
-          </ul>
-        </div>
-        <figure>
-          <img src="images/when-drive.jpg" alt="Car on a quiet road at sunrise">
-          <figcaption>Weekend drive</figcaption>
-          <p class="prompt"><em>AI prompt (image): “photorealistic sport sedan on empty scenic road at sunrise, calm mood”</em></p>
-        </figure>
-        <div>
-          <h3>Simple routine</h3>
-          <p>Plan a route, check fluids/tires, drive safely, and be respectful to neighborhoods.</p>
-        </div>
-      </div>
+      <p>Best times: weekend mornings and cool evenings. Big events happen more in spring and fall.</p>
+      <ul>
+        <li>Sat/Sun drives</li>
+        <li>Weeknight DIY tasks</li>
+        <li>Spring/Fall = most meets</li>
+      </ul>
+      <figure>
+        <img src="../images/when-sunrise.jpg" alt="Two BMWs parked by beach huts around sunrise.">
+        <figcaption>Sunrise drive to the beach</figcaption>
+        <p class="prompt"><em>Photo by me; no AI used.</em></p>
+      </figure>
     </section>
 
     <!-- WHERE -->
     <section id="where">
       <h2>Where</h2>
-      <div class="grid">
-        <div>
-          <p>I look for smooth roads, safe pull-offs, and spots with good lighting for photos. Local tracks and cars-and-coffee meetups are great too.</p>
-          <ul>
-            <li>Scenic parkways</li>
-            <li>Cars & coffee lots</li>
-            <li>Track days (beginner groups)</li>
-          </ul>
-        </div>
-        <figure>
-          <img src="images/where-spot.jpg" alt="Open parking area with distant skyline">
-          <figcaption>Photo spot</figcaption>
-          <p class="prompt"><em>AI prompt (image): “photorealistic open parking area, clean lines, distant city skyline, neutral light”</em></p>
-        </figure>
-        <div>
-          <h3>Finding locations</h3>
-          <p>Ask friends, check local groups, and save map pins so you can return later.</p>
-        </div>
-      </div>
+      <p>I look for smooth roads, safe pull-offs, and good photo spots. Local tracks are great for learning.</p>
+      <ul>
+        <li>Scenic routes / parkways</li>
+        <li>Cars & Coffee lots</li>
+        <li>Beginner track days</li>
+      </ul>
+      <figure>
+        <img src="../images/where-spot.jpg" alt="Gray BMW parked on a rooftop with the city skyline at night.">
+        <figcaption>Rooftop photo spot</figcaption>
+        <p class="prompt"><em>Photo by me; no AI used.</em></p>
+      </figure>
     </section>
 
     <!-- HOW -->
     <section id="how">
       <h2>How</h2>
-      <div class="grid">
-        <div>
-          <h3>Getting started</h3>
-          <ol>
-            <li>Set a budget and goal (daily, track, show).</li>
-            <li>Start with basic maintenance.</li>
-            <li>Add simple, reversible mods.</li>
-          </ol>
-        </div>
-        <figure>
-          <img src="images/how-basics.jpg" alt="Basic tools and car maintenance items on a workbench">
-          <figcaption>Basics first</figcaption>
-          <p class="prompt"><em>AI prompt (image): “photorealistic simple workbench with basic car tools and fluids, tidy layout”</em></p>
-        </figure>
-        <div>
-          <h3>Example easy mods</h3>
-          <ul>
-            <li>Performance tires</li>
-            <li>Brake pads/fluids</li>
-            <li>Mild tune (research first)</li>
-          </ul>
-        </div>
-      </div>
+      <p>Start small and safe: set a budget, maintain the car, and choose simple, reversible mods.</p>
+      <ol>
+        <li>Maintenance first (fluids, brakes, tires)</li>
+        <li>Plan your goals (daily, track, show)</li>
+        <li>Research before modding</li>
+      </ol>
+      <figure>
+        <img src="../images/how-garage.jpg" alt="White BMW on stands in a home garage with tools out while I change the oil and adjust the bumper.">
+        <figcaption>DIY maintenance in the garage</figcaption>
+        <p class="prompt"><em>Photo by me; no AI used.</em></p>
+      </figure>
     </section>
 
     <!-- WHY -->
     <section id="why">
       <h2>Why</h2>
-      <div class="grid">
-        <div>
-          <p>I enjoy the engineering, the driving feel, and the community. Cars are a hands-on way to learn and make friends.</p>
-          <ul>
-            <li>Mechanical learning</li>
-            <li>Personal expression</li>
-            <li>Memorable drives</li>
-          </ul>
-        </div>
-        <figure>
-          <img src="images/why-enjoy.jpg" alt="Driver’s view through windshield on a curvy road">
-          <figcaption>Pure fun</figcaption>
-          <p class="prompt"><em>AI prompt (image): “photorealistic driver view on curvy road, relaxed evening light, simple composition”</em></p>
-        </figure>
-        <div>
-          <h3>Keep it simple</h3>
-          <p>Do small steps, stay safe, and enjoy the process.</p>
-        </div>
-      </div>
+      <p>I like the engineering, the driving feel, and the community. Cars are a hands-on way to learn and make friends.</p>
+      <ul>
+        <li>Mechanical learning</li>
+        <li>Personal expression</li>
+        <li>Memorable drives</li>
+      </ul>
+      <figure>
+        <img src="../images/why-enjoy.jpg" alt="Pink 1980s Nissan coupe parked at an overlook during a colorful sunset.">
+        <figcaption>Why I love it</figcaption>
+        <p class="prompt"><em>Photo by me; no AI used.</em></p>
+      </figure>
     </section>
 
     <!-- AI PROMPTS -->
     <section id="ai">
       <h2>AI Prompts</h2>
-      <p>If you used AI images, list the prompts here (they also appear under each figure):</p>
-      <ul>
-        <li><strong>what-cars.jpg</strong> — “photorealistic BMW sport sedan and Ford Mustang parked at golden hour, simple composition, stock look”</li>
-        <li><strong>who-community.jpg</strong> — “photorealistic small car meet, friendly people, evening light, casual parking lot scene”</li>
-        <li><strong>when-drive.jpg</strong> — “photorealistic sport sedan on empty scenic road at sunrise, calm mood”</li>
-        <li><strong>where-spot.jpg</strong> — “photorealistic open parking area, clean lines, distant city skyline, neutral light”</li>
-        <li><strong>how-basics.jpg</strong> — “photorealistic simple workbench with basic car tools and fluids, tidy layout”</li>
-        <li><strong>why-enjoy.jpg</strong> — “photorealistic driver view on curvy road, relaxed evening light, simple composition”</li>
+      <p><em>I did not use AI for code or text, and all images on this page are my own photos. No AI prompts were used.</em></p>
+
+      <ul class="gallery">
+        <li>
+          <figure>
+            <img src="../images/what-cars.JPG" alt="Red Ford Mustang GT at a gas station at night.">
+            <figcaption>My Mustang GT</figcaption>
+            <p class="prompt"><em>Photo by me; no AI used.</em></p>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <img src="../images/who-community.jpg" alt="Car meet with supercars and people at a gas station.">
+            <figcaption>Car community</figcaption>
+            <p class="prompt"><em>Photo by me; no AI used.</em></p>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <img src="../images/when-sunrise.jpg" alt="Two BMWs by beach huts at sunrise.">
+            <figcaption>Sunrise drive</figcaption>
+            <p class="prompt"><em>Photo by me; no AI used.</em></p>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <img src="../images/where-spot.jpg" alt="Gray BMW on a rooftop with city skyline at night.">
+            <figcaption>Rooftop spot</figcaption>
+            <p class="prompt"><em>Photo by me; no AI used.</em></p>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <img src="../images/how-garage.jpg" alt="White BMW on stands in a home garage with tools out.">
+            <figcaption>DIY maintenance</figcaption>
+            <p class="prompt"><em>Photo by me; no AI used.</em></p>
+          </figure>
+        </li>
+        <li>
+          <figure>
+            <img src="../images/why-enjoy.jpg" alt="Pink 1980s Nissan coupe at sunset.">
+            <figcaption>Why I love it</figcaption>
+            <p class="prompt"><em>Photo by me; no AI used.</em></p>
+          </figure>
+        </li>
       </ul>
-      <p><em>If you only used AI for images, say “I only used AI for images.”</em></p>
     </section>
   </main>
 
   <footer>
-    <div>© <span id="year"></span> Vahid Zamen • <a href="../design-firm/index.html">Design Firm</a></div>
-    <div class="badges" aria-label="Validation">
-      <a class="badge" href="https://validator.w3.org/nu/?doc=referer">HTML ✓</a>
-      <a class="badge" href="https://jigsaw.w3.org/css-validator/validator?uri=referer">CSS ✓</a>
-      <a class="badge" href="https://wave.webaim.org/report#/">Accessibility (WAVE)</a>
+    <small>© <span id="year"></span> Vahid Zamen • <a href="../design-firm/index.html">Design Firm</a></small>
+    <div class="badges">
+      <a href="https://validator.w3.org/nu/?doc=referer">HTML ✓</a>
+      <a href="https://jigsaw.w3.org/css-validator/validator?uri=referer">CSS ✓</a>
+      <a href="https://wave.webaim.org/report#/">Accessibility</a>
     </div>
   </footer>
 
-  <!-- tiny JS to switch sections (beginner level) -->
   <script>
-    const links = document.querySelectorAll('nav[aria-label="Primary"] a[data-section]');
+    const links = document.querySelectorAll('nav a[data-section]');
     const sections = document.querySelectorAll('main section');
-    function show(id){
-      sections.forEach(s => s.classList.toggle('active', s.id === id));
-      links.forEach(a => a.setAttribute('aria-current', a.dataset.section === id ? 'page' : 'false'));
-      location.hash = id; // keep hash in URL
-    }
-    // start on #what (default) or from hash
+    function show(id){ sections.forEach(s => s.classList.toggle('active', s.id === id)); location.hash = id; }
     show((location.hash || '#what').replace('#',''));
     links.forEach(a => a.addEventListener('click', e => { e.preventDefault(); show(a.dataset.section); }));
     document.getElementById('year').textContent = new Date().getFullYear();
