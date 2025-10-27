@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vahid Zamen | Introduction Form</title>
+  <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="styles/default.css" />
+</head>
+<body>
+  <!-- Reuse your dynamic header/footer includes so styles & spacing match exactly -->
+  <div data-include="components/header.html"></div>
+
+  <main>
+    <h2>Introduction Form</h2>
+    <h3>Please submit the form below.</h3>
+
+    <!-- RESULT AREA (hidden until submit) -->
+    <section id="result" class="card" hidden></section>
+
+    <!-- FORM AREA -->
+    <form id="intro-form" novalidate>
+      <!-- Acknowledgment (required) -->
+      <fieldset class="card" style="margin-bottom:1rem;">
+        <legend><strong>Acknowledgment</strong></legend>
+        <label>
+          <span class="accent">Acknowledgment Statement *</span><br/>
+          <input name="ackStatement" type="text" required
+                 placeholder="I, [Your Name], certify this is my work…"
+                 value="I, Vahid Zamen, certify this is my work for ITIS-3135." />
+        </label><br/><br/>
+        <label>
+          <span class="accent">Acknowledgment Date *</span><br/>
+          <input name="ackDate" type="date" required
+                 value="2025-09-14" />
+        </label>
+      </fieldset>
+
+      <!-- Identity (required first/last; middle & nickname optional) -->
+      <fieldset class="card" style="margin-bottom:1rem;">
+        <legend><strong>Identity</strong></legend>
+        <label>
+          First Name *<br/>
+          <input name="firstName" required placeholder="First name" value="Vahid" />
+        </label><br/><br/>
+        <label>
+          Middle Name / Initial (optional)<br/>
+          <input name="middleName" placeholder="Middle name or initial" value="" />
+        </label><br/><br/>
+        <label>
+          Nickname / Preferred (optional)<br/>
+          <input name="nickname" placeholder="Preferred name" value="" />
+        </label><br/><br/>
+        <label>
+          Last Name *<br/>
+          <input name="lastName" required placeholder="Last name" value="Zamen" />
+        </label>
+      </fieldset>
+
+      <!-- Mascot line (required) -->
+      <fieldset class="card" style="margin-bottom:1rem;">
+        <legend><strong>Mascot Line</strong></legend>
+        <label>
+          Mascot Adjective *<br/>
+          <input name="mascotAdj" required placeholder="e.g., Vigilant" value="Vigilant" />
+        </label><br/><br/>
+        <label>
+          Mascot Animal *<br/>
+          <input name="mascotAnimal" required placeholder="e.g., Zebra" value="Zebra" />
+        </label><br/><br/>
+        <label>
+          Divider * (e.g., ~, |, ♥️)<br/>
+          <input name="divider" required placeholder="|" value="—" />
+        </label>
+      </fieldset>
+
+      <!-- Image (defaults to your image; allow upload or URL) -->
+      <fieldset class="card" style="margin-bottom:1rem;">
+        <legend><strong>Picture</strong></legend>
+        <div style="display:grid; gap:.75rem;">
+          <label>
+            Default Image URL (used unless you upload below)<br/>
+            <input name="pictureUrl" type="url"
+                   placeholder="https://…/your-image.jpg"
+                   value="images/IMG_5973.JPG" />
+          </label>
+          <label>
+            Or Upload Your Own Image
+            <input name="pictureFile" type="file" accept="image/*" />
+          </label>
+          <label>
+            Picture Caption *<br/>
+            <input name="pictureCaption" required
+                   placeholder="Short caption under the image"
+                   value="Hi! I’m Vahid—welcome to my page." />
+          </label>
+        </div>
+      </fieldset>
+
+      <!-- Personal statement & bullets -->
+      <fieldset class="card" style="margin-bottom:1rem;">
+        <legend><strong>About You</strong></legend>
+
+        <label>
+          Personal Statement *<br/>
+          <textarea name="personalStatement" required rows="3"
+            placeholder="One-sentence personal intro.">I come from a close-knit family of five siblings. Moving from Afghanistan to the U.S. in 2015 was a big change, but it gave me the chance to grow, adapt, and pursue education in technology.</textarea>
+        </label><br/><br/>
+
+        <div style="display:grid; gap:.6rem;">
+          <label><strong>7 Main Bullets (required)</strong></label>
+
+          <label>1) Personal Background *<br/>
+            <input name="bullet1" required
+              placeholder="Personal background"
+              value="I come from a close-knit family of five siblings. Moving from Afghanistan to the U.S. in 2015 was a big change, but it gave me the chance to grow, adapt, and pursue education in technology." />
+          </label>
+
+          <label>2) Professional Background *<br/>
+            <input name="bullet2" required
+              placeholder="Professional background"
+              value="I have worked in diverse roles, including Tech Consultant at Target, Production Operator at Pfizer, and Photographer at Westgate Chrysler Jeep Dodge RAM, gaining skills in customer service, technology, and teamwork." />
+          </label>
+
+          <label>3) Academic Background *<br/>
+            <input name="bullet3" required
+              placeholder="Academic background"
+              value="I earned my Associate of Arts in Computer Science from Wake Tech with a GPA of 3.4, and transferred to UNC Charlotte to focus on Computer Science (Information Technology). I am pursuing a B.A. in Computer Science with a concentration in Information Technology, planning to graduate in May 2026." />
+          </label>
+
+          <label>4) Primary Computer *<br/>
+            <input name="bullet4" required
+              placeholder="Primary computer"
+              value="MacBook Pro M3 (macOS), which I use primarily at home and on campus." />
+          </label>
+
+          <label>5) Bullet *<br/>
+            <input name="bullet5" required placeholder="(You can duplicate any detail or add new)" value=" " />
+          </label>
+
+          <label>6) Bullet *<br/>
+            <input name="bullet6" required placeholder="(Required)" value=" " />
+          </label>
+
+          <label>7) Bullet *<br/>
+            <input name="bullet7" required placeholder="(Required)" value=" " />
+          </label>
+        </div>
+      </fieldset>
+
+      <!-- Courses (dynamic add/remove) -->
+      <fieldset class="card" style="margin-bottom:1rem;">
+        <legend><strong>Courses (department, number, name, reason)</strong></legend>
+
+        <div id="courses"></div>
+
+        <div style="margin-top:.75rem;">
+          <button type="button" id="add-course" class="cta">+ Add Course</button>
+        </div>
+      </fieldset>
+
+      <!-- Quote -->
+      <fieldset class="card" style="margin-bottom:1rem;">
+        <legend><strong>Quote</strong></legend>
+        <label>
+          Quote *<br/>
+          <input name="quoteText" required placeholder="“Your quote here.”" value="Don’t count the days, make the days count." />
+        </label><br/><br/>
+        <label>
+          Quote Author *<br/>
+          <input name="quoteAuthor" required placeholder="Author" value="Muhammad Ali" />
+        </label>
+      </fieldset>
+
+      <!-- Optional fun/share -->
+      <fieldset class="card" style="margin-bottom:1rem;">
+        <legend><strong>Extras (optional)</strong></legend>
+        <label>
+          Funny thing (optional)<br/>
+          <input name="funnyThing" placeholder="Something funny" />
+        </label><br/><br/>
+        <label>
+          Something I’d like to share (optional)<br/>
+          <input name="shareThing" placeholder="Something to share" />
+        </label>
+      </fieldset>
+
+      <!-- 5 Links -->
+      <fieldset class="card" style="margin-bottom:1rem;">
+        <legend><strong>Five Links</strong></legend>
+        <div style="display:grid; gap:.5rem;">
+          <input name="link1" type="url" required placeholder="https://…" value="https://webpages.charlotte.edu/vzamen/" />
+          <input name="link2" type="url" required placeholder="https://…" value="https://github.com/vahidzamen" />
+          <input name="link3" type="url" required placeholder="https://…" value="https://www.linkedin.com/in/vahid-zamen-8a1092278/" />
+          <input name="link4" type="url" required placeholder="https://…" value="https://www.freecodecamp.org/vzamen" />
+          <input name="link5" type="url" required placeholder="https://…" value="https://www.codecademy.com/profiles/vzamen" />
+        </div>
+      </fieldset>
+
+      <!-- Controls -->
+      <div style="display:flex; flex-wrap:wrap; gap:.5rem;">
+        <button type="submit" class="cta">Submit</button>
+        <button type="reset">Reset</button>
+        <button type="button" id="clear-btn">Clear</button>
+      </div>
+    </form>
+
+    <!-- Reset link displayed after submit -->
+    <p id="reset-link" hidden style="margin-top:1rem;">
+      <a href="#" class="cta" id="start-over">Reset and do it again</a>
+    </p>
+  </main>
+
+  <div data-include="components/footer.html"></div>
+
+  <script src="scripts/HTMLInclude.min.js"></script>
+  <script src="scripts/introduction.js"></script>
+</body>
+</html>
