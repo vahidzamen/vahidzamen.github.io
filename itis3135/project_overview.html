@@ -3,33 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Project Overview | ITIS-3135</title>
+  <title>Project Overview | ITIS 3135</title>
 
-  <!-- Use repo-root paths so this works from ANY subfolder -->
-  <link rel="stylesheet" href="/itis3135/default.css" />
-  <!-- If your class CSS is site.css instead of default.css, swap the line above to: -->
-  <!-- <link rel="stylesheet" href="/itis3135/site.css" /> -->
+  <!-- Use the one you actually have: default.css OR site.css -->
+  <link rel="stylesheet" href="default.css" />
+  <!-- <link rel="stylesheet" href="site.css" /> -->
 
   <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+  <meta name="description" content="Requirements & Design document for the final project website." />
 </head>
 <body>
-  <!-- Shared header/footer via HTMLInclude; repo-root paths prevent 404 -->
-  <div data-include="/itis3135/header.html"></div>
+  <!-- Shared header (relative path to file in the SAME folder) -->
+  <div data-include="header.html"></div>
 
   <main>
     <h2>Project Overview — 49ers Car Culture Club (C3)</h2>
 
-    <section class="card">
+    <!-- fixed: section now has its own heading -->
+    <section class="card" aria-labelledby="meta-heading">
+      <h3 id="meta-heading">Client &amp; Project Category</h3>
       <p>
         <strong>Client Category (Step 01):</strong> <em>Student group at UNCC</em><br />
-        <strong>Project Category (Step 02):</strong> <em>Group site that encourages participation &amp; communication</em>
+        <strong>Project Category (Step 02):</strong>
+        <em>Group site that encourages participation &amp; communication</em>
       </p>
     </section>
 
     <h3>1) Application Purpose</h3>
     <p>
-      The 49ers Car Culture Club (C3) site organizes events (meets, cruises, tech nights), recruits members, and shares media.
-      It improves visibility, centralizes announcements, and offers light interactivity (gallery, FAQs, event highlights, read-only event list).
+      The 49ers Car Culture Club (C3) site organizes events (meets, cruises, tech nights),
+      recruits members, and shares media. It improves visibility, centralizes announcements,
+      and offers light interactivity (gallery, FAQs, event highlights, and a read-only events list).
     </p>
 
     <h3>2) Intended Users</h3>
@@ -53,32 +57,37 @@
     <p>
       <strong>Name:</strong> [Private] (C3 President)<br />
       <strong>Organization:</strong> 49ers Car Culture Club (C3), UNC Charlotte<br />
-      <strong>Email:</strong> [private]<br />
-      <strong>Phone:</strong> [private]
+      <strong>Email:</strong> [private] &nbsp; <strong>Phone:</strong> [private]
     </p>
 
     <h3>5) Wireframe (Home)</h3>
-    <p>Exported from Draw.io. Embedded as a figure with caption.</p>
+    <p>Exported from Draw.io (Google Drive). Embedded below with caption.</p>
     <figure class="card">
       <img
-        src="/itis3135/images/wireframe-c3-home.png"
+        src="images/wireframe-c3-home-optimized.png"
         alt="Wireframe showing header/nav, hero with CTA, next event card, gallery preview, feature cards, and footer"
+        loading="lazy"
+        decoding="async"
+        style="max-width:100%;height:auto"
       />
       <figcaption>
         Wireframe — Home Page.
-        <a href="/itis3135/images/wireframe-c3-home.png" target="_blank" rel="noopener">Open full size</a>
+        <a href="images/wireframe-c3-home-optimized.png" target="_blank" rel="noopener">Open full size</a>
       </figcaption>
     </figure>
 
     <h3>6) Site Map</h3>
     <figure class="card">
       <img
-        src="/itis3135/images/sitemap-c3.png"
+        src="images/sitemap-c3-optimized.png"
         alt="Sitemap: Home; About; Events with detail modal; Gallery; Join & Contact; optional Resources; global header/footer"
+        loading="lazy"
+        decoding="async"
+        style="max-width:100%;height:auto"
       />
       <figcaption>
         Site Map.
-        <a href="/itis3135/images/sitemap-c3.png" target="_blank" rel="noopener">Open full size</a>
+        <a href="images/sitemap-c3-optimized.png" target="_blank" rel="noopener">Open full size</a>
       </figcaption>
     </figure>
 
@@ -92,7 +101,8 @@
       <li><em>Optional:</em> <strong>Resources (resources.html)</strong> — policies &amp; links</li>
     </ul>
     <p>
-      The production project will live in <code>/itis3135/project-c3/</code> with its own HTML/CSS/JS/assets. This overview page stays in your class site with the shared header/footer includes.
+      The production project will live in its own folder (e.g., <code>project-c3/</code>) with its
+      own HTML/CSS/JS/assets. This overview page stays in your class site with shared header/footer includes.
     </p>
 
     <h3>8) Page Design Details</h3>
@@ -102,9 +112,9 @@
       <ul>
         <li><strong>Purpose:</strong> Welcome/value prop; highlight next event</li>
         <li><strong>Audience:</strong> Everyone</li>
-        <li><strong>Content:</strong> Hero, 1–2 sentence mission, “Next Event” card, 3-image preview, Join CTA</li>
+        <li><strong>Content:</strong> Hero, brief mission, “Next Event” card, 3-image preview, Join CTA</li>
         <li><strong>Inputs:</strong> None</li>
-        <li><strong>Controls:</strong> Buttons/links to Events &amp; Join</li>
+        <li><strong>Controls:</strong> Links to Events &amp; Join</li>
         <li><strong>Actions:</strong> “Details” opens modal or Events page</li>
         <li><strong>Notes:</strong> jQuery-UI Accordion for FAQs</li>
       </ul>
@@ -124,70 +134,4 @@
       <summary><strong>Events (events.html)</strong></summary>
       <ul>
         <li><strong>Purpose:</strong> Central events list</li>
-        <li><strong>Audience:</strong> Members &amp; prospects</li>
-        <li><strong>Content:</strong> Event cards (title, date, time, location, brief)</li>
-        <li><strong>Inputs:</strong> None (read-only)</li>
-        <li><strong>Controls:</strong> “Details” modal; “RSVP” → Google Form</li>
-        <li><strong>Actions:</strong> AJAX (read-only) to load a static JSON of events</li>
-      </ul>
-    </details>
-
-    <details class="card">
-      <summary><strong>Gallery (gallery.html)</strong></summary>
-      <ul>
-        <li><strong>Purpose:</strong> Showcase photos</li>
-        <li><strong>Inputs:</strong> None (no uploads per course rules)</li>
-        <li><strong>Controls:</strong> Lightbox with keyboard navigation</li>
-      </ul>
-    </details>
-
-    <details class="card">
-      <summary><strong>Join &amp; Contact (join.html)</strong></summary>
-      <ul>
-        <li><strong>Purpose:</strong> Collect interest &amp; questions</li>
-        <li><strong>Inputs:</strong> Name, UNCC email, grad year, optional car info, interests, message</li>
-        <li><strong>Validations:</strong> Required fields, email pattern, length limits</li>
-        <li><strong>Actions:</strong> Prefilled <code>mailto:</code> or Google Form</li>
-        <li><strong>Notes:</strong> Embedded Google Map to meet spot</li>
-      </ul>
-    </details>
-
-    <details class="card">
-      <summary><strong>Resources (resources.html) — optional</strong></summary>
-      <ul>
-        <li><strong>Purpose:</strong> Campus policies, track days, safety guides</li>
-        <li><strong>Actions:</strong> External links open in new tabs</li>
-      </ul>
-    </details>
-
-    <h3>9) Planned Interactivity (JavaScript/jQuery/AJAX)</h3>
-    <ul>
-      <li><strong>jQuery-UI Accordion</strong> for FAQs/Safety</li>
-      <li><strong>Gallery Lightbox</strong> (jQuery plugin)</li>
-      <li><strong>Events Loader</strong> via fetch of static JSON (read-only)</li>
-      <li><strong>Form Validations</strong> (HTML5 + JS)</li>
-      <li><strong>Map Embed</strong> (Google Maps iframe)</li>
-    </ul>
-
-    <h3>10) Interaction References</h3>
-    <ul>
-      <li>University club pages with clear CTAs &amp; event lists</li>
-      <li>Accessible lightbox galleries</li>
-      <li>Read-only event feeds generated from static JSON</li>
-    </ul>
-
-    <h3>11) Notes &amp; Credits</h3>
-    <ul>
-      <li>All custom HTML/CSS/JS by <strong>Vahid Zamen</strong></li>
-      <li>No persistent storage/CRUD; read-only fetches &amp; external forms</li>
-      <li>Wireframe &amp; sitemap exported from Draw.io</li>
-      <li>Updated: <time datetime="2025-11-02">Nov 2, 2025</time></li>
-    </ul>
-  </main>
-
-  <div data-include="/itis3135/footer.html"></div>
-
-  <!-- Include script from repo root -->
-  <script src="/itis3135/HTMLInclude.min.js"></script>
-</body>
-</html>
+        <li><strong>Audience
