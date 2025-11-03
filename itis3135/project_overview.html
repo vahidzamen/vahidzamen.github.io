@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Project Overview – ASA Connect</title>
+  <link rel="stylesheet" href="styles/site.css" />
+  <style>
+    /* Page-local helpers so this renders nicely even without site.css */
+    :root { --max: 960px; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"; line-height: 1.55; margin: 0; color: #111; }
+    header, main, footer { padding: 1rem; }
+    header { background: #f6f7f9; border-bottom: 1px solid #e5e7eb; }
+    h1 { margin: 0.25rem 0 0.5rem; font-size: clamp(1.5rem, 2.5vw, 2rem); }
+    h2 { font-size: 1.35rem; margin-top: 2rem; border-bottom: 2px solid #e5e7eb; padding-bottom: .25rem; }
+    h3 { font-size: 1.1rem; margin-top: 1.25rem; }
+    .container { max-width: var(--max); margin: 0 auto; }
+    ul, ol { margin: .5rem 0 .75rem 1.25rem; }
+    figure { margin: 1rem 0; border: 1px solid #e5e7eb; padding: .5rem; background:#fff; }
+    figcaption { font-size: .9rem; color: #555; margin-top: .25rem; }
+    code { background:#f3f4f6; padding:.1rem .3rem; border-radius:4px; }
+    .meta { font-size: .95rem; color:#444; display:flex; gap:1rem; flex-wrap:wrap; }
+    .badge { display:inline-block; font-size:.8rem; padding:.15rem .5rem; border-radius:999px; background:#eef2ff; color:#3730a3; border:1px solid #c7d2fe; }
+    .grid { display:grid; gap: .75rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .card { border:1px solid #e5e7eb; border-radius: 12px; padding: .9rem; background: #fff; }
+    .muted { color:#666; }
+    footer { border-top: 1px solid #e5e7eb; font-size: .9rem; background:#f9fafb; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Project Overview: <em>ASA Connect</em></h1>
+      <p class="meta">
+        <span><strong>Web Site Name:</strong> ASA Connect</span>
+        <span><strong>Student:</strong> Vahid Zamen</span>
+        <span><strong>Date:</strong> <!-- update on publish --> November 2, 2025</span>
+      </p>
+      <p class="badge">Category: Student Group at UNCC (external-facing site)</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2 id="project-name">Project Name</h2>
+    <p><strong>ASA Connect – UNCC Afghan Student Association</strong></p>
+
+    <h2 id="project-overview">Project Overview</h2>
+    <h3>Purpose</h3>
+    <p>Design and develop a responsive, accessible website for the UNCC Afghan Student Association (ASA) to centralize information, streamline communication, and encourage participation in events, cultural programs, and community projects. The application improves visibility, recruitment, and coordination without storing user data on our server (read‑only patterns with approved third‑party services/APIs only).</p>
+
+    <h3>Intended Users</h3>
+    <ul>
+      <li><strong>Current UNCC students</strong> interested in joining ASA activities.</li>
+      <li><strong>Prospective students & families</strong> exploring campus cultural communities.</li>
+      <li><strong>Alumni & community partners</strong> supporting mentorship, volunteering, and events.</li>
+      <li><strong>Campus stakeholders</strong> (student org office, cultural centers) coordinating calendars & space.</li>
+    </ul>
+
+    <h3>Content Overview</h3>
+    <ul>
+      <li><strong>About</strong> (mission, officers, constitution highlights)</li>
+      <li><strong>Events</strong> (upcoming & past with media)
+        <ul>
+          <li>Read-only calendar embed (Google Calendar)</li>
+          <li>Event detail modals with photo gallery</li>
+        </ul>
+      </li>
+      <li><strong>Get Involved</strong> (join interest form, volunteer signups via third‑party forms)
+        <ul>
+          <li>Formspree/Google Forms submissions; client receives email; no on‑site storage</li>
+        </ul>
+      </li>
+      <li><strong>Resources</strong> (campus links, community orgs, scholarship list)</li>
+      <li><strong>Gallery</strong> (interactive image grid, filters by tag)</li>
+      <li><strong>Contact</strong> (officer emails via mailto, social links)</li>
+    </ul>
+
+    <h2 id="client">Client Information</h2>
+    <p>If specific items should remain private on the public web, they are marked <em>[private]</em> below.</p>
+    <ul>
+      <li><strong>Name of Client:</strong> UNCC Afghan Student Association (ASA) President – <em>[private]</em></li>
+      <li><strong>Organization:</strong> University of North Carolina at Charlotte (Student Organization)</li>
+      <li><strong>Email:</strong> <em>[private]</em></li>
+      <li><strong>Phone:</strong> <em>[private]</em></li>
+    </ul>
+
+    <h2 id="wireframe">Wireframe</h2>
+    <p>Primary layout wireframe created in Draw.io (Google Drive). The figure below is a static export; the live file link is provided for reference.</p>
+    <figure>
+      <img src="images/wireframes/asa-home-wireframe.png" alt="Wireframe of ASA Connect home page with header, hero, three feature cards, events list, and footer." width="100%" />
+      <figcaption>
+        <a href="https://app.diagrams.net/" target="_blank" rel="noopener">Live Draw.io</a> link (shared via UNCC Google Drive). Replace this placeholder with your actual shared URL.
+      </figcaption>
+    </figure>
+
+    <h2 id="sitemap">Site Map</h2>
+    <p>High‑level information architecture showing top‑level and key subpages. Generated with GlooMaps.</p>
+    <figure>
+      <img src="images/sitemaps/asa-sitemap.png" alt="Sitemap diagram for ASA Connect showing Home, About, Events, Get Involved, Resources, Gallery, and Contact pages." width="100%" />
+      <figcaption>
+        <a href="https://www.gloomaps.com/" target="_blank" rel="noopener">GlooMaps</a> share link (replace with your actual map URL).
+      </figcaption>
+    </figure>
+
+    <h3>Required Structure (5+ pages)</h3>
+    <ul>
+      <li>Home (<code>index.html</code>)</li>
+      <li>About (<code>about.html</code>)</li>
+      <li>Events (<code>events.html</code>)</li>
+      <li>Get Involved (<code>get-involved.html</code>)</li>
+      <li>Resources (<code>resources.html</code>)</li>
+      <li>Gallery (<code>gallery.html</code>)</li>
+      <li>Contact (<code>contact.html</code>)</li>
+    </ul>
+
+    <h2 id="page-design">Page Design</h2>
+
+    <div class="grid">
+      <section class="card" id="page-home">
+        <h3>Home (index.html)</h3>
+        <ul>
+          <li><strong>Purpose:</strong> Snapshot of ASA; funnel to Events/Get Involved.</li>
+          <li><strong>Audience:</strong> All visitors.</li>
+          <li><strong>Content:</strong> Hero banner, 3 feature cards (Mission, Events, Join), latest news (AJAX), testimonials slider.</li>
+          <li><strong>User Input:</strong> None directly.</li>
+          <li><strong>Validation:</strong> N/A.</li>
+          <li><strong>UI Elements:</strong> Buttons, nav links, jQuery UI <em>Accordion</em> for FAQs.</li>
+          <li><strong>Actions:</strong> CTA buttons route to Events/Join; AJAX fetch for news from campus RSS.</li>
+          <li><strong>Notes:</strong> Accessibility-first; lighthouse ≥ 95 targeted.</li>
+        </ul>
+      </section>
+
+      <section class="card" id="page-about">
+        <h3>About (about.html)</h3>
+        <ul>
+          <li><strong>Purpose:</strong> Mission, officers, constitution highlights.</li>
+          <li><strong>Audience:</strong> Prospects, campus stakeholders.</li>
+          <li><strong>Content:</strong> Officer cards, timeline (jQuery UI <em>Datepicker</em> stylings), downloadable PDF.</li>
+          <li><strong>User Input:</strong> None.</li>
+          <li><strong>Validation:</strong> N/A.</li>
+          <li><strong>UI Elements:</strong> Tabs component to switch Mission/Officers/History.</li>
+          <li><strong>Actions:</strong> Open mailto links; smooth-scroll within page.</li>
+          <li><strong>Notes:</strong> Officer images optimized; lazy‑loading.</li>
+        </ul>
+      </section>
+
+      <section class="card" id="page-events">
+        <h3>Events (events.html)</h3>
+        <ul>
+          <li><strong>Purpose:</strong> Publicize upcoming events and archive past events.</li>
+          <li><strong>Audience:</strong> Students, alumni, partners.</li>
+          <li><strong>Content:</strong> Embedded Google Calendar (read‑only), event cards with images and tags.</li>
+          <li><strong>User Input:</strong> Search/filter controls.</li>
+          <li><strong>Validation:</strong> Client‑side only for filter text.</li>
+          <li><strong>UI Elements:</strong> jQuery UI <em>Autocomplete</em> for tag search; modal dialog for event details.</li>
+          <li><strong>Actions:</strong> Filter events by tag/date; open event modal; Add‑to‑Calendar deep link.</li>
+          <li><strong>Notes:</strong> All data read-only via embed or static JSON.</li>
+        </ul>
+      </section>
+
+      <section class="card" id="page-get-involved">
+        <h3>Get Involved (get-involved.html)</h3>
+        <ul>
+          <li><strong>Purpose:</strong> Capture interest/volunteer preferences via third‑party forms.</li>
+          <li><strong>Audience:</strong> Prospective members, volunteers.</li>
+          <li><strong>Content:</strong> Join form (Formspree/Google Forms), role checkboxes, availability, interests.</li>
+          <li><strong>User Input:</strong> Yes – name, email, role, interest areas, consent checkboxes.</li>
+          <li><strong>Validation:</strong> Required fields, email pattern, character limits, terms consent.</li>
+          <li><strong>UI Elements:</strong> jQuery UI <em>Slider</em> for availability hours; <em>Progressbar</em> during submit.</li>
+          <li><strong>Actions:</strong> Submit to third‑party endpoint; display success/fail message (no on‑site storage).</li>
+          <li><strong>Notes:</strong> reCAPTCHA or anti‑bot honeypot where supported by provider.</li>
+        </ul>
+      </section>
+
+      <section class="card" id="page-resources">
+        <h3>Resources (resources.html)</h3>
+        <ul>
+          <li><strong>Purpose:</strong> Curate links to campus services, community groups, scholarships.</li>
+          <li><strong>Audience:</strong> Students & families.</li>
+          <li><strong>Content:</strong> Filterable list with tags (Aid, Mentorship, Cultural Centers).</li>
+          <li><strong>User Input:</strong> Tag filters, search box.</li>
+          <li><strong>Validation:</strong> N/A.</li>
+          <li><strong>UI Elements:</strong> jQuery UI <em>Accordion</em> for categories.</li>
+          <li><strong>Actions:</strong> Client-side filtering; external links open in new tab with rel attributes.</li>
+          <li><strong>Notes:</strong> Provide short descriptions and accessibility labels.</li>
+        </ul>
+      </section>
+
+      <section class="card" id="page-gallery">
+        <h3>Gallery (gallery.html)</h3>
+        <ul>
+          <li><strong>Purpose:</strong> Showcase event photos to boost engagement.</li>
+          <li><strong>Audience:</strong> All visitors.</li>
+          <li><strong>Content:</strong> Masonry grid with lazy‑loaded thumbnails and lightbox.</li>
+          <li><strong>User Input:</strong> Filter by tag/year.</li>
+          <li><strong>Validation:</strong> N/A.</li>
+          <li><strong>UI Elements:</strong> jQuery lightbox plugin; jQuery UI <em>Checkboxradio</em> for filters.</li>
+          <li><strong>Actions:</strong> Open modal viewer; keyboard navigation; ARIA roles for accessibility.</li>
+          <li><strong>Notes:</strong> Images compressed; captions include alt text credits.</li>
+        </ul>
+      </section>
+
+      <section class="card" id="page-contact">
+        <h3>Contact (contact.html)</h3>
+        <ul>
+          <li><strong>Purpose:</strong> Provide safe contact paths without on‑site data storage.</li>
+          <li><strong>Audience:</strong> Anyone seeking contact.</li>
+          <li><strong>Content:</strong> Officer roles with mailto links; social media; embedded map.</li>
+          <li><strong>User Input:</strong> Optional redirect to third‑party contact form.</li>
+          <li><strong>Validation:</strong> Basic email pattern if using third‑party embed.</li>
+          <li><strong>UI Elements:</strong> Buttons, links, map iframe.</li>
+          <li><strong>Actions:</strong> Open mail client; map interactions; link to Get Involved form.</li>
+          <li><strong>Notes:</strong> Avoid exposing personal numbers; use role accounts where possible.</li>
+        </ul>
+      </section>
+    </div>
+
+    <h2 id="dynamic">Dynamic Functionality (Read‑Only + Client‑Side)</h2>
+    <ul>
+      <li><strong>Interactive gallery</strong> with filtering and lightbox (page: <em>Gallery</em>). Example inspiration: <a href="https://photoswipe.com/" target="_blank" rel="noopener">PhotoSwipe</a>.</li>
+      <li><strong>FAQ accordion</strong> (page: <em>Home</em>/<em>Resources</em>) using jQuery UI <em>Accordion</em>. Inspiration: <a href="https://jqueryui.com/accordion/" target="_blank" rel="noopener">jQuery UI Accordion</a>.</li>
+      <li><strong>Events search/autocomplete</strong> (page: <em>Events</em>) using jQuery UI <em>Autocomplete</em> sourced from a static <code>events.json</code>. Inspiration: <a href="https://jqueryui.com/autocomplete/" target="_blank" rel="noopener">jQuery UI Autocomplete</a>.</li>
+      <li><strong>AJAX campus news</strong> (page: <em>Home</em>) client‑side fetch of a public RSS/JSON feed transformed in‑browser for a read‑only news strip. Inspiration: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch" target="_blank" rel="noopener">Fetch API</a>.</li>
+      <li><strong>Join/Volunteer forms</strong> (page: <em>Get Involved</em>) via <a href="https://formspree.io/" target="_blank" rel="noopener">Formspree</a> or Google Forms; display success message with jQuery UI <em>Dialog</em>.</li>
+      <li><strong>Map embed</strong> (page: <em>Contact</em>) via Google Maps iframe (pure read‑only).</li>
+    </ul>
+
+    <h2 id="components">Global Components & Standards</h2>
+    <ul>
+      <li><strong>Navigation:</strong> Single‑click access to each top‑level page; submenus permitted if more pages are added.</li>
+      <li><strong>Header/Footer:</strong> Consistent across pages; footer includes <em>HTML</em> & <em>CSS</em> validator links.</li>
+      <li><strong>Accessibility:</strong> WCAG 2.2 AA targets; semantic landmarks; focus states; color contrast ≥ 4.5:1.</li>
+      <li><strong>Performance:</strong> Image optimization, code splitting, defer scripts, preconnect for embeds.</li>
+      <li><strong>No on‑site data storage:</strong> All interactivity is read‑only or delegated to approved third‑party forms/APIs.</li>
+    </ul>
+
+    <h2 id="notes">Notes, References, Acknowledgments</h2>
+    <ul>
+      <li>Instructor assignment template and rubric (link in LMS).</li>
+      <li>jQuery UI documentation and examples.</li>
+      <li>PhotoSwipe or similar gallery plugin docs.</li>
+      <li>UNCC brand guidelines (for color/typography alignment where permitted).</li>
+      <li><strong>Prepared by:</strong> Vahid Zamen — <time datetime="2025-11-02">November 2, 2025</time>.</li>
+    </ul>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p class="muted">This page is part of the course homework site and documents the requirements & design for the ASA Connect project. Footer on production pages will include HTML/CSS validation links.</p>
+  </div>
+  </footer>
+</body>
+</html>
