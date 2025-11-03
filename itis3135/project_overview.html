@@ -4,88 +4,86 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Project Overview | ITIS-3135</title>
+  <link rel="stylesheet" href="default.css" />
   <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="styles/default.css" />
 </head>
 <body>
-  <!-- Re-usable header -->
-  <div data-include="components/header.html"></div>
+  <!-- Re-usable header (root-level include) -->
+  <div data-include="header.html"></div>
 
   <main>
-    <h2>Project Overview — “49ers Car Culture Club” (C3)</h2>
+    <h2>Project Overview — “49ers Car Culture Club (C3)”</h2>
+
     <p class="card">
-      <strong>Client Category (Step 01):</strong> <em>Category 03 – student group at UNCC</em><br/>
-      <strong>Project Category (Step 02):</strong> <em>Student group site that encourages participation & communication</em>
+      <strong>Client Category (Step 01):</strong> <em>Student group at UNCC</em><br/>
+      <strong>Project Category (Step 02):</strong> <em>Group site that encourages participation & communication</em>
     </p>
 
     <h3>1) Application Purpose</h3>
     <p>
       The 49ers Car Culture Club (C3) needs a simple, fast site to organize events (meets, cruises, tech nights), recruit new members,
-      and share media from the community. The web application improves visibility, centralizes announcements, and offers light
-      interactivity (photo gallery, interest form, event RSVP to a Google Sheet, and read-only pulls from public APIs).
+      and share media. The site improves visibility, centralizes announcements, and offers light interactivity (gallery, FAQs, event
+      highlights, and a read-only events list).
     </p>
 
     <h3>2) Intended Users</h3>
     <ul>
-      <li><strong>Prospective members:</strong> Students curious about joining (want basics, how to join, upcoming events).</li>
-      <li><strong>Active members:</strong> Need dates, locations, and quick RSVP links.</li>
-      <li><strong>Officers:</strong> Need a clear place to post schedules and rules (content provided to developer).</li>
-      <li><strong>Partners/Sponsors:</strong> View past events, contact officers for collaborations.</li>
+      <li><strong>Prospective members:</strong> Basics, how to join, upcoming events</li>
+      <li><strong>Active members:</strong> Dates, locations, quick RSVP links</li>
+      <li><strong>Officers:</strong> A place to post schedules & rules (content provided)</li>
+      <li><strong>Partners/Sponsors:</strong> Past events & contact</li>
     </ul>
 
     <h3>3) Content Overview</h3>
     <ul>
-      <li><strong>About/mission:</strong> Who we are, safety guidelines, officer bios.</li>
-      <li><strong>Events:</strong> Calendar of meets & cruises, event detail pages.</li>
-      <li><strong>Gallery:</strong> Curated photos from members (interactive lightbox).</li>
-      <li><strong>Join/Contact:</strong> Interest form (validations) + map to meet locations.</li>
-      <li><strong>Resources:</strong> Links to campus policies, local tracks, detailing guides.</li>
+      <li><strong>About/mission</strong>, officer bios, safety guidelines</li>
+      <li><strong>Events</strong> list and highlights</li>
+      <li><strong>Gallery</strong> with interactive lightbox</li>
+      <li><strong>Join/Contact</strong> interest form + campus map</li>
+      <li><strong>Resources</strong> (optional): policies & useful links</li>
     </ul>
 
     <h3>4) Client Information</h3>
     <p>
       <strong>Name:</strong> [Private] (C3 President)<br/>
       <strong>Organization:</strong> 49ers Car Culture Club (C3), UNC Charlotte<br/>
-      <strong>Email:</strong> [private] <em>(client prefers not to publish email on the public page)</em><br/>
+      <strong>Email:</strong> [private]<br/>
       <strong>Phone:</strong> [private]
     </p>
 
     <h3>5) Wireframe (Home Page)</h3>
-    <p>
-      Created in Draw.io (connected to UNCC Google Drive). Replace the placeholder below with your exported PNG/JPG and shareable link.
-    </p>
+    <p>Created in Draw.io (UNCC Google Drive). Embedded below as a figure with caption.</p>
     <figure class="card">
-      <img src="images/wireframe-c3-home.png" alt="Wireframe of C3 home page showing hero, events list, gallery, and CTA sections" />
+      <img src="images/wireframe-c3-home.png"
+           alt="Wireframe of C3 home page showing header/nav, hero with CTA, next event card, mini gallery preview, feature cards, and footer" />
       <figcaption>
         Wireframe: C3 Home Page —
-        <a href="https://drive.google.com/your-shared-wireframe-link" target="_blank" rel="noopener">View on Drive</a>
+        <a href="images/wireframe-c3-home.png" target="_blank" rel="noopener">Open full size</a>
       </figcaption>
     </figure>
 
     <h3>6) Site Map</h3>
-    <p>
-      Created in Draw.io. Replace with your exported sitemap image & link.
-    </p>
+    <p>Pages and primary navigation for the site.</p>
     <figure class="card">
-      <img src="images/sitemap-c3.png" alt="Sitemap for 5+ page C3 site showing Home, About, Events, Gallery, Join/Contact, Resources" />
+      <img src="images/sitemap-c3.png"
+           alt="Sitemap for 5+ page C3 site showing Home, About, Events, Gallery, Join & Contact, and optional Resources, with notes about global header/footer" />
       <figcaption>
         Site Map —
-        <a href="https://drive.google.com/your-shared-sitemap-link" target="_blank" rel="noopener">View on Drive</a>
+        <a href="images/sitemap-c3.png" target="_blank" rel="noopener">Open full size</a>
       </figcaption>
     </figure>
 
     <h3>7) Required Pages & Navigation</h3>
     <ul>
-      <li><strong>Home (index.html)</strong> — overview, hero, quick upcoming event, CTA to Join</li>
+      <li><strong>Home (index.html)</strong> — overview, hero, next event highlight, CTA to Join</li>
       <li><strong>About (about.html)</strong> — mission, officer bios, safety rules</li>
-      <li><strong>Events (events.html)</strong> — list + event detail modal</li>
+      <li><strong>Events (events.html)</strong> — list of upcoming/past events (read-only)</li>
       <li><strong>Gallery (gallery.html)</strong> — interactive image grid/lightbox</li>
-      <li><strong>Join & Contact (join.html)</strong> — interest form, validations, map</li>
-      <li><em>(Optional)</em> <strong>Resources (resources.html)</strong> — policies, links</li>
+      <li><strong>Join & Contact (join.html)</strong> — interest form (validations), map</li>
+      <li><em>(Optional)</em> <strong>Resources (resources.html)</strong> — policies & links</li>
     </ul>
     <p>
-      The project’s production site will live in a separate folder (e.g., <code>/project-c3/</code>) with its own HTML/CSS/JS/assets.
-      This overview page stays in the class site with the usual header/footer includes.
+      The production project will live in its own folder (e.g., <code>/project-c3/</code>) with its own HTML/CSS/JS/assets. This overview page stays in your class site with the shared header/footer includes.
     </p>
 
     <h3>8) Page Design Details</h3>
@@ -93,108 +91,94 @@
     <details class="card">
       <summary><strong>Home (index.html)</strong></summary>
       <ul>
-        <li><strong>Purpose:</strong> Welcome, value prop, highlight next event.</li>
-        <li><strong>Audience:</strong> Everyone (prospects, members, partners).</li>
-        <li><strong>Content:</strong> Hero, two-sentence mission, “Next Event” card, 3-image gallery preview, “Join” CTA.</li>
-        <li><strong>Inputs:</strong> None.</li>
-        <li><strong>Controls:</strong> Buttons/links to Events & Join pages.</li>
-        <li><strong>Actions:</strong> “Next Event” card opens detail (modal or link).</li>
-        <li><strong>Notes:</strong> jQuery-UI <em>Accordion</em> for FAQs at bottom.</li>
+        <li><strong>Purpose:</strong> Welcome/value prop; highlight next event</li>
+        <li><strong>Audience:</strong> Everyone</li>
+        <li><strong>Content:</strong> Hero, 1–2 sentence mission, “Next Event” card, 3-image gallery preview, Join CTA</li>
+        <li><strong>Inputs:</strong> None</li>
+        <li><strong>Controls:</strong> Buttons/links to Events & Join</li>
+        <li><strong>Actions:</strong> “Details” opens modal or Events page</li>
+        <li><strong>Notes:</strong> jQuery-UI Accordion for FAQs at bottom</li>
       </ul>
     </details>
 
     <details class="card">
       <summary><strong>About (about.html)</strong></summary>
       <ul>
-        <li><strong>Purpose:</strong> Explain mission, expectations, officer bios.</li>
-        <li><strong>Audience:</strong> Prospective members, campus partners.</li>
-        <li><strong>Content:</strong> Mission paragraph, safety checklist, officer cards.</li>
-        <li><strong>Inputs:</strong> None.</li>
-        <li><strong>Controls:</strong> “Contact an Officer” link to Join page.</li>
-        <li><strong>Actions:</strong> Expand safety rules (Accordion).</li>
+        <li><strong>Purpose:</strong> Mission, expectations, officer bios</li>
+        <li><strong>Audience:</strong> Prospects & partners</li>
+        <li><strong>Inputs:</strong> None</li>
+        <li><strong>Actions:</strong> Expandable safety checklist (Accordion)</li>
       </ul>
     </details>
 
     <details class="card">
       <summary><strong>Events (events.html)</strong></summary>
       <ul>
-        <li><strong>Purpose:</strong> Central list of upcoming/past events.</li>
-        <li><strong>Audience:</strong> Members & prospects.</li>
-        <li><strong>Content:</strong> Event cards (title, date, time, location, brief).</li>
-        <li><strong>Inputs:</strong> None (read-only).</li>
-        <li><strong>Controls:</strong> “Details” button opens modal; “RSVP” opens Google Form.</li>
-        <li><strong>Validations:</strong> N/A (handled by Google Form if used).</li>
-        <li><strong>Actions:</strong> AJAX (read-only) fetch to load a public JSON of upcoming events (hosted on GitHub Pages or a static JSON file) and render cards.</li>
+        <li><strong>Purpose:</strong> Central events list</li>
+        <li><strong>Audience:</strong> Members & prospects</li>
+        <li><strong>Content:</strong> Event cards (title, date, time, location, brief)</li>
+        <li><strong>Inputs:</strong> None (read-only)</li>
+        <li><strong>Controls:</strong> “Details” modal; “RSVP” → Google Form</li>
+        <li><strong>Actions:</strong> AJAX (read-only) to load a static JSON of events</li>
       </ul>
     </details>
 
     <details class="card">
       <summary><strong>Gallery (gallery.html)</strong></summary>
       <ul>
-        <li><strong>Purpose:</strong> Showcase photos from meets.</li>
-        <li><strong>Audience:</strong> Everyone.</li>
-        <li><strong>Content:</strong> Responsive grid of thumbnails.</li>
-        <li><strong>Inputs:</strong> None (no uploads; read-only per course rules).</li>
-        <li><strong>Controls:</strong> Click thumbnail → lightbox viewer with prev/next.</li>
-        <li><strong>Actions:</strong> jQuery plugin for lightbox; keyboard navigation.</li>
+        <li><strong>Purpose:</strong> Showcase photos</li>
+        <li><strong>Inputs:</strong> None (no uploads per course rules)</li>
+        <li><strong>Controls:</strong> Lightbox with keyboard nav</li>
       </ul>
     </details>
 
     <details class="card">
       <summary><strong>Join & Contact (join.html)</strong></summary>
       <ul>
-        <li><strong>Purpose:</strong> Collect interest & questions.</li>
-        <li><strong>Audience:</strong> Prospective members/partners.</li>
-        <li><strong>Content:</strong> Form fields (name, UNCC email, grad year, car make/model [optional], interests, message), Google Map embed (meet spot).</li>
-        <li><strong>Inputs:</strong> Form with client-side validations (required fields, email pattern, character limits).</li>
-        <li><strong>Controls:</strong> Submit button + Reset.</li>
-        <li><strong>Actions:</strong> On submit, validate → either:
-          <ul>
-            <li>Open a prefilled mailto: to the officers, or</li>
-            <li>POST to a Google Form endpoint (if allowed) or redirect to Google Form (no custom CRUD).</li>
-          </ul>
-        </li>
-        <li><strong>Notes:</strong> Confirmation message displayed on success.</li>
+        <li><strong>Purpose:</strong> Collect interest & questions</li>
+        <li><strong>Inputs:</strong> Name, UNCC email, grad year, car (optional), interests, message</li>
+        <li><strong>Validations:</strong> Required fields, email pattern, length limits</li>
+        <li><strong>Actions:</strong> Prefilled <code>mailto:</code> or Google Form</li>
+        <li><strong>Notes:</strong> Embedded Google Map to meet spot</li>
       </ul>
     </details>
 
     <details class="card">
       <summary><strong>Resources (resources.html) — optional</strong></summary>
       <ul>
-        <li><strong>Purpose:</strong> Link out to campus policies, track days, safety guides.</li>
-        <li><strong>Actions:</strong> External links open in new tabs.</li>
+        <li><strong>Purpose:</strong> Campus policies, track days, safety guides</li>
+        <li><strong>Actions:</strong> External links in new tabs</li>
       </ul>
     </details>
 
     <h3>9) Planned Interactivity (JavaScript/jQuery/AJAX)</h3>
     <ul>
-      <li><strong>jQuery-UI Accordion</strong> for FAQs/Safety on Home/About.</li>
-      <li><strong>Gallery Lightbox</strong> (jQuery plugin) with keyboard nav.</li>
-      <li><strong>Events Loader (AJAX, read-only):</strong> Fetch a static public JSON (hosted file) to render upcoming events—no user writes.</li>
-      <li><strong>Form Validations:</strong> HTML5 + JS (required, pattern, length). Optional integration with Google Forms for submissions.</li>
-      <li><strong>Map Embed:</strong> Simple Google Maps iframe to meet location.</li>
+      <li><strong>jQuery-UI Accordion</strong> for FAQs/Safety</li>
+      <li><strong>Gallery Lightbox</strong> (jQuery plugin)</li>
+      <li><strong>Events Loader (AJAX, read-only)</strong> from static JSON</li>
+      <li><strong>Form Validations</strong> (HTML5 + JS)</li>
+      <li><strong>Map Embed</strong> (Google Maps iframe)</li>
     </ul>
 
-    <h3>10) Example Inspiration (interaction references)</h3>
+    <h3>10) Example Interaction References</h3>
     <ul>
-      <li>University club landing pages with clear CTAs & events lists.</li>
-      <li>Accessible image galleries with keyboard-friendly lightboxes.</li>
-      <li>Read-only event feeds generated from static JSON.</li>
+      <li>University club pages with clear CTAs & events lists</li>
+      <li>Accessible lightbox galleries</li>
+      <li>Read-only event feeds from static JSON</li>
     </ul>
 
     <h3>11) Notes & Credits</h3>
     <ul>
-      <li>All custom HTML/CSS/JS by <strong>Vahid Zamen</strong>.</li>
-      <li>No persistent storage/CRUD; only read-only fetches and external forms per course rules.</li>
-      <li>Draw.io files are stored in UNCC Google Drive and exported as images for this page.</li>
-      <li>Page created/updated: <time datetime="2025-11-02">Nov 2, 2025</time>.</li>
+      <li>All custom HTML/CSS/JS by <strong>Vahid Zamen</strong></li>
+      <li>No persistent storage/CRUD; read-only fetches and external forms only</li>
+      <li>Wireframe & sitemap exported from Draw.io</li>
+      <li>Page created/updated: <time datetime="2025-11-02">Nov 2, 2025</time></li>
     </ul>
-
   </main>
 
-  <!-- Re-usable footer -->
-  <div data-include="components/footer.html"></div>
+  <!-- Re-usable footer (root-level include) -->
+  <div data-include="footer.html"></div>
 
-  <script src="scripts/HTMLInclude.min.js"></script>
+  <script src="HTMLInclude.min.js"></script>
 </body>
 </html>
