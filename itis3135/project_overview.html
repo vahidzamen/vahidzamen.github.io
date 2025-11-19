@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Project Overview | ITIS 3135</title>
 
-  <!-- Use the one you actually have: default.css OR site.css -->
+  <!-- Use the stylesheet you actually have: default.css OR site.css -->
   <link rel="stylesheet" href="default.css" />
   <!-- <link rel="stylesheet" href="site.css" /> -->
 
   <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
-  <meta name="description" content="Requirements & Design document for the final project website." />
+  <meta name="description" content="Requirements &amp; Design document for the final project website." />
 </head>
 <body>
   <!-- Shared header (relative path to file in the SAME folder) -->
@@ -19,7 +19,6 @@
   <main>
     <h2>Project Overview — 49ers Car Culture Club (C3)</h2>
 
-    <!-- fixed: section now has its own heading -->
     <section class="card" aria-labelledby="meta-heading">
       <h3 id="meta-heading">Client &amp; Project Category</h3>
       <p>
@@ -80,7 +79,7 @@
     <figure class="card">
       <img
         src="images/sitemap-c3-optimized.png"
-        alt="Sitemap: Home; About; Events with detail modal; Gallery; Join & Contact; optional Resources; global header/footer"
+        alt="Sitemap: Home; About; Events with detail modal; Gallery; Join &amp; Contact; optional Resources; global header/footer"
         loading="lazy"
         decoding="async"
         style="max-width:100%;height:auto"
@@ -134,4 +133,34 @@
       <summary><strong>Events (events.html)</strong></summary>
       <ul>
         <li><strong>Purpose:</strong> Central events list</li>
-        <li><strong>Audience
+        <li><strong>Audience:</strong> Members &amp; prospects</li>
+        <li><strong>Content:</strong> Event cards (title, date, time, location, brief)</li>
+        <li><strong>Inputs:</strong> None (read-only)</li>
+        <li><strong>Controls:</strong> “Details” modal; “RSVP” → Google Form</li>
+        <li><strong>Actions:</strong> Fetch a static JSON of events (AJAX, read-only)</li>
+      </ul>
+    </details>
+
+    <details class="card">
+      <summary><strong>Gallery (gallery.html)</strong></summary>
+      <ul>
+        <li><strong>Purpose:</strong> Showcase photos</li>
+        <li><strong>Inputs:</strong> None (no uploads per course rules)</li>
+        <li><strong>Controls:</strong> Lightbox with keyboard navigation</li>
+      </ul>
+    </details>
+
+    <details class="card">
+      <summary><strong>Join &amp; Contact (join.html)</strong></summary>
+      <ul>
+        <li><strong>Purpose:</strong> Collect interest &amp; questions</li>
+        <li><strong>Inputs:</strong> Name, UNCC email, grad year, optional car info, interests, message</li>
+        <li><strong>Validations:</strong> Required fields, email pattern, length limits</li>
+        <li><strong>Actions:</strong> Prefilled <code>mailto:</code> or Google Form</li>
+        <li><strong>Notes:</strong> Embedded Google Map to meet spot</li>
+      </ul>
+    </details>
+
+    <details class="card">
+      <summary><strong>Resources (resources.html) — optional</strong></summary>
+      <u
