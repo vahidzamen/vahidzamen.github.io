@@ -1,9 +1,21 @@
-:root { --bg:#0b0e14; --panel:#1f2937; --muted:#334155; --text:#f8fafc; --accent:#10b981; --maxw:900px; }
+:root {
+  --bg:#0b0e14;
+  --panel:#1f2937;
+  --muted:#334155;
+  --text:#f8fafc;
+  --accent:#10b981;
+  --maxw:900px;
 
-html{box-sizing:border-box}
-*,*:before,*:after{box-sizing:inherit}
+  /* heading sizes (desktop default) */
+  --h1-size: clamp(1.75rem, 3vw + 1rem, 2.5rem);
+  --h2-size: clamp(1.25rem, 2vw + .75rem, 1.75rem);
+}
 
-body{
+/* global box-sizing */
+html { box-sizing:border-box; }
+*, *::before, *::after { box-sizing:inherit; }
+
+body {
   margin:0 auto;
   width:90%;
   max-width:var(--maxw);
@@ -13,9 +25,14 @@ body{
   line-height:1.6;
 }
 
-header,main,footer{padding:1.25rem 0}
+header,
+main,
+footer {
+  padding:1.25rem 0;
+}
 
-header{
+/* header layout */
+header {
   display:flex;
   flex-direction:column;
   gap:.75rem;
@@ -23,40 +40,45 @@ header{
 
 .primary-nav,
 .secondary-nav,
-.footer-nav{
+.footer-nav {
   display:flex;
   flex-wrap:wrap;
   align-items:center;
   gap:.5rem 1rem;
 }
 
-a{
+/* links */
+a {
   color:var(--accent);
   text-decoration:none;
 }
-a:hover,a:focus{
+a:hover,
+a:focus {
   text-decoration:underline;
   outline:none;
 }
 
-h1{
-  font-family: Georgia,"Times New Roman",Times,serif;
-  line-height: 1.25;
-  margin: 0 0 .5rem;
-  font-size: clamp(1.75rem, 3vw + 1rem, 2.5rem);
+/* headings – defined ONCE, sizes controlled by variables above */
+h1 {
+  font-family:Georgia,"Times New Roman",Times,serif;
+  line-height:1.25;
+  margin:0 0 .5rem;
+  font-size:var(--h1-size);
 }
 
-h2{
-  font-family: Georgia,"Times New Roman",Times,serif;
-  line-height: 1.25;
-  margin: 0 0 .5rem;
-  font-size: clamp(1.25rem, 2vw + .75rem, 1.75rem);
-  color: #e5f9f3;
+h2 {
+  font-family:Georgia,"Times New Roman",Times,serif;
+  line-height:1.25;
+  margin:0 0 .5rem;
+  font-size:var(--h2-size);
+  color:#e5f9f3;
 }
 
-p{margin:0 0 1rem}
+/* text */
+p { margin:0 0 1rem; }
 
-main{
+/* main card container */
+main {
   background:rgba(255,255,255,.02);
   border:1px solid rgba(255,255,255,.06);
   border-radius:14px;
@@ -64,47 +86,59 @@ main{
   box-shadow:0 6px 20px rgba(0,0,0,.06);
 }
 
-footer{
+/* footer */
+footer {
   border-top:1px solid rgba(255,255,255,.08);
   margin-top:2rem;
   padding-top:1rem;
   color:#e2e8f0;
 }
 
-.footer-nav a{
+.footer-nav a {
   padding:.25rem .5rem;
   border:1px solid rgba(255,255,255,.08);
   border-radius:999px;
 }
 
-ul,ol{
+/* lists */
+ul,
+ol {
   padding-left:1.25rem;
   margin:0 0 1rem;
 }
 
-code,kbd,pre,samp{
-  font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+/* code-like elements */
+code,
+kbd,
+pre,
+samp {
+  font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
   background:rgba(255,255,255,.06);
   border:1px solid rgba(255,255,255,.08);
   border-radius:8px;
   padding:.15rem .35rem;
 }
 
-pre{
+pre {
   padding:.75rem 1rem;
   overflow:auto;
 }
 
-img{max-width:100%; height:auto}
+/* images */
+img {
+  max-width:100%;
+  height:auto;
+}
 
+/* layout helpers */
 .container,
-.maincontainer{
+.maincontainer {
   max-width:var(--maxw);
   width:90%;
   margin:0 auto;
 }
 
-.card{
+.card {
   background:rgba(255,255,255,.03);
   border:1px solid rgba(255,255,255,.08);
   border-radius:14px;
@@ -112,18 +146,21 @@ img{max-width:100%; height:auto}
   box-shadow:0 6px 20px rgba(0,0,0,.05);
 }
 
-.grid{
+.grid {
   display:grid;
   gap:1rem;
   grid-template-columns:repeat(12,1fr);
 }
 
-.col-12{grid-column:span 12}
-.col-6{grid-column:span 6}
-.col-4{grid-column:span 4}
-.col-3{grid-column:span 3}
+.col-12 { grid-column:span 12; }
+.col-6  { grid-column:span 6; }
+.col-4  { grid-column:span 4; }
+.col-3  { grid-column:span 3; }
 
-button,.btn,.cta{
+/* buttons */
+button,
+.btn,
+.cta {
   border:0;
   cursor:pointer;
   padding:.65rem 1rem;
@@ -137,38 +174,71 @@ button,.btn,.cta{
 }
 
 .cta:hover,
-.cta:focus{
+.cta:focus {
   transform:translateY(-1px);
   opacity:.95;
   outline:none;
 }
 
-@media screen and (min-width: 981px) and (max-width: 1400px){
-  :root{ --maxw:1000px }
-  body{ width:92% }
+/* ────────────── RESPONSIVE BREAKPOINTS ───────────── */
+
+/* large tablets / small desktops */
+@media screen and (min-width:981px) and (max-width:1400px) {
+  :root {
+    --maxw:1000px;
+    /* keep same heading sizes here, just widen container */
+  }
+  body { width:92%; }
 }
 
-@media screen and (min-width: 601px) and (max-width: 980px){
-  :root{ --maxw:860px }
-  body{ width:94% }
-  header,main,footer{ padding:1rem 0 }
-  h1{ font-size: clamp(1.6rem, 2.2vw + 1rem, 2.1rem) }
-  h2{ font-size: clamp(1.1rem, 1.6vw + .8rem, 1.5rem) }
-  .grid{ gap:.85rem }
-  .col-6{grid-column:span 6}
-  .col-4{grid-column:span 6}
-  .col-3{grid-column:span 4}
+/* tablets */
+@media screen and (min-width:601px) and (max-width:980px) {
+  :root {
+    --maxw:860px;
+    --h1-size: clamp(1.6rem, 2.2vw + 1rem, 2.1rem);
+    --h2-size: clamp(1.1rem, 1.6vw + .8rem, 1.5rem);
+  }
+
+  body { width:94%; }
+  header,
+  main,
+  footer { padding:1rem 0; }
+  .grid { gap:.85rem; }
+
+  .col-6 { grid-column:span 6; }
+  .col-4 { grid-column:span 6; }
+  .col-3 { grid-column:span 4; }
 }
 
-@media screen and (max-width: 600px){
-  :root{ --maxw:560px }
-  body{ width:95% }
-  header,main,footer{ padding:.85rem 0 }
-  h1{ font-size: clamp(1.4rem, 4.5vw + .9rem, 1.9rem) }
-  h2{ font-size: clamp(1rem, 3.5vw + .6rem, 1.3rem) }
-  .footer-nav a{ padding:.35rem .6rem; border-radius:10px }
-  img{ display:block; width:100%; height:auto }
-  figure{ margin:0 }
-  .grid{ gap:.75rem }
-  .col-6,.col-4,.col-3{grid-column:span 12}
+/* phones */
+@media screen and (max-width:600px) {
+  :root {
+    --maxw:560px;
+    --h1-size: clamp(1.4rem, 4.5vw + .9rem, 1.9rem);
+    --h2-size: clamp(1rem, 3.5vw + .6rem, 1.3rem);
+  }
+
+  body { width:95%; }
+  header,
+  main,
+  footer { padding:.85rem 0; }
+
+  .footer-nav a {
+    padding:.35rem .6rem;
+    border-radius:10px;
+  }
+
+  img {
+    display:block;
+    width:100%;
+    height:auto;
+  }
+
+  figure { margin:0; }
+
+  .grid { gap:.75rem; }
+
+  .col-6,
+  .col-4,
+  .col-3 { grid-column:span 12; }
 }
