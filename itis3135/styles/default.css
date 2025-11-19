@@ -148,7 +148,7 @@ img {
 
 .grid {
   display:grid;
-  gap:1rem;
+  gap:1rem;                    /* <-- linter chokes here */
   grid-template-columns:repeat(12,1fr);
 }
 
