@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Project Overview | ITIS 3135</title>
 
-  <!-- Use the stylesheet you actually have: default.css OR site.css -->
-  <link rel="stylesheet" href="default.css" />
-  <!-- <link rel="stylesheet" href="site.css" /> -->
+  <!-- Correct CSS path according to folder structure -->
+  <link rel="stylesheet" href="styles/default.css" />
 
   <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
   <meta name="description" content="Requirements &amp; Design document for the final project website." />
 </head>
+
 <body>
-  <!-- Shared header (relative path to file in the SAME folder) -->
-  <div data-include="header.html"></div>
+  <!-- Shared header -->
+  <div data-include="components/header.html"></div>
 
   <main>
     <h2>Project Overview — 49ers Car Culture Club (C3)</h2>
@@ -56,18 +56,18 @@
     <p>
       <strong>Name:</strong> [Private] (C3 President)<br />
       <strong>Organization:</strong> 49ers Car Culture Club (C3), UNC Charlotte<br />
-      <strong>Email:</strong> [private] &nbsp; <strong>Phone:</strong> [private]
+      <strong>Email:</strong> [private] &nbsp;&nbsp; <strong>Phone:</strong> [private]
     </p>
 
     <h3>5) Wireframe (Home)</h3>
     <p>Exported from Draw.io (Google Drive). Embedded below with caption.</p>
+
     <figure class="card">
       <img
         src="images/wireframe-c3-home-optimized.png"
-        alt="Wireframe showing header/nav, hero with CTA, next event card, gallery preview, feature cards, and footer"
+        alt="Wireframe layout for home page showing hero, next event, gallery preview, and footer"
         loading="lazy"
         decoding="async"
-        style="max-width:100%;height:auto"
       />
       <figcaption>
         Wireframe — Home Page.
@@ -79,10 +79,9 @@
     <figure class="card">
       <img
         src="images/sitemap-c3-optimized.png"
-        alt="Sitemap: Home; About; Events with detail modal; Gallery; Join &amp; Contact; optional Resources; global header/footer"
+        alt="Sitemap showing Home, About, Events, Gallery, Join/Contact, and Resources pages"
         loading="lazy"
         decoding="async"
-        style="max-width:100%;height:auto"
       />
       <figcaption>
         Site Map.
@@ -92,75 +91,96 @@
 
     <h3>7) Required Pages &amp; Navigation</h3>
     <ul>
-      <li><strong>Home (index.html)</strong> — overview, next event highlight, CTA to Join</li>
+      <li><strong>Home (index.html)</strong> — overview, next event highlight, Join CTA</li>
       <li><strong>About (about.html)</strong> — mission, officer bios, safety rules</li>
       <li><strong>Events (events.html)</strong> — list of upcoming/past events (read-only)</li>
-      <li><strong>Gallery (gallery.html)</strong> — interactive image grid/lightbox</li>
-      <li><strong>Join &amp; Contact (join.html)</strong> — interest form (validations), map</li>
+      <li><strong>Gallery (gallery.html)</strong> — photo grid with lightbox</li>
+      <li><strong>Join &amp; Contact (join.html)</strong> — form with validation + map</li>
       <li><em>Optional:</em> <strong>Resources (resources.html)</strong> — policies &amp; links</li>
     </ul>
-    <p>
-      The production project will live in its own folder (e.g., <code>project-c3/</code>) with its
-      own HTML/CSS/JS/assets. This overview page stays in your class site with shared header/footer includes.
-    </p>
 
     <h3>8) Page Design Details</h3>
 
     <details class="card">
       <summary><strong>Home (index.html)</strong></summary>
       <ul>
-        <li><strong>Purpose:</strong> Welcome/value prop; highlight next event</li>
+        <li><strong>Purpose:</strong> Welcome users and show next event quickly</li>
         <li><strong>Audience:</strong> Everyone</li>
-        <li><strong>Content:</strong> Hero, brief mission, “Next Event” card, 3-image preview, Join CTA</li>
-        <li><strong>Inputs:</strong> None</li>
-        <li><strong>Controls:</strong> Links to Events &amp; Join</li>
-        <li><strong>Actions:</strong> “Details” opens modal or Events page</li>
-        <li><strong>Notes:</strong> jQuery-UI Accordion for FAQs</li>
+        <li><strong>Content:</strong> Hero, mission, next event card, gallery preview, CTA</li>
+        <li><strong>Actions:</strong> Details button → Events</li>
       </ul>
     </details>
 
     <details class="card">
       <summary><strong>About (about.html)</strong></summary>
       <ul>
-        <li><strong>Purpose:</strong> Mission, expectations, officer bios</li>
-        <li><strong>Audience:</strong> Prospects &amp; partners</li>
-        <li><strong>Inputs:</strong> None</li>
-        <li><strong>Actions:</strong> Expandable safety checklist (Accordion)</li>
+        <li><strong>Purpose:</strong> Explain mission, values, officers</li>
+        <li><strong>Actions:</strong> Expandable FAQ or safety rules</li>
       </ul>
     </details>
 
     <details class="card">
       <summary><strong>Events (events.html)</strong></summary>
       <ul>
-        <li><strong>Purpose:</strong> Central events list</li>
-        <li><strong>Audience:</strong> Members &amp; prospects</li>
-        <li><strong>Content:</strong> Event cards (title, date, time, location, brief)</li>
-        <li><strong>Inputs:</strong> None (read-only)</li>
-        <li><strong>Controls:</strong> “Details” modal; “RSVP” → Google Form</li>
-        <li><strong>Actions:</strong> Fetch a static JSON of events (AJAX, read-only)</li>
+        <li><strong>Purpose:</strong> Show all upcoming/past meets</li>
+        <li><strong>Actions:</strong> Read-only AJAX event loading from static JSON</li>
       </ul>
     </details>
 
     <details class="card">
       <summary><strong>Gallery (gallery.html)</strong></summary>
       <ul>
-        <li><strong>Purpose:</strong> Showcase photos</li>
-        <li><strong>Inputs:</strong> None (no uploads per course rules)</li>
-        <li><strong>Controls:</strong> Lightbox with keyboard navigation</li>
+        <li><strong>Purpose:</strong> Showcase photos of past events</li>
+        <li><strong>Actions:</strong> Lightbox viewer</li>
       </ul>
     </details>
 
     <details class="card">
       <summary><strong>Join &amp; Contact (join.html)</strong></summary>
       <ul>
-        <li><strong>Purpose:</strong> Collect interest &amp; questions</li>
-        <li><strong>Inputs:</strong> Name, UNCC email, grad year, optional car info, interests, message</li>
-        <li><strong>Validations:</strong> Required fields, email pattern, length limits</li>
-        <li><strong>Actions:</strong> Prefilled <code>mailto:</code> or Google Form</li>
-        <li><strong>Notes:</strong> Embedded Google Map to meet spot</li>
+        <li><strong>Purpose:</strong> Collect interest + questions</li>
+        <li><strong>Validations:</strong> Required fields + email pattern</li>
+        <li><strong>Actions:</strong> Mailto or Google Form</li>
       </ul>
     </details>
 
     <details class="card">
-      <summary><strong>Resources (resources.html) — optional</strong></summary>
-      <u
+      <summary><strong>Resources (resources.html)</strong></summary>
+      <ul>
+        <li><strong>Purpose:</strong> External links to policies &amp; tools</li>
+      </ul>
+    </details>
+
+    <h3>9) Planned Interactivity</h3>
+    <ul>
+      <li>jQuery UI Accordion (FAQ / Safety)</li>
+      <li>Lightbox Gallery</li>
+      <li>Events loaded from static JSON (read-only)</li>
+      <li>Form validation (JS + HTML5)</li>
+      <li>Embedded Google Map</li>
+    </ul>
+
+    <h3>10) Notes &amp; Credits</h3>
+    <ul>
+      <li>Created by <strong>Vahid Zamen</strong></li>
+      <li>No CRUD used — read-only operations only</li>
+      <li>Wireframes &amp; sitemap created in Draw.io</li>
+      <li>Updated: <time datetime="2025-11-02">Nov 2, 2025</time></li>
+    </ul>
+
+  </main>
+
+  <!-- Shared footer -->
+  <div data-include="components/footer.html"></div>
+
+  <!-- Include script (must be after the include divs) -->
+  <script src="scripts/HTMLInclude.min.js"></script>
+
+  <noscript>
+    <p style="padding:1rem;background:#fee;border:1px solid #f88;">
+      JavaScript is required to load the shared header and footer.
+    </p>
+  </noscript>
+
+</body>
+</html>
