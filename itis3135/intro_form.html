@@ -207,10 +207,11 @@
         <button type="submit" class="cta">Submit</button>
         <button type="reset">Reset</button>
         <button type="button" id="clear-btn">Clear</button>
-        <!-- NEW: Generate HTML button for this assignment -->
+        <!-- Generate HTML (previous assignment) -->
         <button type="button" id="generate-html-btn">Generate HTML</button>
+        <!-- NEW: Generate JSON -->
+        <button type="button" id="generate-json-btn">Generate JSON</button>
       </div>
-    </form>
 
     <!-- Reset link displayed after submit -->
     <p id="reset-link" hidden style="margin-top:1rem;">
@@ -224,6 +225,13 @@
       <pre><code id="html-code" class="language-html"></code></pre>
     </section>
   </main>
+      <!-- NEW: section where the generated JSON will appear -->
+      <section id="json-output" class="card" hidden style="margin-top:1.5rem;">
+        <h3>Generated Introduction JSON</h3>
+        <p>You can copy this JSON and save it as a .json file.</p>
+        <pre><code id="json-code" class="language-json"></code></pre>
+      </section>
+  
 
   <div data-include="components/footer.html"></div>
 
@@ -237,5 +245,10 @@
 
   <!-- NEW: script that builds the HTML code output -->
   <script src="scripts/generate_html.js"></script>
+</body>
+</html>
+<script src="scripts/generate_html.js"></script>
+<!-- NEW: script that builds the JSON code output -->
+<script src="scripts/generate_json.js"></script>
 </body>
 </html>
