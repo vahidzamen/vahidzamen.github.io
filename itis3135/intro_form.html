@@ -6,13 +6,12 @@
   <title>Vahid Zamen | Introduction Form</title>
   <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="styles/default.css" />
-
   <!-- Highlight.js stylesheet for code coloring -->
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css" />
 </head>
 <body>
-  <!-- Reuse your dynamic header/footer includes so styles & spacing match exactly -->
+  <!-- Shared header -->
   <div data-include="components/header.html"></div>
 
   <main>
@@ -21,7 +20,9 @@
     <h3>Please submit the form below.</h3>
 
     <!-- RESULT AREA (hidden until submit) -->
-    <section id="result" class="card" hidden></section>
+    <section id="result" class="card" hidden>
+      <h3 class="visually-hidden">Generated Introduction</h3>
+    </section>
 
     <!-- FORM AREA -->
     <form id="intro-form" novalidate>
@@ -41,7 +42,7 @@
         </label>
       </fieldset>
 
-      <!-- Identity (required first/last; middle & nickname optional) -->
+      <!-- Identity -->
       <fieldset class="card" style="margin-bottom:1rem;">
         <legend><strong>Identity</strong></legend>
         <label>
@@ -62,7 +63,7 @@
         </label>
       </fieldset>
 
-      <!-- Mascot line (required) -->
+      <!-- Mascot line -->
       <fieldset class="card" style="margin-bottom:1rem;">
         <legend><strong>Mascot Line</strong></legend>
         <label>
@@ -79,7 +80,7 @@
         </label>
       </fieldset>
 
-      <!-- Image (defaults to your image; allow upload or URL) -->
+      <!-- Picture -->
       <fieldset class="card" style="margin-bottom:1rem;">
         <legend><strong>Picture</strong></legend>
         <div style="display:grid; gap:.75rem;">
@@ -87,7 +88,7 @@
             Default Image URL (used unless you upload below)<br/>
             <input name="pictureUrl" type="url"
                    placeholder="https://…/your-image.jpg"
-                   value="images/when-sunrise.jpg" />
+                   value="https://webpages.charlotte.edu/vzamen/itis3135/images/when-sunrise.jpg" />
           </label>
           <label>
             Or Upload Your Own Image
@@ -102,10 +103,9 @@
         </div>
       </fieldset>
 
-      <!-- Personal statement & bullets -->
+      <!-- About You -->
       <fieldset class="card" style="margin-bottom:1rem;">
         <legend><strong>About You</strong></legend>
-
         <label>
           Personal Statement *<br/>
           <textarea name="personalStatement" required rows="3"
@@ -153,12 +153,10 @@
         </div>
       </fieldset>
 
-      <!-- Courses (dynamic add/remove) -->
+      <!-- Courses -->
       <fieldset class="card" style="margin-bottom:1rem;">
         <legend><strong>Courses (department, number, name, reason)</strong></legend>
-
         <div id="courses"></div>
-
         <div style="margin-top:.75rem;">
           <button type="button" id="add-course" class="cta">+ Add Course</button>
         </div>
@@ -169,7 +167,8 @@
         <legend><strong>Quote</strong></legend>
         <label>
           Quote *<br/>
-          <input name="quoteText" required placeholder="“Your quote here.”" value="Don’t count the days, make the days count." />
+          <input name="quoteText" required placeholder="“Your quote here.”"
+                 value="Don’t count the days, make the days count." />
         </label><br/><br/>
         <label>
           Quote Author *<br/>
@@ -177,7 +176,7 @@
         </label>
       </fieldset>
 
-      <!-- Optional fun/share -->
+      <!-- Extras -->
       <fieldset class="card" style="margin-bottom:1rem;">
         <legend><strong>Extras (optional)</strong></legend>
         <label>
@@ -190,15 +189,20 @@
         </label>
       </fieldset>
 
-      <!-- 5 Links -->
+      <!-- Five Links -->
       <fieldset class="card" style="margin-bottom:1rem;">
         <legend><strong>Five Links</strong></legend>
         <div style="display:grid; gap:.5rem;">
-          <input name="link1" type="url" required placeholder="https://…" value="https://webpages.charlotte.edu/vzamen/" />
-          <input name="link2" type="url" required placeholder="https://…" value="https://github.com/vahidzamen" />
-          <input name="link3" type="url" required placeholder="https://…" value="https://www.linkedin.com/in/vahid-zamen-8a1092278/" />
-          <input name="link4" type="url" required placeholder="https://…" value="https://www.freecodecamp.org/vzamen" />
-          <input name="link5" type="url" required placeholder="https://…" value="https://www.codecademy.com/profiles/vzamen" />
+          <input name="link1" type="url" required placeholder="https://…"
+                 value="https://webpages.charlotte.edu/vzamen/" />
+          <input name="link2" type="url" required placeholder="https://…"
+                 value="https://github.com/vahidzamen" />
+          <input name="link3" type="url" required placeholder="https://…"
+                 value="https://www.linkedin.com/in/vahid-zamen-8a1092278/" />
+          <input name="link4" type="url" required placeholder="https://…"
+                 value="https://www.freecodecamp.org/vzamen" />
+          <input name="link5" type="url" required placeholder="https://…"
+                 value="https://www.codecademy.com/profiles/vzamen" />
         </div>
       </fieldset>
 
@@ -207,48 +211,38 @@
         <button type="submit" class="cta">Submit</button>
         <button type="reset">Reset</button>
         <button type="button" id="clear-btn">Clear</button>
-        <!-- Generate HTML (previous assignment) -->
         <button type="button" id="generate-html-btn">Generate HTML</button>
-        <!-- NEW: Generate JSON -->
         <button type="button" id="generate-json-btn">Generate JSON</button>
       </div>
+    </form>
 
-    <!-- Reset link displayed after submit -->
+    <!-- Reset link -->
     <p id="reset-link" hidden style="margin-top:1rem;">
       <a href="#" class="cta" id="start-over">Reset and do it again</a>
     </p>
 
-    <!-- NEW: section where the generated HTML code will appear -->
+    <!-- HTML output -->
     <section id="html-output" class="card" hidden style="margin-top:1.5rem;">
       <h3>Generated Introduction HTML</h3>
       <p>You can copy this HTML and paste it into your Introduction page.</p>
       <pre><code id="html-code" class="language-html"></code></pre>
     </section>
-  </main>
-      <!-- NEW: section where the generated JSON will appear -->
-      <section id="json-output" class="card" hidden style="margin-top:1.5rem;">
-        <h3>Generated Introduction JSON</h3>
-        <p>You can copy this JSON and save it as a .json file.</p>
-        <pre><code id="json-code" class="language-json"></code></pre>
-      </section>
-  
 
+    <!-- JSON output -->
+    <section id="json-output" class="card" hidden style="margin-top:1.5rem;">
+      <h3>Generated Introduction JSON</h3>
+      <p>You can copy this JSON and save it as a .json file.</p>
+      <pre><code id="json-code" class="language-json"></code></pre>
+    </section>
+  </main>
+
+  <!-- Shared footer -->
   <div data-include="components/footer.html"></div>
 
   <script src="scripts/HTMLInclude.min.js"></script>
-
-  <!-- Highlight.js script -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-
-  <!-- your existing JS for form behavior -->
   <script src="scripts/introduction.js"></script>
-
-  <!-- NEW: script that builds the HTML code output -->
   <script src="scripts/generate_html.js"></script>
-</body>
-</html>
-<script src="scripts/generate_html.js"></script>
-<!-- NEW: script that builds the JSON code output -->
-<script src="scripts/generate_json.js"></script>
+  <script src="scripts/generate_json.js"></script>
 </body>
 </html>
