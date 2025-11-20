@@ -6,13 +6,18 @@
   <title>Vahid Zamen | Introduction Form</title>
   <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="styles/default.css" />
+
+  <!-- Highlight.js stylesheet for code coloring -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css" />
 </head>
 <body>
   <!-- Reuse your dynamic header/footer includes so styles & spacing match exactly -->
   <div data-include="components/header.html"></div>
 
   <main>
-    <h2>Introduction Form</h2>
+    <!-- give this an id so JS can change it to "Introduction HTML" later -->
+    <h2 id="intro-heading">Introduction Form</h2>
     <h3>Please submit the form below.</h3>
 
     <!-- RESULT AREA (hidden until submit) -->
@@ -82,7 +87,7 @@
             Default Image URL (used unless you upload below)<br/>
             <input name="pictureUrl" type="url"
                    placeholder="https://…/your-image.jpg"
-                   value="images/IMG_5973.JPG" />
+                   value="images/when-sunrise.jpg" />
           </label>
           <label>
             Or Upload Your Own Image
@@ -202,6 +207,8 @@
         <button type="submit" class="cta">Submit</button>
         <button type="reset">Reset</button>
         <button type="button" id="clear-btn">Clear</button>
+        <!-- NEW: Generate HTML button for this assignment -->
+        <button type="button" id="generate-html-btn">Generate HTML</button>
       </div>
     </form>
 
@@ -209,11 +216,26 @@
     <p id="reset-link" hidden style="margin-top:1rem;">
       <a href="#" class="cta" id="start-over">Reset and do it again</a>
     </p>
+
+    <!-- NEW: section where the generated HTML code will appear -->
+    <section id="html-output" class="card" hidden style="margin-top:1.5rem;">
+      <h3>Generated Introduction HTML</h3>
+      <p>You can copy this HTML and paste it into your Introduction page.</p>
+      <pre><code id="html-code" class="language-html"></code></pre>
+    </section>
   </main>
 
   <div data-include="components/footer.html"></div>
 
   <script src="scripts/HTMLInclude.min.js"></script>
+
+  <!-- Highlight.js script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+  <!-- your existing JS for form behavior -->
   <script src="scripts/introduction.js"></script>
+
+  <!-- NEW: script that builds the HTML code output -->
+  <script src="scripts/generate_html.js"></script>
 </body>
 </html>
