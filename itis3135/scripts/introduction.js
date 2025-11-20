@@ -119,15 +119,20 @@
       }));
   
       // Decide which image to use (uploaded file takes precedence)
-      let imgSrc = form.pictureUrl.value.trim();
-      const file = form.pictureFile.files?.[0];
-      if (file) {
-        imgSrc = await new Promise((resolve) => {
-          const reader = new FileReader();
-          reader.onload = () => resolve(reader.result);
-          reader.readAsDataURL(file);
-        });
-      }
+let imgSrc = form.pictureUrl.value.trim();
+
+// old JS that Accumulus supports (no optional chaining)
+const file =
+  (form.pictureFile && form.pictureFile.files && form.pictureFile.files[0]) ||
+  null;
+
+if (file) {
+  imgSrc = await new Promise((resolve) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result);
+    reader.readAsDataURL(file);
+  });
+}
   
       // Gather all fields
       const data = {
