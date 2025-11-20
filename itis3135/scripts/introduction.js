@@ -11,14 +11,14 @@
     form.addEventListener('submit', (e) => e.preventDefault());
   
     // ---------- Prefill: your 5 current courses ----------
-    const defaultCourses = [
-      { dept:'ITIS', num:'3135', name:'Front-End Web Application Development', reason:'Degree requirement; strengthens web dev skills.' },
+    const starterCourses = [
+      { dept:'ITIS', num:'3135', name:'Front-End Web App Dev', reason:'Required; builds web dev skills.' },
       { dept:'ITCS', num:'3166', name:'Intro to Computer Networks', reason:'Required; foundation in networking concepts.' },
       { dept:'ITIS', num:'3200', name:'Intro to Info Security & Privacy', reason:'Required; core cybersecurity & privacy.' },
       { dept:'ITSC', num:'3155', name:'Software Engineering', reason:'Required; teamwork & project-based design.' },
-      { dept:'ITCS', num:'3050', name:'Computational Thinking & AI Literacy in K-12', reason:'Required; perspective on computing & AI in education.' },
+      { dept:'ITCS', num:'3050', name:'Computational Thinking & AI Literacy in K–12', reason:'Required; perspective on computing & AI in education.' }
     ];
-  
+    
     // Helper: build one course row
     function courseRow(data = {}) {
       const id = crypto.randomUUID();
