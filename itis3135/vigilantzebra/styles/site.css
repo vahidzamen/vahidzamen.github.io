@@ -78,7 +78,8 @@ nav a[aria-current="page"]{text-decoration:underline}
 
 .grid{
   display:grid;
-  gap:1rem;
+  /* use older syntax instead of gap */
+  grid-gap:1rem;
   grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
   margin-top:1rem;
 }
