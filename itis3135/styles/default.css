@@ -5,7 +5,6 @@
   --text:#f8fafc;
   --accent:#10b981;
   --maxw:900px;
-
   /* heading sizes (desktop default) */
   --h1-size: clamp(1.75rem, 3vw + 1rem, 2.5rem);
   --h2-size: clamp(1.25rem, 2vw + .75rem, 1.75rem);
@@ -65,7 +64,6 @@ h1 {
   margin:0 0 .5rem;
   font-size:var(--h1-size);
 }
-
 h2 {
   font-family:Georgia,"Times New Roman",Times,serif;
   line-height:1.25;
@@ -93,7 +91,6 @@ footer {
   padding-top:1rem;
   color:#e2e8f0;
 }
-
 .footer-nav a {
   padding:.25rem .5rem;
   border:1px solid rgba(255,255,255,.08);
@@ -118,7 +115,6 @@ samp {
   border-radius:8px;
   padding:.15rem .35rem;
 }
-
 pre {
   padding:.75rem 1rem;
   overflow:auto;
@@ -147,11 +143,10 @@ img {
 }
 
 .grid {
-  display: grid;
-  grid-gap: 1rem;                     /* older syntax; linter-friendly */
-  grid-template-columns: repeat(12, 1fr);
+  display:grid;
+  grid-gap:1rem; /* older syntax; linter-friendly */
+  grid-template-columns:repeat(12,1fr);
 }
-
 
 .col-12 { grid-column:span 12; }
 .col-6  { grid-column:span 6; }
@@ -173,7 +168,6 @@ button,
   box-shadow:0 4px 14px rgba(0,0,0,.25);
   transition:transform .16s ease,opacity .16s ease;
 }
-
 .cta:hover,
 .cta:focus {
   transform:translateY(-1px);
@@ -186,8 +180,7 @@ button,
 /* large tablets / small desktops */
 @media screen and (min-width:981px) and (max-width:1400px) {
   :root {
-    --maxw:1000px;
-    /* keep same heading sizes here, just widen container */
+    --maxw:1000px; /* wider container */
   }
   body { width:92%; }
 }
@@ -196,16 +189,14 @@ button,
 @media screen and (min-width:601px) and (max-width:980px) {
   :root {
     --maxw:860px;
-    --h1-size: clamp(1.6rem, 2.2vw + 1rem, 2.1rem);
-    --h2-size: clamp(1.1rem, 1.6vw + .8rem, 1.5rem);
+    --h1-size:clamp(1.6rem, 2.2vw + 1rem, 2.1rem);
+    --h2-size:clamp(1.1rem, 1.6vw + .8rem, 1.5rem);
   }
-
   body { width:94%; }
   header,
   main,
   footer { padding:1rem 0; }
-  .grid { gap:.85rem; }
-
+  .grid { grid-gap:.85rem; }  /* changed from gap → grid-gap */
   .col-6 { grid-column:span 6; }
   .col-4 { grid-column:span 6; }
   .col-3 { grid-column:span 4; }
@@ -215,30 +206,24 @@ button,
 @media screen and (max-width:600px) {
   :root {
     --maxw:560px;
-    --h1-size: clamp(1.4rem, 4.5vw + .9rem, 1.9rem);
-    --h2-size: clamp(1rem, 3.5vw + .6rem, 1.3rem);
+    --h1-size:clamp(1.4rem, 4.5vw + .9rem, 1.9rem);
+    --h2-size:clamp(1rem, 3.5vw + .6rem, 1.3rem);
   }
-
   body { width:95%; }
   header,
   main,
   footer { padding:.85rem 0; }
-
   .footer-nav a {
     padding:.35rem .6rem;
     border-radius:10px;
   }
-
   img {
     display:block;
     width:100%;
     height:auto;
   }
-
   figure { margin:0; }
-
-  .grid { gap:.75rem; }
-
+  .grid { grid-gap:.75rem; }  /* changed from gap → grid-gap */
   .col-6,
   .col-4,
   .col-3 { grid-column:span 12; }
