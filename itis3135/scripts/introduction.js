@@ -28,14 +28,15 @@
       wrap.dataset.courseId = id;
   
       wrap.innerHTML = `
-        <div style="display:grid; gap:.5rem; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); align-items:end;">
-          <label>Dept *<br/><input name="courseDept" required placeholder="ITIS" value="${data.dept ?? ''}"></label>
-          <label>Number *<br/><input name="courseNum" required placeholder="3135" value="${data.num ?? ''}"></label>
-          <label>Name *<br/><input name="courseName" required placeholder="Course name" value="${data.name ?? ''}"></label>
-          <label>Reason *<br/><input name="courseReason" required placeholder="Why you’re taking it" value="${data.reason ?? ''}"></label>
-          <button type="button" class="delete-course" style="justify-self:start">Delete</button>
-        </div>
-      `;
+  <div style="display:grid; gap:.5rem; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); align-items:end;">
+    <label>Dept *<br/><input name="courseDept" required placeholder="ITIS" value="${data.dept || ''}"></label>
+    <label>Number *<br/><input name="courseNum" required placeholder="3135" value="${data.num || ''}"></label>
+    <label>Name *<br/><input name="courseName" required placeholder="Course name" value="${data.name || ''}">
+    </label>
+    <label>Reason *<br/><input name="courseReason" required placeholder="Why you’re taking it" value="${data.reason || ''}"></label>
+    <button type="button" class="delete-course" style="justify-self:start">Delete</button>
+  </div>
+`;
   
       // Delete handler
       wrap.querySelector('.delete-course').addEventListener('click', () => {
