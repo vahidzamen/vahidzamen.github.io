@@ -2,185 +2,266 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Project Overview | ITIS 3135</title>
-
-  <!-- Correct CSS path according to folder structure -->
-  <link rel="stylesheet" href="styles/default.css" />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Overview | ITIS-3135</title>
   <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
-  <meta name="description" content="Requirements &amp; Design document for the final project website." />
+  <link rel="stylesheet" href="styles/default.css" />
+  <meta name="description"
+        content="Requirements and design document for Vahid Zamen&#39;s ITIS-3135 final project website." />
 </head>
-
 <body>
-  <!-- Shared header -->
+  <!-- shared header include -->
   <div data-include="components/header.html"></div>
 
   <main>
     <h2>Project Overview — 49ers Car Culture Club (C3)</h2>
 
-    <section class="card" aria-labelledby="meta-heading">
-      <h3 id="meta-heading">Client &amp; Project Category</h3>
+    <!-- 1. Client & category -->
+    <section class="card" aria-labelledby="client-heading">
+      <h3 id="client-heading">Client &amp; Project Category</h3>
       <p>
-        <strong>Client Category (Step 01):</strong> <em>Student group at UNCC</em><br />
+        <strong>Client Category (Step 01):</strong>
+        <em>Student group at UNC Charlotte</em><br />
         <strong>Project Category (Step 02):</strong>
-        <em>Group site that encourages participation &amp; communication</em>
+        <em>Student group site that encourages participation and communication</em>
+      </p>
+      <p>
+        The 49ers Car Culture Club (C3) is a student organization for UNC Charlotte
+        students who are interested in cars, driving, and community events. This
+        website will help them share information, organize events, and attract new
+        members.
       </p>
     </section>
 
-    <h3>1) Application Purpose</h3>
-    <p>
-      The 49ers Car Culture Club (C3) site organizes events (meets, cruises, tech nights),
-      recruits members, and shares media. It improves visibility, centralizes announcements,
-      and offers light interactivity (gallery, FAQs, event highlights, and a read-only events list).
-    </p>
-
-    <h3>2) Intended Users</h3>
-    <ul>
-      <li><strong>Prospective members:</strong> basics, how to join, upcoming events</li>
-      <li><strong>Active members:</strong> dates, locations, quick RSVP links</li>
-      <li><strong>Officers:</strong> publish schedules &amp; rules (content provided)</li>
-      <li><strong>Partners/Sponsors:</strong> view past events &amp; contact</li>
-    </ul>
-
-    <h3>3) Content Overview</h3>
-    <ul>
-      <li><strong>About/mission</strong>, officer bios, safety guidelines</li>
-      <li><strong>Events</strong> list and highlights</li>
-      <li><strong>Gallery</strong> with accessible lightbox</li>
-      <li><strong>Join/Contact</strong> interest form + campus map</li>
-      <li><strong>Resources</strong> (optional): policies &amp; useful links</li>
-    </ul>
-
-    <h3>4) Client Information</h3>
-    <p>
-      <strong>Name:</strong> [Private] (C3 President)<br />
-      <strong>Organization:</strong> 49ers Car Culture Club (C3), UNC Charlotte<br />
-      <strong>Email:</strong> [private] &nbsp;&nbsp; <strong>Phone:</strong> [private]
-    </p>
-
-    <h3>5) Wireframe (Home)</h3>
-    <p>Exported from Draw.io (Google Drive). Embedded below with caption.</p>
-
-    <figure class="card">
-      <img
-        src="images/wireframe-c3-home-optimized.png"
-        alt="Wireframe layout for home page showing hero, next event, gallery preview, and footer"
-        loading="lazy"
-        decoding="async"
-      />
-      <figcaption>
-        Wireframe — Home Page.
-        <a href="images/wireframe-c3-home-optimized.png" target="_blank" rel="noopener">Open full size</a>
-      </figcaption>
-    </figure>
-
-    <h3>6) Site Map</h3>
-    <figure class="card">
-      <img
-        src="images/sitemap-c3-optimized.png"
-        alt="Sitemap showing Home, About, Events, Gallery, Join/Contact, and Resources pages"
-        loading="lazy"
-        decoding="async"
-      />
-      <figcaption>
-        Site Map.
-        <a href="images/sitemap-c3-optimized.png" target="_blank" rel="noopener">Open full size</a>
-      </figcaption>
-    </figure>
-
-    <h3>7) Required Pages &amp; Navigation</h3>
-    <ul>
-      <li><strong>Home (index.html)</strong> — overview, next event highlight, Join CTA</li>
-      <li><strong>About (about.html)</strong> — mission, officer bios, safety rules</li>
-      <li><strong>Events (events.html)</strong> — list of upcoming/past events (read-only)</li>
-      <li><strong>Gallery (gallery.html)</strong> — photo grid with lightbox</li>
-      <li><strong>Join &amp; Contact (join.html)</strong> — form with validation + map</li>
-      <li><em>Optional:</em> <strong>Resources (resources.html)</strong> — policies &amp; links</li>
-    </ul>
-
-    <h3>8) Page Design Details</h3>
-
-    <details class="card">
-      <summary><strong>Home (index.html)</strong></summary>
+    <!-- 2. Application purpose -->
+    <section class="card">
+      <h3>1) Application Purpose</h3>
+      <p>
+        The C3 website will:
+      </p>
       <ul>
-        <li><strong>Purpose:</strong> Welcome users and show next event quickly</li>
-        <li><strong>Audience:</strong> Everyone</li>
-        <li><strong>Content:</strong> Hero, mission, next event card, gallery preview, CTA</li>
-        <li><strong>Actions:</strong> Details button → Events</li>
+        <li>Promote upcoming meets, cruises, and tech nights.</li>
+        <li>Show what the club is about, including photos and event highlights.</li>
+        <li>Help new students learn how to join and what to expect.</li>
+        <li>Provide a simple way to contact the officers for questions or partnerships.</li>
       </ul>
-    </details>
+    </section>
 
-    <details class="card">
-      <summary><strong>About (about.html)</strong></summary>
+    <!-- 3. Intended users -->
+    <section class="card">
+      <h3>2) Intended Users</h3>
       <ul>
-        <li><strong>Purpose:</strong> Explain mission, values, officers</li>
-        <li><strong>Actions:</strong> Expandable FAQ or safety rules</li>
+        <li><strong>Prospective members:</strong> Students curious about joining the club.</li>
+        <li><strong>Active members:</strong> Students already in the club who need event details.</li>
+        <li><strong>Officers:</strong> Students who organize events and share information.</li>
+        <li><strong>Partners / Sponsors:</strong> Local shops or organizations interested in working with the club.</li>
       </ul>
-    </details>
+    </section>
 
-    <details class="card">
-      <summary><strong>Events (events.html)</strong></summary>
+    <!-- 4. Content overview -->
+    <section class="card">
+      <h3>3) Content Overview</h3>
       <ul>
-        <li><strong>Purpose:</strong> Show all upcoming/past meets</li>
-        <li><strong>Actions:</strong> Read-only AJAX event loading from static JSON</li>
+        <li><strong>Home:</strong> Short intro, next event highlight, and quick links.</li>
+        <li><strong>About:</strong> Mission, officer bios, and safety / behavior guidelines.</li>
+        <li><strong>Events:</strong> List of upcoming and recent events (read-only list).</li>
+        <li><strong>Gallery:</strong> Photo gallery with car meet pictures (interactive images).</li>
+        <li><strong>Join &amp; Contact:</strong> Interest form and basic contact information.</li>
+        <li><em>Optional:</em> Resources or FAQ page with helpful links and rules.</li>
       </ul>
-    </details>
+    </section>
 
-    <details class="card">
-      <summary><strong>Gallery (gallery.html)</strong></summary>
+    <!-- 5. Client info -->
+    <section class="card">
+      <h3>4) Client Information</h3>
+      <p>
+        <strong>Name:</strong> [Private] (C3 President)<br />
+        <strong>Organization:</strong> 49ers Car Culture Club (C3), UNC Charlotte<br />
+        <strong>Email:</strong> [private] <br />
+        <strong>Phone:</strong> [private]
+      </p>
+      <p>
+        Personal contact details are kept private here, but the real client is a
+        current officer for the 49ers Car Culture Club.
+      </p>
+    </section>
+
+    <!-- 6. Wireframe -->
+    <section class="card">
+      <h3>5) Wireframe (Home Page)</h3>
+      <p>
+        The wireframe below was created in Draw.io using my UNCC Google account.
+        It shows the basic layout of the C3 home page: header, navigation, hero
+        section, next event card, gallery preview, and footer.
+      </p>
+
+      <figure class="card">
+        <!-- make sure this file exists: itis3135/images/project-wireframe.png -->
+        <img
+          src="images/project-wireframe.png"
+          alt="Wireframe of the C3 home page showing header, navigation, hero section, next event card, gallery preview, and footer layout."
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption>
+          Wireframe &mdash; C3 Home Page.
+          <a href="images/project-wireframe.png" target="_blank" rel="noopener">
+            Open full size
+          </a>
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- 7. Site map -->
+    <section class="card">
+      <h3>6) Site Map</h3>
+      <p>
+        The sitemap below was also created in Draw.io and shows the main pages
+        and how users will navigate between them.
+      </p>
+
+      <figure class="card">
+        <!-- make sure this file exists: itis3135/images/project-sitemap.png -->
+        <img
+          src="images/project-sitemap.png"
+          alt="Sitemap diagram showing Home, About, Events, Gallery, Join & Contact, and optional Resources pages all connected with a common header and footer."
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption>
+          Sitemap &mdash; C3 Website.
+          <a href="images/project-sitemap.png" target="_blank" rel="noopener">
+            Open full size
+          </a>
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- 8. Required pages & navigation -->
+    <section class="card">
+      <h3>7) Required Pages &amp; Navigation</h3>
       <ul>
-        <li><strong>Purpose:</strong> Showcase photos of past events</li>
-        <li><strong>Actions:</strong> Lightbox viewer</li>
+        <li><strong>Home (index.html):</strong> Intro, next event, quick CTA to join.</li>
+        <li><strong>About (about.html):</strong> Mission, officer information, and rules.</li>
+        <li><strong>Events (events.html):</strong> List of upcoming and past events.</li>
+        <li><strong>Gallery (gallery.html):</strong> Interactive photo gallery of meets.</li>
+        <li><strong>Join &amp; Contact (join.html):</strong> Interest form and contact info.</li>
+        <li><em>Optional:</em> <strong>Resources (resources.html):</strong> Links, policies, FAQ.</li>
       </ul>
-    </details>
+      <p>
+        All pages will share a common header and footer (via includes) and a
+        consistent navigation bar that links to each of the main pages in a
+        single click.
+      </p>
+    </section>
 
-    <details class="card">
-      <summary><strong>Join &amp; Contact (join.html)</strong></summary>
+    <!-- 9. Page design details -->
+    <section class="card">
+      <h3>8) Page Design Details</h3>
+
+      <details class="card">
+        <summary><strong>Home (index.html)</strong></summary>
+        <ul>
+          <li><strong>Purpose:</strong> Welcome users and highlight the next event.</li>
+          <li><strong>Audience:</strong> All users (new and returning).</li>
+          <li><strong>Content:</strong> Hero text, brief description, next event card, gallery preview, join button.</li>
+          <li><strong>Inputs:</strong> None.</li>
+          <li><strong>Actions:</strong> Buttons/links to Events and Join &amp; Contact pages.</li>
+        </ul>
+      </details>
+
+      <details class="card">
+        <summary><strong>About (about.html)</strong></summary>
+        <ul>
+          <li><strong>Purpose:</strong> Explain what C3 is and who runs it.</li>
+          <li><strong>Audience:</strong> Prospective members and partners.</li>
+          <li><strong>Content:</strong> Mission statement, officer bios, and safety / behavior guidelines.</li>
+          <li><strong>Inputs:</strong> None.</li>
+          <li><strong>Actions:</strong> Links to Join &amp; Contact and Events.</li>
+        </ul>
+      </details>
+
+      <details class="card">
+        <summary><strong>Events (events.html)</strong></summary>
+        <ul>
+          <li><strong>Purpose:</strong> Show upcoming and recent events.</li>
+          <li><strong>Audience:</strong> Mostly active members.</li>
+          <li><strong>Content:</strong> Event cards with date, time, location, and short description.</li>
+          <li><strong>Inputs:</strong> None (read-only list).</li>
+          <li><strong>Actions:</strong> Filter or highlight events using simple JavaScript (e.g., show only upcoming).</li>
+        </ul>
+      </details>
+
+      <details class="card">
+        <summary><strong>Gallery (gallery.html)</strong></summary>
+        <ul>
+          <li><strong>Purpose:</strong> Show photos from meets and cruises.</li>
+          <li><strong>Audience:</strong> Everyone, especially prospective members.</li>
+          <li><strong>Content:</strong> Image grid with hover or click interaction.</li>
+          <li><strong>Inputs:</strong> None (no uploads; static images only).</li>
+          <li><strong>Actions:</strong> Clicking an image opens a larger view (lightbox style) with JavaScript.</li>
+        </ul>
+      </details>
+
+      <details class="card">
+        <summary><strong>Join &amp; Contact (join.html)</strong></summary>
+        <ul>
+          <li><strong>Purpose:</strong> Let students express interest and contact officers.</li>
+          <li><strong>Audience:</strong> Prospective members and partners.</li>
+          <li><strong>Content:</strong> Form fields for name, email, car interest, and message; basic contact info; maybe a Google Map to campus.</li>
+          <li><strong>Inputs:</strong> Form fields (validated on the client with JavaScript).</li>
+          <li><strong>Actions:</strong> On submit, show a confirmation message (no database; read-only behavior).</li>
+        </ul>
+      </details>
+    </section>
+
+    <!-- 10. Dynamic functionality -->
+    <section class="card">
+      <h3>9) Dynamic Functionality &amp; Interactivity</h3>
+      <p>
+        The website will use JavaScript and jQuery (and optionally jQuery-UI)
+        for light interactivity. Planned features include:
+      </p>
       <ul>
-        <li><strong>Purpose:</strong> Collect interest + questions</li>
-        <li><strong>Validations:</strong> Required fields + email pattern</li>
-        <li><strong>Actions:</strong> Mailto or Google Form</li>
+        <li><strong>Responsive navigation:</strong> Simple mobile menu toggle.</li>
+        <li><strong>Events filtering:</strong> Show only upcoming events or toggle between upcoming / past events.</li>
+        <li><strong>Gallery lightbox:</strong> Click an image to view a larger version with a caption.</li>
+        <li><strong>Form validation:</strong> Check that required fields on the Join &amp; Contact page are filled in correctly.</li>
+        <li><strong>jQuery-UI widget:</strong> Possible use of an accordion or tabs for FAQs or event details.</li>
       </ul>
-    </details>
-
-    <details class="card">
-      <summary><strong>Resources (resources.html)</strong></summary>
+      <p>
+        Example sites that inspired this interactivity:
+      </p>
       <ul>
-        <li><strong>Purpose:</strong> External links to policies &amp; tools</li>
+        <li>University club sites with event calendars and galleries.</li>
+        <li>Simple car meet pages that show photos and basic event information.</li>
       </ul>
-    </details>
+    </section>
 
-    <h3>9) Planned Interactivity</h3>
-    <ul>
-      <li>jQuery UI Accordion (FAQ / Safety)</li>
-      <li>Lightbox Gallery</li>
-      <li>Events loaded from static JSON (read-only)</li>
-      <li>Form validation (JS + HTML5)</li>
-      <li>Embedded Google Map</li>
-    </ul>
-
-    <h3>10) Notes &amp; Credits</h3>
-    <ul>
-      <li>Created by <strong>Vahid Zamen</strong></li>
-      <li>No CRUD used — read-only operations only</li>
-      <li>Wireframes &amp; sitemap created in Draw.io</li>
-      <li>Updated: <time datetime="2025-11-02">Nov 2, 2025</time></li>
-    </ul>
-
+    <!-- 11. Notes and references -->
+    <section class="card">
+      <h3>10) Notes &amp; References</h3>
+      <p>
+        This page is a planning and requirements document for the final project.
+        The actual project files will live in a separate folder (for example,
+        <code>project-c3/</code>) with their own HTML, CSS, JavaScript, and images.
+      </p>
+      <p>
+        References and tools used:
+      </p>
+      <ul>
+        <li>Draw.io via UNCC Google account for wireframe and sitemap diagrams.</li>
+        <li>Course materials and ITIS-3135 assignment description.</li>
+      </ul>
+      <p>
+        Prepared by <strong>Vahid Zamen</strong> &mdash; [current date/time].
+      </p>
+    </section>
   </main>
 
-  <!-- Shared footer -->
+  <!-- shared footer include -->
   <div data-include="components/footer.html"></div>
 
-  <!-- Include script (must be after the include divs) -->
   <script src="scripts/HTMLInclude.min.js"></script>
-
-  <noscript>
-    <p style="padding:1rem;background:#fee;border:1px solid #f88;">
-      JavaScript is required to load the shared header and footer.
-    </p>
-  </noscript>
-
 </body>
 </html>
