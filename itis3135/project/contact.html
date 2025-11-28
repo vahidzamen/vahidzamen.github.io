@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nxt Step Auto Boutique | Contact</title>
+  <link rel="stylesheet" href="styles/site.css" />
+  <script src="scripts/HTMLInclude.min.js" defer></script>
+</head>
+<body>
+  <div data-include="components/header.html"></div>
+
+  <main id="contact">
+    <h2>Contact & Quotes</h2>
+    <p class="lead">
+      Tell us about your car, your goals, and your timeline. We’ll follow up with a rough estimate and next steps.
+    </p>
+
+    <section class="grid">
+      <form class="card contact-form">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" required />
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required />
+
+        <label for="car">Vehicle (Year / Make / Model)</label>
+        <input id="car" name="car" type="text" />
+
+        <label for="service">Requested Service</label>
+        <select id="service" name="service">
+          <option>PPF</option>
+          <option>Vinyl Wrap</option>
+          <option>Window Tint</option>
+          <option>Ceramic Coating</option>
+          <option>Detailing</option>
+        </select>
+
+        <label for="message">Project Details</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+
+      <article class="card">
+        <h3>Direct Contact</h3>
+        <p>Email: <a href="mailto:hello@nxtstepauto.com">hello@nxtstepauto.com</a></p>
+        <p>Phone: (704) 555-0123</p>
+        <p>Instagram: @nxtstepauto (for behind-the-scenes builds)</p>
+      </article>
+    </section>
+  </main>
+
+  <div data-include="components/footer.html"></div>
+</body>
+</html>
