@@ -20,7 +20,7 @@ body {
   max-width:var(--maxw);
   background:linear-gradient(180deg,var(--bg),#121826 35%,var(--panel));
   color:var(--text);
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   line-height:1.6;
 }
 
@@ -37,6 +37,7 @@ header {
   gap:.75rem;
 }
 
+/* navs */
 .primary-nav,
 .secondary-nav,
 .footer-nav {
@@ -57,7 +58,7 @@ a:focus {
   outline:none;
 }
 
-/* headings – defined ONCE, sizes controlled by variables above */
+/* headings */
 h1 {
   font-family:Georgia,"Times New Roman",Times,serif;
   line-height:1.25;
@@ -127,8 +128,7 @@ img {
 }
 
 /* layout helpers */
-.container,
-.maincontainer {
+.container {
   max-width:var(--maxw);
   width:90%;
   margin:0 auto;
@@ -142,12 +142,12 @@ img {
   box-shadow:0 6px 20px rgba(0,0,0,.05);
 }
 
+/* grid helpers */
 .grid {
   display:grid;
-  grid-gap:1rem; /* older syntax; linter-friendly */
+  grid-gap:1rem;
   grid-template-columns:repeat(12,1fr);
 }
-
 .col-12 { grid-column:span 12; }
 .col-6  { grid-column:span 6; }
 .col-4  { grid-column:span 4; }
@@ -180,7 +180,7 @@ button,
 /* large tablets / small desktops */
 @media screen and (min-width:981px) and (max-width:1400px) {
   :root {
-    --maxw:1000px; /* wider container */
+    --maxw:1000px;
   }
   body { width:92%; }
 }
@@ -196,7 +196,7 @@ button,
   header,
   main,
   footer { padding:1rem 0; }
-  .grid { grid-gap:.85rem; }  /* changed from gap → grid-gap */
+  .grid { grid-gap:.85rem; }
   .col-6 { grid-column:span 6; }
   .col-4 { grid-column:span 6; }
   .col-3 { grid-column:span 4; }
@@ -213,17 +213,21 @@ button,
   header,
   main,
   footer { padding:.85rem 0; }
+
   .footer-nav a {
     padding:.35rem .6rem;
     border-radius:10px;
   }
+
   img {
     display:block;
     width:100%;
     height:auto;
   }
+
   figure { margin:0; }
-  .grid { grid-gap:.75rem; }  /* changed from gap → grid-gap */
+
+  .grid { grid-gap:.75rem; }
   .col-6,
   .col-4,
   .col-3 { grid-column:span 12; }
