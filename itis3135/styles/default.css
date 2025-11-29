@@ -54,7 +54,6 @@ a {
 a:hover,
 a:focus {
   text-decoration: underline;
-  outline: none;
 }
 
 a:focus-visible {
@@ -86,6 +85,16 @@ a:focus-visible {
 h1 {
   font-size: clamp(1.5rem, 2vw + 1rem, 2.25rem);
   margin: 0;
+}
+
+/* Global headings */
+h2 {
+  font-size: clamp(1.35rem, 2vw + 0.75rem, 1.9rem);
+  margin: 0 0 0.5rem;
+}
+
+h3 {
+  margin-top: 0;
 }
 
 .tagline {
@@ -129,7 +138,6 @@ h1 {
 .secondary-nav a:focus {
   background: var(--accent-soft);
   color: var(--text);
-  outline: none;
 }
 
 /* slightly smaller / softer second row if you ever use it */
@@ -146,12 +154,7 @@ h1 {
   border: 1px solid var(--border);
 }
 
-/* Main content */
-main h2 {
-  font-size: clamp(1.35rem, 2vw + 0.75rem, 1.9rem);
-  margin: 0 0 0.5rem;
-}
-
+/* Main text helper */
 .lead {
   color: var(--muted);
   max-width: 60ch;
@@ -164,10 +167,6 @@ main h2 {
   gap: 1.5rem;
   align-items: center;
   margin-bottom: 1.75rem;
-}
-
-.hero-text h2 {
-  font-size: clamp(1.6rem, 2.4vw + 1rem, 2.2rem);
 }
 
 .hero-text p {
@@ -213,10 +212,6 @@ main h2 {
   border: 1px solid var(--border);
   padding: 1rem 1.1rem;
   box-shadow: var(--shadow);
-}
-
-.card h3 {
-  margin-top: 0;
 }
 
 .card ul {
