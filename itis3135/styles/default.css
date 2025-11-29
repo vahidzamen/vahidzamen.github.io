@@ -1,6 +1,3 @@
-/* styles/site.css */
-
-/* ---- Base tokens ---- */
 :root {
   --bg: #0b0e14;
   --panel: #111827;
@@ -48,6 +45,23 @@ header {
   padding-top: 1.75rem;
 }
 
+/* Global link style */
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+  outline: none;
+}
+
+a:focus-visible {
+  outline: 2px dashed var(--accent);
+  outline-offset: 3px;
+}
+
 /* Branding */
 .brand {
   display: flex;
@@ -79,14 +93,28 @@ h1 {
   color: var(--muted);
 }
 
-/* Nav */
+/* ───────────── NAVIGATION ───────────── */
+
+/* containers for nav bars */
+.primary-nav,
+.secondary-nav,
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+}
+
+/* top nav bar (main menu) */
 .primary-nav {
   margin-top: 0.5rem;
   border-top: 1px solid var(--border);
   padding-top: 0.5rem;
 }
 
-.primary-nav a {
+/* links in primary / secondary nav */
+.primary-nav a,
+.secondary-nav a {
   color: var(--text);
   text-decoration: none;
   margin-right: 0.35rem;
@@ -96,14 +124,26 @@ h1 {
 }
 
 .primary-nav a:hover,
-.primary-nav a:focus {
+.primary-nav a:focus,
+.secondary-nav a:hover,
+.secondary-nav a:focus {
   background: var(--accent-soft);
+  color: var(--text);
   outline: none;
 }
 
-a:focus-visible {
-  outline: 2px dashed var(--accent);
-  outline-offset: 3px;
+/* slightly smaller / softer second row if you ever use it */
+.secondary-nav {
+  margin-top: 0.25rem;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/* footer nav pills */
+.footer-nav a {
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
 }
 
 /* Main content */
