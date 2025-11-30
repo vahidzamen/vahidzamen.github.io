@@ -9,7 +9,7 @@
   <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 
   <style>
-    /* Image size fix */
+    /* Optional: extra styling for this page */
     .diagram-img {
       max-width: 600px;
       width: 100%;
@@ -22,6 +22,11 @@
 
     figure {
       text-align: center;
+      margin: 2rem auto;
+    }
+
+    figcaption {
+      margin-top: .5rem;
     }
 
     figcaption a {
@@ -31,6 +36,7 @@
 </head>
 
 <body>
+  <!-- Shared Header -->
   <div data-include="components/header.html"></div>
 
   <main>
@@ -39,41 +45,39 @@
     <section class="card">
       <h3>Client &amp; Project Category</h3>
       <p>
-        <strong>Client Category:</strong> <em>Student group at UNCC</em><br />
-        <strong>Project Category:</strong>
-        <em>Group site that encourages participation &amp; communication</em>
+        <strong>Client Category:</strong> Student group at UNCC<br>
+        <strong>Project Category:</strong> Group site encouraging participation and communication
       </p>
     </section>
 
     <h3>1) Application Purpose</h3>
     <p>
-      The 49ers Car Culture Club (C3) site organizes events (meets, cruises, tech nights),
-      recruits members, and shares media. It improves visibility, centralizes announcements,
-      and offers light interactivity (gallery, FAQs, event highlights, and a read-only events list).
+      The 49ers Car Culture Club (C3) website will promote club activities, display event media,
+      highlight upcoming meets, and serve as an interest point for new members.
     </p>
 
     <h3>2) Intended Users</h3>
     <ul>
-      <li><strong>Prospective members:</strong> basics, how to join, upcoming events</li>
-      <li><strong>Active members:</strong> dates, locations, quick RSVP links</li>
-      <li><strong>Officers:</strong> publish schedules &amp; rules</li>
-      <li><strong>Partners/Sponsors:</strong> view past events &amp; contact</li>
+      <li>Prospective members</li>
+      <li>Active members</li>
+      <li>Club officers</li>
+      <li>Partner organizations and sponsors</li>
     </ul>
 
     <h3>3) Content Overview</h3>
     <ul>
-      <li><strong>About/mission</strong>, officer bios, safety guidelines</li>
-      <li><strong>Events</strong> list and highlights</li>
-      <li><strong>Gallery</strong> with accessible lightbox</li>
-      <li><strong>Join/Contact</strong> interest form + campus map</li>
-      <li><strong>Resources</strong> (optional)</li>
+      <li>About / Mission</li>
+      <li>Events</li>
+      <li>Gallery</li>
+      <li>Join / Contact Form</li>
+      <li>Resources (optional)</li>
     </ul>
 
     <h3>4) Client Information</h3>
     <p>
-      <strong>Name:</strong> [Private] (C3 President)<br />
-      <strong>Organization:</strong> 49ers Car Culture Club (C3)<br />
-      <strong>Email / Phone:</strong> [Private]
+      <strong>Client:</strong> C3 President (Name private)<br>
+      <strong>Organization:</strong> 49ers Car Culture Club<br>
+      <strong>Email/Phone:</strong> Private
     </p>
 
     <!-- WIREFRAME -->
@@ -83,13 +87,12 @@
     <figure>
       <img
         class="diagram-img"
-        src="images/wireframe-c3-home-optimized.png"
+        src="images/wireframe-c3-home.png"
         alt="Wireframe layout of the C3 home page showing header, hero, next event card, gallery preview, and footer."
       />
       <figcaption>
-        Wireframe — Home Page  
-        <br />
-        <a href="images/wireframe-c3-home-optimized.png" target="_blank">Open full size</a>
+        Wireframe — Home Page<br>
+        <a href="images/wireframe-c3-home.png" target="_blank">Open full size</a>
       </figcaption>
     </figure>
 
@@ -100,23 +103,22 @@
       <img
         class="diagram-img"
         src="images/sitemap-c3-optimized.png"
-        alt="Sitemap diagram showing Home, About, Events, Gallery, Join/Contact, Resources."
+        alt="Site map showing Home, About, Events, Gallery, Join/Contact, and Resources."
       />
       <figcaption>
-        Site Map  
-        <br />
+        Site Map<br>
         <a href="images/sitemap-c3-optimized.png" target="_blank">Open full size</a>
       </figcaption>
     </figure>
 
     <h3>7) Required Pages & Navigation</h3>
     <ul>
-      <li><strong>Home</strong> — overview, next event, CTA</li>
-      <li><strong>About</strong> — mission, officer bios</li>
-      <li><strong>Events</strong> — list of meets (read-only JSON)</li>
-      <li><strong>Gallery</strong> — image grid with lightbox</li>
-      <li><strong>Join/Contact</strong> — form + map</li>
-      <li><strong>Resources</strong> (optional)</li>
+      <li><strong>Home:</strong> Overview, next event, CTA</li>
+      <li><strong>About:</strong> Mission, officers, guidelines</li>
+      <li><strong>Events:</strong> Upcoming/past events (JSON)</li>
+      <li><strong>Gallery:</strong> Photo gallery with lightbox</li>
+      <li><strong>Join/Contact:</strong> Form + map</li>
+      <li><strong>Resources:</strong> Optional page</li>
     </ul>
 
     <h3>8) Page Design Details</h3>
@@ -124,55 +126,51 @@
     <details class="card">
       <summary><strong>Home</strong></summary>
       <ul>
-        <li>Hero, mission, next event, gallery preview</li>
-        <li>Quick “Join Now” button</li>
+        <li>Hero section</li>
+        <li>Next event card</li>
+        <li>Gallery preview</li>
+        <li>Join CTA button</li>
       </ul>
     </details>
 
     <details class="card">
       <summary><strong>About</strong></summary>
       <ul>
-        <li>Mission</li>
+        <li>Mission statement</li>
         <li>Officer bios</li>
-        <li>Safety guidelines</li>
+        <li>Safety and club guidelines</li>
       </ul>
     </details>
 
     <details class="card">
       <summary><strong>Events</strong></summary>
       <ul>
-        <li>Loads events from static JSON (read-only)</li>
+        <li>Loads from a static JSON file</li>
+        <li>No CRUD (read-only)</li>
       </ul>
     </details>
 
     <details class="card">
       <summary><strong>Gallery</strong></summary>
       <ul>
-        <li>Accessible grid with lightbox viewer</li>
+        <li>Responsive image grid</li>
+        <li>Lightbox interaction</li>
       </ul>
     </details>
 
     <details class="card">
       <summary><strong>Join & Contact</strong></summary>
       <ul>
-        <li>Email form</li>
-        <li>Campus map</li>
-        <li>Validation rules</li>
-      </ul>
-    </details>
-
-    <details class="card">
-      <summary><strong>Resources</strong></summary>
-      <ul>
-        <li>Policies & helpful links</li>
+        <li>Validated form</li>
+        <li>Google Map embed</li>
       </ul>
     </details>
 
     <h3>9) Planned Interactivity</h3>
     <ul>
-      <li>jQuery UI Accordion</li>
-      <li>Lightbox Gallery</li>
-      <li>Static JSON Events Loader</li>
+      <li>jQuery UI accordion (FAQ/safety)</li>
+      <li>Lightbox viewer</li>
+      <li>JSON event loader</li>
       <li>Form validation</li>
       <li>Google Map embed</li>
     </ul>
@@ -180,12 +178,14 @@
     <h3>10) Notes & Credits</h3>
     <ul>
       <li>Created by <strong>Vahid Zamen</strong></li>
-      <li>Draw.io used for diagrams</li>
-      <li>Updated: <time datetime="2025-11-02">Nov 2, 2025</time></li>
+      <li>Images exported from Draw.io</li>
+      <li>Updated November 2025</li>
     </ul>
   </main>
 
+  <!-- Shared Footer -->
   <div data-include="components/footer.html"></div>
+
   <script src="scripts/HTMLInclude.min.js"></script>
 </body>
 </html>
