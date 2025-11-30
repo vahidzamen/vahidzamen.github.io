@@ -282,6 +282,16 @@ footer a {
   border: 1px solid rgba(255,255,255,.15);
   box-sizing: border-box; /* Fixes warning */
 }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 10px;
+}
 
 /* Responsive */
 @media (min-width: 720px) {
