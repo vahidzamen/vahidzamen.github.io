@@ -272,6 +272,15 @@ footer a {
   color: var(--accent);
   text-decoration: none;
 }
+.diagram-img {
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5rem auto;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.15);
+}
 
 /* Responsive */
 @media (min-width: 720px) {
