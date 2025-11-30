@@ -280,6 +280,7 @@ footer a {
   margin: 1.5rem auto;
   border-radius: 10px;
   border: 1px solid rgba(255,255,255,.15);
+  box-sizing: border-box; /* Fixes warning */
 }
 
 /* Responsive */
