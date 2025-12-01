@@ -71,7 +71,25 @@
         </div>
       </section>
     </main>
-
+    <section class="card">
+        <h2>Random Car Photo</h2>
+        <p>Click the button to see a random photo from our gallery.</p>
+      
+        <img
+          id="random-photo-image"
+          src="when-sunrise.jpg"
+          alt="Early morning lineup before a campus cruise."
+        />
+      
+        <p id="random-photo-caption">
+          Early morning lineup before a campus cruise.
+        </p>
+      
+        <button type="button" class="button" id="random-photo-btn">
+          Show another photo
+        </button>
+      </section>
+      
     <footer id="site-footer">
       <p>&copy; <span id="year">2025</span> 49ers Car Culture Club (C3). Site by Vahid Zamen.</p>
     </footer>
@@ -80,5 +98,6 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+  <script src="c3.js"></script>
 </body>
 </html>

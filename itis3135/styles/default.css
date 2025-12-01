@@ -303,3 +303,43 @@ footer a {
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   }
 }
+/* Buttons (if not already defined) */
+.button {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  background: #10b981;
+  color: #022c22;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #22c55e;
+}
+
+/* Active filter button on events page */
+.filter-active {
+  background: #22c55e;
+}
+
+/* Form status messages */
+.form-status {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.form-status-success {
+  color: #bbf7d0;
+}
+
+.form-status-error {
+  color: #fecaca;
+}
+
+/* Optional small helper text */
+.small-text {
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
