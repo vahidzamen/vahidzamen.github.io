@@ -1,161 +1,347 @@
-/* Basic site styles - simpler version */
+/*
+  File: default.css
+  Site: 49ers Car Culture Club (C3)
+  Author: Vahid Zamen
+  Description:
+    Shared styles for the C3 client project. Provides a simple
+    dark theme layout with cards, navigation, gallery grid, and
+    basic form styling.
+*/
 
-/* Global reset */
+/* ========== Global Reset & Base Styles ========== */
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
-/* Colors & layout */
+/* Page background and text colors */
 body {
-  background: #020617;
-  color: #f9fafb;
+  background-color: #020617; /* near-black blue */
+  color: #e5e7eb; /* light gray text */
 }
 
-/* Keep content centered */
-header, main, footer {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 1.25rem 1rem;
-}
-
-/* Links */
-a {
-  color: #10b981;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* Headings */
-h1 {
-  margin: 0 0 0.25rem;
-  font-size: 2rem;
-}
-
-h2 {
-  margin: 0 0 0.5rem;
-  font-size: 1.5rem;
-}
-
-/* Tagline text */
-.tagline {
-  margin: 0;
-  color: #9ca3af;
-}
-
-/* NAVIGATION */
-.primary-nav,
-.secondary-nav {
+/* Container to keep footer at bottom if desired */
+#page-container {
+  min-height: 100vh;
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 0.75rem;
+  flex-direction: column;
 }
 
-.primary-nav a,
-.secondary-nav a {
-  padding: 0.35rem 0.75rem;
-  border-radius: 999px;
-  background: #111827;
-  border: 1px solid #1f2937;
+/* Main content should grow, footer stays at bottom */
+main {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 2rem;
+  flex: 1;
+}
+
+/* ========== Header & Navigation ========== */
+
+#site-header {
+  border-bottom: 1px solid #111827;
+  background: radial-gradient(circle at top left, #1d4ed8 0, #020617 55%);
+  padding: 1.5rem 1rem 1.75rem;
+  text-align: center;
+}
+
+.site-title {
+  margin: 0 0 0.25rem;
+  font-size: 1.9rem;
+  font-weight: 700;
   color: #f9fafb;
+}
+
+.tagline {
+  margin: 0 0 1.25rem;
+  color: #cbd5f5;
   font-size: 0.95rem;
 }
 
-.primary-nav a:hover,
-.secondary-nav a:hover {
-  background: #10b981;
-  color: #022c22;
+/* Navigation bar */
+.primary-nav {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
-/* Generic card box */
-.card {
-  background: #111827;
-  border-radius: 12px;
-  border: 1px solid #1f2937;
-  padding: 1rem 1.1rem;
-  margin-bottom: 1rem;
-}
-
-/* Main intro text */
-.lead {
-  color: #9ca3af;
-  max-width: 60ch;
-}
-
-/* Button (for your CTA) */
-.btn {
-  display: inline-block;
-  margin-top: 0.75rem;
-  padding: 0.6rem 1.1rem;
-  border-radius: 999px;
-  background: #10b981;
-  color: #022c22;
+/* Individual nav links */
+.primary-nav a {
   text-decoration: none;
+  font-size: 0.95rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid #1f2937;
+  background-color: rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+  transition: background-color 0.18s ease, color 0.18s ease, transform 0.08s ease;
+}
+
+/* Hover state */
+.primary-nav a:hover {
+  background-color: #0ea5e9;
+  color: #020617;
+  transform: translateY(-1px);
+}
+
+/* Active / current-page link */
+.primary-nav a[aria-current="page"] {
+  background-color: #10b981;
+  color: #022c22;
+  border-color: #22c55e;
   font-weight: 600;
 }
 
-.btn:hover {
-  filter: brightness(1.05);
+/* ========== Card Layouts & Typography ========== */
+
+h2 {
+  font-size: 1.5rem;
+  margin: 0 0 0.75rem;
+  color: #f9fafb;
 }
 
-/* Image used for diagrams (wireframe & sitemap) */
-.diagram-img {
-  max-width: 600px;
+h3 {
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem;
+  color: #e5e7eb;
+}
+
+p {
+  margin: 0 0 0.75rem;
+  line-height: 1.6;
+}
+
+/* Reusable card box */
+.card {
+  background-color: #020617;
+  border-radius: 12px;
+  border: 1px solid #1f2937;
+  padding: 1.25rem 1.2rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.45);
+}
+
+/* Split card layout (text + image) */
+.card-split {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.card-text {
+  min-width: 0;
+}
+
+/* Card image wrapper */
+.card-image {
+  margin: 0;
+}
+
+.card-image img {
   width: 100%;
-  height: auto;
   display: block;
-  margin: 1.5rem auto;
   border-radius: 10px;
   border: 1px solid #1f2937;
 }
 
-/* Gallery grid */
+/* Simple list style for leadership/etc. */
+.simple-list {
+  list-style-type: disc;
+  padding-left: 1.25rem;
+  margin: 0 0 0.75rem;
+}
+
+/* ========== Buttons & Links ========== */
+
+a {
+  color: #38bdf8;
+}
+
+/* Generic button style */
+.button,
+button {
+  display: inline-block;
+  padding: 0.6rem 1.1rem;
+  border-radius: 999px;
+  border: none;
+  background-color: #38bdf8;
+  color: #020617;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.08s ease;
+}
+
+.button:hover,
+button:hover {
+  background-color: #0ea5e9;
+  transform: translateY(-1px);
+}
+
+/* ========== Info Grid (Home) ========== */
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1rem;
+}
+
+/* Each info item is just a card that gets reused, but we can tweak it */
+.info-item {
+  padding: 1rem;
+}
+
+/* ========== Events Layout ========== */
+
+.event-card {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem 0;
+  border-top: 1px solid #111827;
+}
+
+/* First event card in a list should not have top border */
+.event-card:first-of-type {
+  border-top: none;
+}
+
+.event-text p {
+  margin-bottom: 0.5rem;
+}
+
+.event-image {
+  margin: 0;
+}
+
+.event-image img {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #1f2937;
+}
+
+/* ========== Gallery Grid ========== */
+
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1rem;
+  margin-top: 1rem;
+}
+
+.gallery-grid figure {
+  margin: 0;
+  background-color: #020617;
+  border-radius: 10px;
+  border: 1px solid #111827;
+  overflow: hidden;
 }
 
 .gallery-grid img {
   width: 100%;
-  border-radius: 10px;
+  display: block;
 }
 
-/* Simple form styling (Join page) */
+.gallery-grid figcaption {
+  padding: 0.6rem 0.75rem 0.75rem;
+  font-size: 0.9rem;
+  color: #d1d5db;
+}
+
+/* ========== Forms (Join Page) ========== */
+
 form {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.65rem;
 }
 
-form input,
-form textarea,
-form select {
-  padding: 0.45rem 0.6rem;
-  border-radius: 8px;
+/* Group for checkboxes (fieldset/legend) */
+.form-group,
+fieldset.form-group {
   border: 1px solid #1f2937;
-  background: #020617;
-  color: #f9fafb;
+  border-radius: 8px;
+  padding: 0.75rem 0.9rem;
+  margin: 0.35rem 0 0.65rem;
 }
 
-/* Footer */
-footer {
-  border-top: 1px solid #1f2937;
-  margin-top: 1.5rem;
-  padding-bottom: 2rem;
+fieldset.form-group legend {
+  padding: 0 0.25rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+/* Base styles for form controls */
+label {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  margin-top: 0.2rem;
+  padding: 0.55rem 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #374151;
+  background-color: #020617;
+  color: #e5e7eb;
+  font-size: 0.95rem;
+}
+
+/* Checkbox label alignment */
+fieldset.form-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.3rem;
+  font-weight: 400;
+}
+
+/* ========== Footer ========== */
+
+#site-footer {
+  border-top: 1px solid #111827;
+  padding: 1rem;
+  text-align: center;
   font-size: 0.9rem;
   color: #9ca3af;
-  text-align: center;
+  background: #020617;
+}
+
+.footer-links a {
+  font-size: 0.85rem;
+}
+
+/* ========== Responsive Adjustments ========== */
+
+@media (max-width: 768px) {
+  /* Stack split cards & event cards vertically on narrow screens */
+  .card-split,
+  .event-card {
+    grid-template-columns: 1fr;
+  }
+
+  main {
+    padding: 1.25rem 0.75rem 2rem;
+  }
+
+  .site-title {
+    font-size: 1.6rem;
+  }
 }

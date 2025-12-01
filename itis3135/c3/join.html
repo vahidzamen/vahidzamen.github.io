@@ -1,46 +1,110 @@
 <!DOCTYPE html>
+<!--
+  File: join.html
+  Site: 49ers Car Culture Club (C3)
+  Author: Vahid Zamen
+  Description: Join page with membership interest form.
+-->
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>C3 Car Club | Join</title>
-  <link rel="stylesheet" href="../styles/default.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>49ers Car Culture Club (C3) | Join</title>
+
+  <link rel="stylesheet" href="default.css" />
+  <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <header>
-    <h1>49ers Car Culture Club (C3)</h1>
-    <nav class="primary-nav">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="events.html">Events</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="join.html">Join</a>
-    </nav>
-  </header>
+  <div id="page-container">
+    <header id="site-header">
+      <h1 class="site-title">49ers Car Culture Club (C3)</h1>
+      <p class="tagline">Ready to join the crew? Start here.</p>
 
-  <main>
-    <h2>Join the Club</h2>
-    <p>Fill out the form below if you want to join the 49ers Car Culture Club.</p>
+      <nav class="primary-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="events.html">Events</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="join.html" aria-current="page">Join</a>
+      </nav>
+    </header>
 
-    <form class="card" action="#" method="post">
-      <label>Name:</label>
-      <input type="text" required>
+    <main id="join-main">
+      <!-- Intro text -->
+      <section class="card">
+        <h2>Join the 49ers Car Culture Club</h2>
+        <p>
+          Fill out the form below to let us know you're interested in joining C3. We’ll follow up
+          with meeting times, event announcements, and ways to get involved.
+        </p>
+        <p><strong>Note:</strong> This is a demo form for a class project and does not submit to a live server.</p>
+      </section>
 
-      <label>Email:</label>
-      <input type="email" required>
+      <!-- Membership form -->
+      <section class="card">
+        <h2>Interest Form</h2>
 
-      <label>Your Car (optional):</label>
-      <input type="text">
+        <!-- The form action is left blank on purpose for this assignment -->
+        <form id="join-form" action="#" method="post">
+          <!-- Name -->
+          <label for="name">Full Name:</label>
+          <input id="name" name="name" type="text" required />
 
-      <label>Message:</label>
-      <textarea rows="4" required></textarea>
+          <!-- Email -->
+          <label for="email">UNC Charlotte Email:</label>
+          <input id="email" name="email" type="email" required />
 
-      <button type="submit">Submit</button>
-    </form>
-  </main>
+          <!-- Student status -->
+          <label for="status">Status:</label>
+          <select id="status" name="status" required>
+            <option value="">Select one…</option>
+            <option value="undergrad">Undergraduate Student</option>
+            <option value="grad">Graduate Student</option>
+            <option value="alumni">Alumni</option>
+            <option value="other">Other / Friend of C3</option>
+          </select>
 
-  <footer>
-    <p>&copy; 2025 49ers Car Culture Club (C3). Site by Vahid Zamen.</p>
-  </footer>
+          <!-- Interests checkboxes -->
+          <fieldset class="form-group">
+            <legend>What are you most interested in?</legend>
+            <label>
+              <input type="checkbox" name="interest" value="meets" />
+              Car meets &amp; cruises
+            </label>
+            <label>
+              <input type="checkbox" name="interest" value="wrenching" />
+              Wrenching / learning maintenance
+            </label>
+            <label>
+              <input type="checkbox" name="interest" value="photography" />
+              Car photography &amp; media
+            </label>
+            <label>
+              <input type="checkbox" name="interest" value="motorsports" />
+              Motorsports &amp; track days
+            </label>
+          </fieldset>
+
+          <!-- Optional car field -->
+          <label for="car">Your Car (optional):</label>
+          <input id="car" name="car" type="text" placeholder="Year, Make, Model" />
+
+          <!-- Message -->
+          <label for="message">Tell us a bit about your car interests:</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+
+          <button type="submit" class="button">Submit Interest</button>
+        </form>
+      </section>
+    </main>
+
+    <footer id="site-footer">
+      <p>&copy; <span id="year">2025</span> 49ers Car Culture Club (C3). Site by Vahid Zamen.</p>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

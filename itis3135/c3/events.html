@@ -1,52 +1,106 @@
 <!DOCTYPE html>
+<!--
+  File: events.html
+  Site: 49ers Car Culture Club (C3)
+  Author: Vahid Zamen
+  Description: Events page showing upcoming and recent C3 activities.
+-->
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>C3 Car Club | Events</title>
-  <link rel="stylesheet" href="../styles/default.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>49ers Car Culture Club (C3) | Events</title>
+
+  <link rel="stylesheet" href="default.css" />
+  <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <header>
-    <h1>49ers Car Culture Club (C3)</h1>
-    <nav class="primary-nav">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="events.html">Events</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="join.html">Join</a>
-    </nav>
-  </header>
+  <div id="page-container">
+    <header id="site-header">
+      <h1 class="site-title">49ers Car Culture Club (C3)</h1>
+      <p class="tagline">Stay up to date with meets, cruises, and workshops.</p>
 
-  <main>
-    <h2>Upcoming Events</h2>
+      <nav class="primary-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="events.html" aria-current="page">Events</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="join.html">Join</a>
+      </nav>
+    </header>
 
-    <section class="card">
-      <h3>Fall Campus Meet</h3>
-      <p><strong>Date:</strong> October 12</p>
-      <p><strong>Location:</strong> Union Deck Top Level</p>
-      <p>A relaxed meet-up to kick off the fall semester. All cars welcome.</p>
-      <img src="../images/what-cars.JPG" alt="Cars at meet" class="diagram-img">
-    </section>
+    <main id="events-main">
+      <!-- Upcoming events -->
+      <section class="card">
+        <h2>Upcoming Events</h2>
 
-    <section class="card">
-      <h3>Charity Cruise</h3>
-      <p><strong>Date:</strong> November 4</p>
-      <p><strong>Route:</strong> Campus → Lake Norman → Uptown</p>
-      <p>Join us for a scenic cruise to raise money for local charities.</p>
-    </section>
+        <!-- Event card 1 -->
+        <article class="event-card">
+          <div class="event-text">
+            <h3>Sunset Cruise &amp; Photoshoot</h3>
+            <p>
+              <time datetime="2025-11-16T17:30">Saturday, November 16, 2025 — 5:30 PM</time><br />
+              <strong>Location:</strong> Student Union Parking Deck, Level 4
+            </p>
+            <p>
+              Meet at the deck, grab some photos at golden hour, and then join a relaxed cruise
+              route around campus and nearby scenic spots. All skill levels welcome.
+            </p>
+          </div>
+          <figure class="event-image">
+            <img src="where-spot.jpg" alt="Cars lined up at a sunset photo spot" />
+          </figure>
+        </article>
 
-    <section class="card">
-      <h3>Garage Day Workshop</h3>
-      <p><strong>Date:</strong> December 2</p>
-      <p><strong>Location:</strong> EPIC Parking Garage</p>
-      <p>Learn hands-on car care and basic maintenance with experienced members.</p>
-      <img src="../images/how-garage.jpg" alt="Garage Workshop" class="diagram-img">
-    </section>
-  </main>
+        <!-- Event card 2 -->
+        <article class="event-card">
+          <div class="event-text">
+            <h3>Garage Day: Wrench &amp; Learn</h3>
+            <p>
+              <time datetime="2025-12-02T13:00">Tuesday, December 2, 2025 — 1:00 PM</time><br />
+              <strong>Location:</strong> Off-campus garage (address shared with members)
+            </p>
+            <p>
+              Learn the basics of maintenance (oil changes, tire rotation, safety checks) and get
+              hands-on help from experienced members. Perfect if you’ve always wanted to learn but
+              didn’t know where to start.
+            </p>
+          </div>
+          <figure class="event-image">
+            <img src="how-garage.jpg" alt="People working on a car in a garage" />
+          </figure>
+        </article>
+      </section>
 
-  <footer>
-    <p>&copy; 2025 49ers Car Culture Club (C3). Site by Vahid Zamen.</p>
-  </footer>
+      <!-- Recent events -->
+      <section class="card">
+        <h2>Recent Highlights</h2>
+        <article class="event-card">
+          <div class="event-text">
+            <h3>Cars &amp; Coffee: Campus Edition</h3>
+            <p>
+              <time datetime="2025-10-05T09:00">Sunday, October 5, 2025</time><br />
+              <strong>Location:</strong> CRI Deck
+            </p>
+            <p>
+              More than 30 cars showed up—including classic imports, muscle cars, and a few EVs.
+              We hosted a casual detail demo and a photo walk for members interested in automotive photography.
+            </p>
+          </div>
+          <figure class="event-image">
+            <img src="what-cars.JPG" alt="Row of different cars at a C3 meetup" />
+          </figure>
+        </article>
+      </section>
+    </main>
+
+    <footer id="site-footer">
+      <p>&copy; <span id="year">2025</span> 49ers Car Culture Club (C3). Site by Vahid Zamen.</p>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

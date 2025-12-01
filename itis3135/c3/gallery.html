@@ -1,37 +1,84 @@
 <!DOCTYPE html>
+<!--
+  File: gallery.html
+  Site: 49ers Car Culture Club (C3)
+  Author: Vahid Zamen
+  Description: Photo gallery page showcasing C3 events and members' cars.
+-->
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>C3 Car Club | Gallery</title>
-  <link rel="stylesheet" href="../styles/default.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>49ers Car Culture Club (C3) | Gallery</title>
+
+  <link rel="stylesheet" href="default.css" />
+  <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <header>
-    <h1>49ers Car Culture Club (C3)</h1>
-    <nav class="primary-nav">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="events.html">Events</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="join.html">Join</a>
-    </nav>
-  </header>
+  <div id="page-container">
+    <header id="site-header">
+      <h1 class="site-title">49ers Car Culture Club (C3)</h1>
+      <p class="tagline">Highlights from recent meets and cruises.</p>
 
-  <main>
-    <h2>Photo Gallery</h2>
-    <p>A collection of photos from past events and club moments.</p>
+      <nav class="primary-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="events.html">Events</a>
+        <a href="gallery.html" aria-current="page">Gallery</a>
+        <a href="join.html">Join</a>
+      </nav>
+    </header>
 
-    <section class="gallery-grid">
-      <img src="../images/how-garage.jpg" alt="Car meet" />
-      <img src="../images/who-community.jpg" alt="Community" />
-      <img src="../images/why-enjoy.jpg" alt="Enjoying the cars" />
-      <img src="../images/when-sunrise.jpg" alt="Sunrise cruise" />
-    </section>
-  </main>
+    <main id="gallery-main">
+      <section class="card">
+        <h2>Photo Gallery</h2>
+        <p>
+          A glimpse at some of our favorite moments. Want your car featured here? Join the club
+          and come out to a meet!
+        </p>
 
-  <footer>
-    <p>&copy; 2025 49ers Car Culture Club (C3). Site by Vahid Zamen.</p>
-  </footer>
+        <!-- Responsive image grid -->
+        <div class="gallery-grid">
+          <figure>
+            <img src="when-sunrise.jpg" alt="Cars in a row at sunrise" />
+            <figcaption>Early morning lineup before a campus cruise.</figcaption>
+          </figure>
+
+          <figure>
+            <img src="where-spot.jpg" alt="Cars parked at a scenic overlook" />
+            <figcaption>Our go-to photo spot just off campus.</figcaption>
+          </figure>
+
+          <figure>
+            <img src="who-community.jpg" alt="Group of students standing around a car talking" />
+            <figcaption>C3 members catching up after a meet.</figcaption>
+          </figure>
+
+          <figure>
+            <img src="how-garage.jpg" alt="Members working in a garage" />
+            <figcaption>Learning basic maintenance at Garage Day.</figcaption>
+          </figure>
+
+          <figure>
+            <img src="why-enjoy.jpg" alt="Close up of a car interior with driver smiling" />
+            <figcaption>Because driving should be fun.</figcaption>
+          </figure>
+
+          <figure>
+            <img src="IMG_5973.JPG" alt="Close-up shot of a modified wheel and tire" />
+            <figcaption>Detail from one of our members’ builds.</figcaption>
+          </figure>
+        </div>
+      </section>
+    </main>
+
+    <footer id="site-footer">
+      <p>&copy; <span id="year">2025</span> 49ers Car Culture Club (C3). Site by Vahid Zamen.</p>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
