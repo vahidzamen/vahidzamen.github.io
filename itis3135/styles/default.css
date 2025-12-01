@@ -1,5 +1,4 @@
-/* styles/site.css */
-
+/* styles/default.css */
 /* ---- Base tokens ---- */
 :root {
   --bg: #0b0e14;
@@ -21,12 +20,10 @@
 *::after {
   box-sizing: border-box;
 }
-
 html,
 body {
   height: 100%;
 }
-
 body {
   margin: 0;
   background: radial-gradient(circle at top left, #111827, #020617 55%, #000);
@@ -43,7 +40,6 @@ footer {
   margin: 0 auto;
   padding: 1.25rem 1rem;
 }
-
 header {
   padding-top: 1.75rem;
 }
@@ -53,12 +49,10 @@ a {
   color: var(--accent);
   text-decoration: none;
 }
-
 a:hover,
 a:focus {
   text-decoration: underline;
 }
-
 a:focus-visible {
   outline: 2px dashed var(--accent);
   outline-offset: 3px;
@@ -71,7 +65,6 @@ a:focus-visible {
   gap: 0.85rem;
   margin-bottom: 0.75rem;
 }
-
 .logo-mark {
   width: 52px;
   height: 52px;
@@ -84,7 +77,6 @@ a:focus-visible {
   font-weight: 800;
   letter-spacing: 1px;
 }
-
 h1 {
   font-size: clamp(1.5rem, 2vw + 1rem, 2.25rem);
   margin: 0;
@@ -95,18 +87,15 @@ h2 {
   font-size: clamp(1.35rem, 2vw + 0.75rem, 1.9rem);
   margin: 0 0 0.5rem;
 }
-
 h3 {
   margin-top: 0;
 }
-
 .tagline {
   margin: 0.1rem 0 0;
   color: var(--muted);
 }
 
 /* ───────────── NAVIGATION ───────────── */
-
 .primary-nav,
 .secondary-nav,
 .footer-nav {
@@ -115,13 +104,11 @@ h3 {
   align-items: center;
   gap: 0.5rem 1rem;
 }
-
 .primary-nav {
   margin-top: 0.5rem;
   border-top: 1px solid var(--border);
   padding-top: 0.5rem;
 }
-
 .primary-nav a,
 .secondary-nav a {
   color: var(--text);
@@ -131,7 +118,6 @@ h3 {
   border-radius: 999px;
   font-size: 0.95rem;
 }
-
 .primary-nav a:hover,
 .primary-nav a:focus,
 .secondary-nav a:hover,
@@ -139,13 +125,11 @@ h3 {
   background: var(--accent-soft);
   color: var(--text);
 }
-
 .secondary-nav {
   margin-top: 0.25rem;
   font-size: 0.95rem;
   opacity: 0.9;
 }
-
 .footer-nav a {
   padding: 0.25rem 0.5rem;
   border-radius: 999px;
@@ -166,11 +150,9 @@ h3 {
   align-items: center;
   margin-bottom: 1.75rem;
 }
-
 .hero-text p {
   color: var(--muted);
 }
-
 .btn {
   display: inline-block;
   margin-top: 0.75rem;
@@ -183,13 +165,11 @@ h3 {
   border: none;
   cursor: pointer;
 }
-
 .btn:hover,
 .btn:focus {
   filter: brightness(1.05);
   transform: translateY(-1px);
 }
-
 .hero-image img {
   max-width: 100%;
   border-radius: var(--radius);
@@ -203,7 +183,6 @@ h3 {
   gap: 1rem;
   margin-top: 1.25rem;
 }
-
 .card {
   background: var(--panel);
   border-radius: var(--radius);
@@ -211,17 +190,20 @@ h3 {
   padding: 1rem 1.1rem;
   box-shadow: var(--shadow);
 }
-
 .card ul {
   padding-left: 1.1rem;
   margin: 0.4rem 0 0;
 }
 
 /* Gallery */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
 .gallery-grid figure {
   margin: 0;
 }
-
 .gallery-grid img {
   width: 100%;
   display: block;
@@ -235,11 +217,9 @@ h3 {
   flex-direction: column;
   gap: 0.6rem;
 }
-
 .contact-form label {
   font-weight: 600;
 }
-
 .contact-form input,
 .contact-form select,
 .contact-form textarea {
@@ -250,7 +230,6 @@ h3 {
   padding: 0.45rem 0.6rem;
   font: inherit;
 }
-
 .contact-form input:focus,
 .contact-form select:focus,
 .contact-form textarea:focus {
@@ -267,11 +246,12 @@ footer {
   color: var(--muted);
   text-align: center;
 }
-
 footer a {
   color: var(--accent);
   text-decoration: none;
 }
+
+/* Diagram image helper */
 .diagram-img {
   max-width: 600px;
   width: 100%;
@@ -279,18 +259,8 @@ footer a {
   display: block;
   margin: 1.5rem auto;
   border-radius: 10px;
-  border: 1px solid rgba(255,255,255,.15);
-  box-sizing: border-box; /* Fixes warning */
-}
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
-}
-
-.gallery-grid img {
-  width: 100%;
-  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-sizing: border-box;
 }
 
 /* Responsive */
@@ -298,12 +268,12 @@ footer a {
   .hero {
     grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
   }
-
   .grid {
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   }
 }
-/* Buttons (if not already defined) */
+
+/* Generic button */
 .button {
   display: inline-block;
   padding: 8px 14px;
@@ -314,7 +284,6 @@ footer a {
   font-weight: 600;
   cursor: pointer;
 }
-
 .button:hover {
   background: #22c55e;
 }
@@ -329,11 +298,9 @@ footer a {
   margin-top: 0.5rem;
   font-size: 0.9rem;
 }
-
 .form-status-success {
   color: #bbf7d0;
 }
-
 .form-status-error {
   color: #fecaca;
 }
