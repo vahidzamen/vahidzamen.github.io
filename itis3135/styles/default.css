@@ -183,6 +183,7 @@ h3 {
   gap: 1rem;
   margin-top: 1.25rem;
 }
+
 .card {
   background: var(--panel);
   border-radius: var(--radius);
@@ -190,6 +191,7 @@ h3 {
   padding: 1rem 1.1rem;
   box-shadow: var(--shadow);
 }
+
 .card ul {
   padding-left: 1.1rem;
   margin: 0.4rem 0 0;
