@@ -310,3 +310,62 @@ footer a {
   font-size: 0.85rem;
   color: #9ca3af;
 }
+/* Simple two-column grid for the WHO/WHAT/WHERE/etc section */
+.grid-two {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+/* Hero layout */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.hero-image img {
+  border-radius: var(--radius);
+}
+
+/* Mini cards inside the What is C3 section */
+.mini-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 0.75rem 0.85rem;
+}
+
+/* CTA buttons */
+.button {
+  display: inline-block;
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.button:hover {
+  opacity: 0.95;
+}
+
+.button-outline {
+  background: transparent;
+  color: var(--accent);
+}
+
+/* Simple gallery preview grid */
+.gallery-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1rem;
+}
+
+.gallery-preview figure {
+  margin: 0;
+}
