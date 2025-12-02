@@ -201,16 +201,17 @@ h3 {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
 }
+
 .gallery-grid figure {
   margin: 0;
 }
+
 .gallery-grid img {
   width: 100%;
   display: block;
   border-radius: 10px;
   margin-bottom: 0.5rem;
 }
-
 /* Contact form */
 .contact-form {
   display: flex;
