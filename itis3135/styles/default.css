@@ -143,13 +143,6 @@ h3 {
   margin-bottom: 1.25rem;
 }
 
-/* Hero section */
-.hero {
-  display: grid;
-  gap: 1.5rem;
-  align-items: center;
-  margin-bottom: 1.75rem;
-}
 .hero-text p {
   color: var(--muted);
 }
@@ -276,17 +269,6 @@ footer a {
   }
 }
 
-/* Generic button */
-.button {
-  display: inline-block;
-  padding: 8px 14px;
-  border-radius: 6px;
-  border: none;
-  background: #10b981;
-  color: #022c22;
-  font-weight: 600;
-  cursor: pointer;
-}
 .button:hover {
   background: #22c55e;
 }
