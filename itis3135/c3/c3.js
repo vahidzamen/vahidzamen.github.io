@@ -21,41 +21,34 @@ function updateYear() {
   }
 }
 
-/* ---------------- JOIN FORM INTERACTION ---------------- */
+/* ---------------- JOIN FORM ---------------- */
 
 function setupJoinForm() {
   var form = document.getElementById("join-form");
-  if (!form) {
-    return; // Not on the join page
-  }
+  if (!form) return; // Not on join page
 
-  var nameInput = document.getElementById("name");
-  var emailInput = document.getElementById("email");
-  var messageInput = document.getElementById("message");
-  var counterSpan = document.getElementById("message-counter");
+  var messageBox = document.getElementById("message");
+  var countBox = document.getElementById("char-count");
   var statusBox = document.getElementById("form-status");
 
-  // Live character counter for the textarea
-  if (messageInput && counterSpan) {
-    counterSpan.textContent = "0";
-
-    messageInput.addEventListener("input", function () {
-      var count = messageInput.value.length;
-      counterSpan.textContent = String(count);
+  // Update character count as user types
+  if (messageBox && countBox) {
+    messageBox.addEventListener("input", function () {
+      countBox.textContent = messageBox.value.length;
     });
   }
 
-  // Handle form submit
+  // Handle submit
   form.addEventListener("submit", function (event) {
-    event.preventDefault(); // stop actual submit (demo only)
+    event.preventDefault();
 
-    var name = nameInput.value.trim();
-    var email = emailInput.value.trim();
+    var name = form.elements["name"].value.trim();
+    var email = form.elements["email"].value.trim();
+    var year = form.elements["year"].value.trim();
 
-    // Basic check for required fields
-    if (name === "" || email === "") {
+    if (!name || !email || !year) {
       if (statusBox) {
-        statusBox.textContent = "Please enter both your name and email.";
+        statusBox.textContent = "Please fill out all required fields.";
         statusBox.className = "form-status form-status-error";
       }
       return;
@@ -70,50 +63,42 @@ function setupJoinForm() {
 
     // Clear the form
     form.reset();
-    if (counterSpan) {
-      counterSpan.textContent = "0";
-    }
+    if (countBox) countBox.textContent = "0";
   });
 }
 
-/* ---------------- EVENTS FILTER BUTTONS ---------------- */
+/* ---------------- EVENT FILTERS ---------------- */
 
 function setupEventFilters() {
-  var filterContainer = document.getElementById("event-filter");
-  if (!filterContainer) {
-    return; // Not on the events page
-  }
+  var buttons = document.querySelectorAll(".filter-btn");
+  var cards = document.querySelectorAll(".event-card");
 
-  var buttons = filterContainer.querySelectorAll("button[data-filter]");
-  var cards = document.querySelectorAll("[data-event-type]");
+  if (buttons.length === 0 || cards.length === 0) return; // Not on events page
 
-  if (buttons.length === 0 || cards.length === 0) {
-    return;
-  }
+  buttons.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      // Remove active class from all buttons
+      buttons.forEach(function (b) {
+        b.classList.remove("filter-active");
+      });
 
-  // Attach click handler to each filter button
-  for (var i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener("click", function () {
-      var filter = this.getAttribute("data-filter");
+      // Add active to clicked button
+      btn.classList.add("filter-active");
 
-      // Highlight active button
-      for (var j = 0; j < buttons.length; j++) {
-        buttons[j].classList.remove("filter-active");
-      }
-      this.classList.add("filter-active");
+      var filter = btn.getAttribute("data-filter");
 
       // Show/hide event cards
-      for (var k = 0; k < cards.length; k++) {
-        var type = cards[k].getAttribute("data-event-type");
+      cards.forEach(function (card) {
+        var type = card.getAttribute("data-type");
 
         if (filter === "all" || filter === type) {
-          cards[k].style.display = "";
+          card.style.display = "block";
         } else {
-          cards[k].style.display = "none";
+          card.style.display = "none";
         }
-      }
+      });
     });
-  }
+  });
 }
 
 /* ---------------- GALLERY RANDOM PHOTO ---------------- */
@@ -127,32 +112,14 @@ function setupRandomGalleryPhoto() {
     return; // Not on gallery page
   }
 
-  // Only using approved images from the images folder (one level up)
+  // Approved images (images folder is one level above c3/)
   var photos = [
-    {
-      src: "../images/when-sunrise.jpg",
-      text: "Early morning lineup before a campus cruise."
-    },
-    {
-      src: "../images/where-spot.jpg",
-      text: "Our go-to rooftop photo spot."
-    },
-    {
-      src: "../images/who-community.jpg",
-      text: "C3 members hanging out after a campus meet."
-    },
-    {
-      src: "../images/how-garage.jpg",
-      text: "Learning basic maintenance at Garage Day."
-    },
-    {
-      src: "../images/why-enjoy.jpg",
-      text: "Because driving should be fun."
-    },
-    {
-      src: "../images/what-cars.JPG",
-      text: "Lineup of cars at a campus meet."
-    }
+    { src: "../images/what-cars.JPG", text: "Meet lineup on campus." },
+    { src: "../images/who-community.jpg", text: "Club community at a meet." },
+    { src: "../images/where-spot.jpg", text: "Our usual campus meet spot." },
+    { src: "../images/when-sunrise.jpg", text: "A sunrise cruise moment." },
+    { src: "../images/why-enjoy.jpg", text: "Enjoying car culture together." },
+    { src: "../images/how-garage.jpg", text: "Garage time and car work." }
   ];
 
   button.addEventListener("click", function () {
