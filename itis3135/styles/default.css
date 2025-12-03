@@ -1,4 +1,7 @@
-/* styles/default.css */
+/* styles/default.css
+   Global design for 49ers Car Culture Club (C3)
+*/
+
 /* ---- Base tokens ---- */
 :root {
   --bg: #0b0e14;
@@ -39,7 +42,7 @@ body {
   line-height: 1.6;
 }
 
-/* -------- Page container (for pages that use #page-container) -------- */
+/* -------- Page container -------- */
 #page-container {
   min-height: 100vh;
   max-width: var(--max-width);
@@ -47,15 +50,6 @@ body {
   padding: 1.5rem 1rem 2.5rem;
   display: flex;
   flex-direction: column;
-}
-
-/* Fallback for pages without #page-container (like about.html/events.html) */
-body > header,
-body > main,
-body > footer {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 1rem;
 }
 
 /* -------- Global link style -------- */
@@ -74,9 +68,8 @@ a:focus-visible {
   outline-offset: 3px;
 }
 
-/* -------- Branding / header band (basketball-style) -------- */
-#site-header,
-body > header {
+/* -------- Branding / header band -------- */
+#site-header {
   margin-top: 1.5rem;
   margin-bottom: 2rem;
   padding: 1.5rem 2rem 1.4rem;
@@ -86,30 +79,8 @@ body > header {
   text-align: center;
 }
 
-.brand {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.85rem;
-  margin-bottom: 0.75rem;
-}
-
-.logo-mark {
-  width: 52px;
-  height: 52px;
-  border-radius: 16px;
-  background: radial-gradient(circle at 30% 20%, #a7f3d0, #10b981 40%, #064e3b);
-  box-shadow: var(--shadow);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  letter-spacing: 1px;
-}
-
-.site-title,
-h1 {
-  font-size: clamp(1.5rem, 2vw + 1rem, 2.25rem);
+.site-title {
+  font-size: clamp(1.7rem, 2vw + 1rem, 2.35rem);
   margin: 0;
 }
 
@@ -129,24 +100,18 @@ h3 {
 }
 
 /* ---------------- NAVIGATION ---------------- */
-.primary-nav,
-.secondary-nav,
-.footer-nav {
+.primary-nav {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 0.75rem 1.25rem;
   justify-content: center;
-}
-
-.primary-nav {
   margin-top: 1rem;
   border-top: 1px solid var(--border);
   padding-top: 0.8rem;
 }
 
-.primary-nav a,
-.secondary-nav a {
+.primary-nav a {
   color: var(--text);
   text-decoration: none;
   padding: 0.3rem 0.9rem;
@@ -160,24 +125,14 @@ h3 {
 }
 
 .primary-nav a:hover,
-.primary-nav a:focus,
-.secondary-nav a:hover,
-.secondary-nav a:focus {
+.primary-nav a:focus {
   background: var(--accent-soft);
   color: var(--text);
   transform: translateY(-1px);
 }
 
-.secondary-nav {
-  margin-top: 0.25rem;
-  font-size: 0.95rem;
-  opacity: 0.9;
-}
-
-.footer-nav a {
-  padding: 0.25rem 0.5rem;
-  border-radius: 999px;
-  border: 1px solid var(--border);
+.primary-nav a[aria-current="page"] {
+  background: var(--accent-soft);
 }
 
 /* -------- Main content layout -------- */
@@ -241,14 +196,14 @@ main {
   border: 1px solid var(--border);
 }
 
-/* -------- Cards & grids (centered like demo) -------- */
+/* -------- Cards & grids -------- */
 .grid {
   display: grid;
   gap: 1rem;
   margin-top: 1.25rem;
 }
 
-/* Main card blocks (like teal hero + content sections) */
+/* Main card blocks */
 .card {
   background: var(--panel);
   border-radius: var(--radius);
@@ -271,7 +226,7 @@ main {
   gap: 1rem;
 }
 
-/* Mini cards inside “What is C3” style sections */
+/* Mini cards */
 .mini-card {
   background: var(--card);
   border: 1px solid var(--line);
@@ -287,7 +242,7 @@ main {
   align-items: center;
 }
 
-/* -------- Gallery cards (basketball-style row) -------- */
+/* -------- Gallery cards -------- */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -316,7 +271,7 @@ main {
   color: var(--muted);
 }
 
-/* Simple gallery preview grid (used on home page “Scenes from C3”) */
+/* Gallery preview on home page */
 .gallery-preview {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
@@ -344,7 +299,7 @@ main {
   font-weight: 600;
 }
 
-/* Shared input/select/textarea styles for BOTH contact + join forms */
+/* Shared input/select/textarea styles */
 .contact-form input,
 .contact-form select,
 .contact-form textarea,
@@ -369,7 +324,7 @@ main {
   outline-offset: 1px;
 }
 
-/* Fieldset groups on join/contact pages */
+/* Fieldset groups on join pages */
 .form-group {
   border-radius: 10px;
   border: 1px solid var(--border);
@@ -401,18 +356,6 @@ main {
   color: #9ca3af;
 }
 
-/* -------- Diagram image helper -------- */
-.diagram-img {
-  max-width: 600px;
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 1.5rem auto;
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-sizing: border-box;
-}
-
 /* -------- Events filter row -------- */
 #event-filter {
   display: flex;
@@ -421,7 +364,32 @@ main {
   margin-top: 0.8rem;
 }
 
-/* -------- Footer (solid bar like demo) -------- */
+/* Event cards */
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+.event-card {
+  background: #020617;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  padding: 0.9rem 1rem 1.1rem;
+  box-shadow: var(--shadow);
+}
+
+.event-card h3 {
+  margin-bottom: 0.25rem;
+}
+
+.event-meta {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* -------- Footer -------- */
 footer,
 #site-footer {
   margin-top: auto;
@@ -442,12 +410,6 @@ footer a,
 @media (min-width: 720px) {
   #page-container {
     padding: 2rem 1.5rem 2.8rem;
-  }
-
-  body > header,
-  body > main,
-  body > footer {
-    padding: 0 1.5rem;
   }
 
   .grid {
@@ -494,33 +456,9 @@ footer a,
   gap: 0.75rem;
 }
 
-/* Put labels above inputs and make them pop a bit */
 #join-form label {
   font-weight: 600;
   font-size: 0.95rem;
-}
-
-/* Fieldset for checkboxes */
-#join-form .form-group {
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  background: #020617;
-  padding: 0.75rem 0.9rem 0.9rem;
-  display: grid;
-  gap: 0.45rem;
-}
-
-#join-form .form-group legend {
-  padding: 0 0.2rem;
-  font-weight: 600;
-  color: var(--text);
-}
-
-#join-form .form-group label {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-weight: 400;
 }
 
 /* Submit button centered */
@@ -528,16 +466,4 @@ footer a,
   justify-self: center;
   margin-top: 0.6rem;
   padding-inline: 1.6rem;
-}
-
-/* Slightly nicer spacing on big screens */
-@media (min-width: 720px) {
-  #join-main {
-    padding-inline: 1.5rem;
-  }
-
-  /* Name / email / status as a simple grid row */
-  #join-form {
-    max-width: 760px;
-  }
 }

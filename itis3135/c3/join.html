@@ -1,10 +1,5 @@
 <!DOCTYPE html>
-<!--
-  File: join.html
-  Site: 49ers Car Culture Club (C3)
-  Author: Vahid Zamen
-  Description: Join page with membership interest form.
--->
+<!-- Join page -->
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -12,7 +7,6 @@
   <title>49ers Car Culture Club (C3) | Join</title>
 
   <link rel="stylesheet" href="default.css" />
-  <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <div id="page-container">
@@ -44,17 +38,13 @@
       <section class="card">
         <h2>Interest Form</h2>
 
-        <!-- The form action is left blank on purpose for this assignment -->
         <form id="join-form" action="#" method="post">
-          <!-- Name -->
           <label for="name">Full Name:</label>
           <input id="name" name="name" type="text" required />
 
-          <!-- Email -->
           <label for="email">UNC Charlotte Email:</label>
           <input id="email" name="email" type="email" required />
 
-          <!-- Student status -->
           <label for="status">Status:</label>
           <select id="status" name="status" required>
             <option value="">Select one…</option>
@@ -64,7 +54,6 @@
             <option value="other">Other / Friend of C3</option>
           </select>
 
-          <!-- Interests checkboxes -->
           <fieldset class="form-group">
             <legend>What are you most interested in?</legend>
             <label>
@@ -85,27 +74,27 @@
             </label>
           </fieldset>
 
-          <!-- Optional car field -->
           <label for="car">Your Car (optional):</label>
           <input id="car" name="car" type="text" placeholder="Year, Make, Model" />
 
-          <!-- Message -->
           <label for="message">Tell us a bit about your car interests:</label>
           <textarea id="message" name="message" rows="4" required></textarea>
 
+          <p class="small-text">
+            Characters typed: <span id="message-counter">0</span>
+          </p>
+
           <button type="submit" class="button">Submit Interest</button>
+          <p id="form-status" class="form-status" aria-live="polite"></p>
         </form>
       </section>
     </main>
 
     <footer id="site-footer">
-      <p>&copy; <span id="year">2025</span> 49ers Car Culture Club (C3). Site by Vahid Zamen.</p>
+      <p>&copy; <span id="year"></span> 49ers Car Culture Club (C3). Site by Vahid Zamen.</p>
     </footer>
   </div>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
   <script src="c3.js"></script>
 </body>
 </html>

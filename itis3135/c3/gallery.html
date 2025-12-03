@@ -1,10 +1,5 @@
 <!DOCTYPE html>
-<!--
-  File: gallery.html
-  Site: 49ers Car Culture Club (C3)
-  Author: Vahid Zamen
-  Description: Photo gallery page showcasing C3 events and members' cars.
--->
+<!-- Gallery page -->
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -12,7 +7,6 @@
   <title>49ers Car Culture Club (C3) | Gallery</title>
 
   <link rel="stylesheet" href="default.css" />
-  <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <div id="page-container">
@@ -40,64 +34,62 @@
         <!-- Responsive image grid -->
         <div class="gallery-grid">
           <figure>
-            <img src="when-sunrise.jpg" alt="Cars in a row at sunrise" />
+            <img src="images/when-sunrise.jpg" alt="Cars in a row at sunrise" />
             <figcaption>Early morning lineup before a campus cruise.</figcaption>
           </figure>
 
           <figure>
-            <img src="where-spot.jpg" alt="Cars parked at a scenic overlook" />
+            <img src="images/where-spot.jpg" alt="Cars parked at a scenic overlook" />
             <figcaption>Our go-to photo spot just off campus.</figcaption>
           </figure>
 
           <figure>
-            <img src="who-community.jpg" alt="Group of students standing around a car talking" />
+            <img src="images/what-cars.JPG" alt="Cars parked at a campus meet" />
+            <figcaption>What we drive.</figcaption>
+          </figure>
+
+          <figure>
+            <img src="images/who-community.jpg" alt="Group of students standing around a car talking" />
             <figcaption>C3 members catching up after a meet.</figcaption>
           </figure>
 
           <figure>
-            <img src="how-garage.jpg" alt="Members working in a garage" />
+            <img src="images/how-garage.jpg" alt="Members working in a garage" />
             <figcaption>Learning basic maintenance at Garage Day.</figcaption>
           </figure>
 
           <figure>
-            <img src="why-enjoy.jpg" alt="Close up of a car interior with driver smiling" />
+            <img src="images/why-enjoy.jpg" alt="Members smiling inside a car" />
             <figcaption>Because driving should be fun.</figcaption>
-          </figure>
-
-          <figure>
-            <img src="IMG_5973.JPG" alt="Close-up shot of a modified wheel and tire" />
-            <figcaption>Detail from one of our members’ builds.</figcaption>
           </figure>
         </div>
       </section>
-    </main>
-    <section class="card">
+
+      <section class="card">
         <h2>Random Car Photo</h2>
         <p>Click the button to see a random photo from our gallery.</p>
-      
+
         <img
           id="random-photo-image"
-          src="when-sunrise.jpg"
+          src="images/when-sunrise.jpg"
           alt="Early morning lineup before a campus cruise."
         />
-      
+
         <p id="random-photo-caption">
           Early morning lineup before a campus cruise.
         </p>
-      
+
         <button type="button" class="button" id="random-photo-btn">
           Show another photo
         </button>
       </section>
-      
+    </main>
+
     <footer id="site-footer">
-      <p>&copy; <span id="year">2025</span> 49ers Car Culture Club (C3). Site by Vahid Zamen.</p>
+      <p>&copy; <span id="year"></span> 49ers Car Culture Club (C3). Site by Vahid Zamen.</p>
     </footer>
   </div>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
   <script src="c3.js"></script>
 </body>
 </html>

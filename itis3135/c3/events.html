@@ -1,10 +1,5 @@
 <!DOCTYPE html>
-<!--
-  File: events.html
-  Site: 49ers Car Culture Club (C3)
-  Author: Vahid Zamen
-  Description: Events page with filter buttons and event cards.
--->
+<!-- Events page -->
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -13,30 +8,76 @@
   <link rel="stylesheet" href="default.css" />
 </head>
 <body>
-  <header>
-    <h1>49ers Car Culture Club (C3)</h1>
-    <p class="tagline">Meets, cruises, and workshops during the semester.</p>
+  <div id="page-container">
+    <header id="site-header">
+      <h1 class="site-title">49ers Car Culture Club (C3)</h1>
+      <p class="tagline">Meets, cruises, and workshops during the semester.</p>
 
-    <nav class="primary-nav">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="events.html" aria-current="page">Events</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="join.html">Join</a>
-    </nav>
-  </header>
+      <nav class="primary-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="events.html" aria-current="page">Events</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="join.html">Join</a>
+      </nav>
+    </header>
 
-  <main>
-    <section class="card">
-      <h2>Events</h2>
-      <p class="lead">
-        Use the buttons below to view all events, only upcoming events, or past events.
-      </p>
+    <main>
+      <section class="card">
+        <h2>Events</h2>
+        <p class="lead">
+          Use the buttons below to view all events, only upcoming events, or past events.
+        </p>
 
-      <!-- JS filter buttons -->
-      <div id="event-filter">
-        <button type="button" data-filter="all" class="button filter-active">
-          Show All
-        </button>
-        <button type="button" data-filter="upcoming" class="button">
-          Upcoming
+        <!-- JS filter buttons -->
+        <div id="event-filter">
+          <button type="button" data-filter="all" class="button filter-active">
+            Show All
+          </button>
+          <button type="button" data-filter="upcoming" class="button">
+            Upcoming
+          </button>
+          <button type="button" data-filter="past" class="button">
+            Past
+          </button>
+        </div>
+
+        <!-- Event cards (data-event-type used by JS) -->
+        <div class="event-grid">
+          <article class="event-card" data-event-type="upcoming">
+            <h3>Campus Meet &amp; Cruise</h3>
+            <p class="event-meta">Friday, Sept 20 · Student Union Deck</p>
+            <p>Casual meet on campus followed by a short cruise on local roads.</p>
+          </article>
+
+          <article class="event-card" data-event-type="upcoming">
+            <h3>Garage Day: Basics &amp; Safety</h3>
+            <p class="event-meta">Saturday, Sept 28 · Campus Garage</p>
+            <p>
+              Learn how to check fluids, change a tire, and talk about simple maintenance.
+            </p>
+          </article>
+
+          <article class="event-card" data-event-type="past">
+            <h3>Sunrise Photo Cruise</h3>
+            <p class="event-meta">Past · Early morning cruise &amp; photos</p>
+            <p>We met before sunrise and took photos at one of our favorite spots.</p>
+          </article>
+
+          <article class="event-card" data-event-type="past">
+            <h3>Charity Cars &amp; Coffee</h3>
+            <p class="event-meta">Past · Partner event with local group</p>
+            <p>Cars, coffee, and donations for a local nonprofit organization.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer id="site-footer">
+      <p>&copy; <span id="year"></span> 49ers Car Culture Club (C3). Site by Vahid Zamen.</p>
+    </footer>
+  </div>
+
+  <script src="c3.js"></script>
+</body>
+</html>
