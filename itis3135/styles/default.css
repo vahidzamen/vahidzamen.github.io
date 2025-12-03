@@ -16,7 +16,6 @@
   --max-width: 1100px;
   --font-main: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
     sans-serif;
-
   --card: #111827;
   --line: #1f2937;
 }
@@ -42,7 +41,6 @@ body {
 }
 
 /* -------- Global Image Handling -------- */
-
 img {
   max-width: 100%;
   height: auto;
@@ -51,7 +49,8 @@ img {
 }
 
 /* -------- Page container -------- */
-#page-container {
+#page-container,
+.container {
   min-height: 100vh;
   max-width: var(--max-width);
   margin: 0 auto;
@@ -72,7 +71,8 @@ a:focus {
 }
 
 /* -------- Header band -------- */
-#site-header {
+#site-header,
+.site-header {
   margin-top: 1.5rem;
   margin-bottom: 2rem;
   padding: 1.5rem 2rem 1.4rem;
@@ -92,8 +92,7 @@ a:focus {
   color: var(--muted);
 }
 
-/* -------- Headings -------- */
-
+/* -------- Headings (only defined once) -------- */
 h1 {
   text-align: center;
 }
@@ -134,6 +133,12 @@ h2 {
   background: var(--accent-soft);
 }
 
+.primary-nav a[aria-current="page"] {
+  background: var(--accent-soft);
+  border: 1px solid var(--accent);
+  color: var(--text);
+}
+
 /* -------- Main content layout -------- */
 main {
   margin-bottom: 2.5rem;
@@ -157,7 +162,7 @@ main {
   font-weight: 600;
   cursor: pointer;
   border: 1px solid var(--accent);
-  transition: 0.15s;
+  transition: 0.15s ease;
 }
 
 .button:hover,
@@ -166,7 +171,8 @@ main {
   transform: translateY(-1px);
 }
 
-.button-outline {
+.button-outline,
+.btn-outline {
   background: transparent;
   color: var(--accent);
 }
@@ -179,7 +185,6 @@ main {
   align-items: center;
 }
 
-/* Hero Image (scaled smaller) */
 .hero-image img {
   width: 100%;
   max-width: 550px;
@@ -198,6 +203,15 @@ main {
   box-shadow: var(--shadow);
   max-width: 950px;
   margin: 0 auto 1.5rem;
+  transition: 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+.card > :first-child {
+  margin-top: 0;
 }
 
 .grid {
@@ -205,12 +219,10 @@ main {
   gap: 1rem;
 }
 
-/* Two-column card layout */
 .grid-two {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
-/* Mini cards */
 .mini-card {
   background: var(--card);
   border: 1px solid var(--line);
@@ -219,7 +231,7 @@ main {
 }
 
 /* -------- Gallery -------- */
-
+.gallery-preview,
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -242,6 +254,28 @@ main {
   border-radius: 0;
 }
 
+.gallery-grid figcaption {
+  padding: 0.6rem 0.75rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+  background: #020617;
+  border-top: 1px solid var(--border);
+}
+
+/* Random photo section */
+#random-photo-image {
+  margin: 1rem auto;
+  max-width: 700px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+#random-photo-caption {
+  text-align: center;
+  color: var(--muted);
+  margin-bottom: 0.8rem;
+}
+
 /* -------- Contact & Join forms -------- */
 .contact-form,
 #join-form {
@@ -261,14 +295,58 @@ main {
   background: #020617;
   border: 1px solid var(--border);
   color: var(--text);
+  transition: 0.15s ease;
 }
 
-#join-form .button {
+#join-form label {
+  font-weight: 600;
+  margin-top: 0.4rem;
+}
+
+#join-form input:focus,
+#join-form select:focus,
+#join-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+#join-form fieldset.form-group {
+  border: 1px solid var(--border);
+  padding: 0.8rem;
+  border-radius: 10px;
+  background: #0a0f1a;
+}
+
+#join-form fieldset.form-group label {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-weight: 400;
+}
+
+.small-text {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 0.2rem;
+}
+
+.form-status {
   margin-top: 0.8rem;
+  font-weight: 600;
+}
+
+.form-status-success {
+  color: #34d399;
+}
+
+.form-status-error {
+  color: #f87171;
 }
 
 /* -------- Events -------- */
-#event-filter {
+#event-filter,
+.filter-row {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -276,7 +354,8 @@ main {
   margin-top: 1rem;
 }
 
-.event-grid {
+.event-grid,
+#events-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1rem;
@@ -288,11 +367,23 @@ main {
   border-radius: 12px;
   border: 1px solid var(--border);
   padding: 0.9rem 1rem;
+  transition: 0.15s ease;
+}
+
+.event-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
 }
 
 .event-meta {
   font-size: 0.9rem;
   color: var(--muted);
+}
+
+.filter-active {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
 }
 
 /* -------- Footer -------- */
@@ -315,116 +406,4 @@ main {
   .hero-image img {
     max-width: 100%;
   }
-}
-
-/* Make nav show current page a little clearer */
-.primary-nav a[aria-current="page"] {
-  background: var(--accent-soft);
-  border: 1px solid var(--accent);
-  color: var(--text);
-}
-
-/* Slight hover lift on cards */
-.card:hover {
-  transform: translateY(-2px);
-  transition: 0.15s ease;
-}
-
-/* Better spacing for headings inside cards */
-.card h2,
-.card h3 {
-  margin-top: 0;
-}
-
-/* Join form polish */
-#join-form label {
-  font-weight: 600;
-  margin-top: 0.4rem;
-}
-
-#join-form input,
-#join-form select,
-#join-form textarea {
-  transition: border 0.15s ease, box-shadow 0.15s ease;
-}
-
-#join-form input:focus,
-#join-form select:focus,
-#join-form textarea:focus {
-  outline: none;
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-soft);
-}
-
-/* Checkbox group spacing */
-#join-form fieldset.form-group {
-  border: 1px solid var(--border);
-  padding: 0.8rem;
-  border-radius: 10px;
-  background: #0a0f1a;
-}
-
-#join-form fieldset.form-group label {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-  font-weight: 400;
-}
-
-/* Small text for counter */
-.small-text {
-  font-size: 0.9rem;
-  color: var(--muted);
-  margin-top: 0.2rem;
-}
-
-/* Form status messages */
-.form-status {
-  margin-top: 0.8rem;
-  font-weight: 600;
-}
-
-.form-status-success {
-  color: #34d399;
-}
-
-.form-status-error {
-  color: #f87171;
-}
-
-/* Events filter active button */
-.filter-active {
-  background: transparent;
-  color: var(--accent);
-  border: 1px solid var(--accent);
-}
-
-/* Event cards feel a bit more alive */
-.event-card:hover {
-  border-color: var(--accent);
-  transform: translateY(-2px);
-  transition: 0.15s ease;
-}
-
-/* Gallery captions cleaner */
-.gallery-grid figcaption {
-  padding: 0.6rem 0.75rem;
-  font-size: 0.95rem;
-  color: var(--muted);
-  background: #020617;
-  border-top: 1px solid var(--border);
-}
-
-/* Random photo section nicer centered */
-#random-photo-image {
-  margin: 1rem auto;
-  max-width: 700px;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
-}
-
-#random-photo-caption {
-  text-align: center;
-  color: var(--muted);
-  margin-bottom: 0.8rem;
 }
