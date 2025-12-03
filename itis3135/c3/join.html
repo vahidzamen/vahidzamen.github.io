@@ -1,99 +1,78 @@
 <!DOCTYPE html>
-<!-- Join page -->
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>49ers Car Culture Club (C3) | Join</title>
-
-  <link rel="stylesheet" href="default.css" />
+  <title>C3 | Join</title>
+  <link rel="stylesheet" href="../styles/default.css" />
 </head>
 <body>
-  <div id="page-container">
-    <header id="site-header">
-      <h1 class="site-title">49ers Car Culture Club (C3)</h1>
-      <p class="tagline">Ready to join the crew? Start here.</p>
+  <header class="site-header">
+    <div class="container">
+      <h1>Join C3</h1>
+      <p class="tagline">Interested in cars? Come be part of the community.</p>
 
-      <nav class="primary-nav" aria-label="Main navigation">
+      <nav class="primary-nav" aria-label="Main">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="events.html">Events</a>
         <a href="gallery.html">Gallery</a>
         <a href="join.html" aria-current="page">Join</a>
       </nav>
-    </header>
+    </div>
+  </header>
 
-    <main id="join-main">
-      <!-- Intro text -->
-      <section class="card">
-        <h2 class="heading-centered">Join the 49ers Car Culture Club</h2>
-        <p>
-          Fill out the form below to let us know you're interested in joining C3. We’ll follow up
-          with meeting times, event announcements, and ways to get involved.
-        </p>
-        <p><strong>Note:</strong> This is a demo form for a class project and does not submit to a live server.</p>
-      </section>
+  <main class="container">
+    <section class="card">
+      <h2>Membership Form</h2>
+      <p>Fill this out and we’ll add you to our announcements.</p>
 
-      <!-- Membership form -->
-      <section class="card">
-        <h2 class="heading-centered">Interest Form</h2>
-
-        <form id="join-form" action="#" method="post">
-          <label for="name">Full Name:</label>
+      <form id="join-form" novalidate>
+        <div class="form-group">
+          <label for="name">Full Name</label>
           <input id="name" name="name" type="text" required />
+        </div>
 
-          <label for="email">UNC Charlotte Email:</label>
+        <div class="form-group">
+          <label for="email">UNCC Email</label>
           <input id="email" name="email" type="email" required />
+        </div>
 
-          <label for="status">Status:</label>
-          <select id="status" name="status" required>
-            <option value="">Select one…</option>
-            <option value="undergrad">Undergraduate Student</option>
-            <option value="grad">Graduate Student</option>
-            <option value="alumni">Alumni</option>
-            <option value="other">Other / Friend of C3</option>
+        <div class="form-group">
+          <label for="year">Year</label>
+          <select id="year" name="year" required>
+            <option value="">Select one</option>
+            <option>Freshman</option>
+            <option>Sophomore</option>
+            <option>Junior</option>
+            <option>Senior</option>
+            <option>Graduate</option>
           </select>
+        </div>
 
-          <fieldset class="form-group">
-            <legend>What are you most interested in?</legend>
-            <label>
-              <input type="checkbox" name="interest" value="meets" />
-              Car meets &amp; cruises
-            </label>
-            <label>
-              <input type="checkbox" name="interest" value="wrenching" />
-              Wrenching / learning maintenance
-            </label>
-            <label>
-              <input type="checkbox" name="interest" value="photography" />
-              Car photography &amp; media
-            </label>
-            <label>
-              <input type="checkbox" name="interest" value="motorsports" />
-              Motorsports &amp; track days
-            </label>
-          </fieldset>
+        <fieldset class="form-group">
+          <legend>What are you into?</legend>
+          <label><input type="checkbox" name="interest" value="meets" /> Meets</label>
+          <label><input type="checkbox" name="interest" value="cruises" /> Cruises</label>
+          <label><input type="checkbox" name="interest" value="builds" /> Builds</label>
+          <label><input type="checkbox" name="interest" value="photos" /> Photography</label>
+        </fieldset>
 
-          <label for="car">Your Car (optional):</label>
-          <input id="car" name="car" type="text" placeholder="Year, Make, Model" />
+        <div class="form-group">
+          <label for="message">Anything you want us to know?</label>
+          <textarea id="message" name="message" rows="4" maxlength="300"></textarea>
+          <div class="small-text"><span id="char-count">0</span>/300 characters</div>
+        </div>
 
-          <label for="message">Tell us a bit about your car interests:</label>
-          <textarea id="message" name="message" rows="4" required></textarea>
+        <button class="btn" type="submit">Submit</button>
+        <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
 
-          <p class="small-text">
-            Characters typed: <span id="message-counter">0</span>
-          </p>
-
-          <button type="submit" class="button">Submit Interest</button>
-          <p id="form-status" class="form-status" aria-live="polite"></p>
-        </form>
-      </section>
-    </main>
-
-    <footer id="site-footer">
-      <p>&copy; <span id="year"></span> 49ers Car Culture Club (C3). Site by Vahid Zamen.</p>
-    </footer>
-  </div>
+  <footer id="site-footer" class="container">
+    <p>&copy; 49ers Car Culture Club. Built for ITIS 3135.</p>
+  </footer>
 
   <script src="c3.js"></script>
 </body>

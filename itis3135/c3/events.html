@@ -1,94 +1,62 @@
 <!DOCTYPE html>
-<!-- Events page -->
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>C3 | Events</title>
-  <link rel="stylesheet" href="default.css" />
+  <link rel="stylesheet" href="../styles/default.css" />
 </head>
 <body>
-  <div id="page-container">
-    <!-- Header -->
-    <header id="site-header">
-      <h1 class="site-title">49ers Car Culture Club (C3)</h1>
-      <p class="tagline">Meets, cruises, and workshops during the semester.</p>
+  <header class="site-header">
+    <div class="container">
+      <h1>Events</h1>
+      <p class="tagline">Upcoming meets, cruises, and workshops.</p>
 
-      <nav class="primary-nav" aria-label="Main navigation">
+      <nav class="primary-nav" aria-label="Main">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="events.html" aria-current="page">Events</a>
         <a href="gallery.html">Gallery</a>
         <a href="join.html">Join</a>
       </nav>
-    </header>
+    </div>
+  </header>
 
-    <!-- Main content -->
-    <main>
-      <section class="card">
-        <h2 class="heading-centered">Events</h2>
-        <p class="lead">
-          Use the buttons below to view all events, only upcoming events, or past events.
-        </p>
+  <main class="container">
+    <section class="card">
+      <h2>Upcoming Events</h2>
 
-        <!-- Filter buttons (JS uses data-filter) -->
-        <div id="event-filter">
-          <button type="button" data-filter="all" class="button filter-active">
-            Show All
-          </button>
-          <button type="button" data-filter="upcoming" class="button">
-            Upcoming
-          </button>
-          <button type="button" data-filter="past" class="button">
-            Past
-          </button>
-        </div>
+      <div class="filter-row">
+        <button class="btn btn-outline filter-btn filter-active" data-filter="all">All</button>
+        <button class="btn btn-outline filter-btn" data-filter="meet">Meets</button>
+        <button class="btn btn-outline filter-btn" data-filter="cruise">Cruises</button>
+        <button class="btn btn-outline filter-btn" data-filter="workshop">Workshops</button>
+      </div>
 
-        <!-- Event cards -->
-        <div class="event-grid">
-          <article class="event-card" data-event-type="upcoming">
-            <h3 class="heading-tight">Campus Meet &amp; Cruise</h3>
-            <p class="event-meta">Friday, Sept 20 · Student Union Deck</p>
-            <p>
-              Casual meet on campus followed by a short cruise on local roads.
-            </p>
-          </article>
+      <div id="events-list">
+        <article class="card event-card" data-type="meet">
+          <h3>Campus Meet</h3>
+          <p><strong>Date:</strong> Sept 10</p>
+          <p><strong>Location:</strong> CRI Deck</p>
+          <p>Bring your car or just come hang out.</p>
+        </article>
 
-          <article class="event-card" data-event-type="upcoming">
-            <h3 class="heading-tight">Garage Day: Basics &amp; Safety</h3>
-            <p class="event-meta">Saturday, Sept 28 · Campus Garage</p>
-            <p>
-              Learn how to check fluids, change a tire, and talk about simple
-              maintenance with other members.
-            </p>
-          </article>
+        <article class="card event-card" data-type="cruise">
+          <h3>Weekend Cruise</h3>
+          <p><strong>Date:</strong> Sept 22</p>
+          <p><strong>Location:</strong> Meet at Student Union</p>
+          <p>Short cruise through Charlotte and a photo stop.</p>
+        </article>
 
-          <article class="event-card" data-event-type="past">
-            <h3 class="heading-tight">Sunrise Photo Cruise</h3>
-            <p class="event-meta">Past · Early morning cruise &amp; photos</p>
-            <p>
-              We met before sunrise and took photos at one of our favorite spots on
-              the edge of campus.
-            </p>
-          </article>
+        <article class="card event-card" data-type="workshop">
+          <h3>Basic Car Care Workshop</h3>
+          <p><strong>Date:</strong> Oct 5</p>
+          <p><strong>Location:</strong> Campus parking lot A</p>
+          <p>Learn basic checks like oil and tire pressure.</p>
+        </article>
+      </div>
+    </section>
+  </main>
 
-          <article class="event-card" data-event-type="past">
-            <h3 class="heading-tight">Charity Cars &amp; Coffee</h3>
-            <p class="event-meta">Past · Partner event with local group</p>
-            <p>
-              Cars, coffee, and donations supporting a local nonprofit organization.
-            </p>
-          </article>
-        </div>
-      </section>
-    </main>
-
-    <!-- Footer -->
-    <footer id="site-footer">
-      <p>&copy; <span id="year"></span> 49ers Car Culture Club (C3). Site by Vahid Zamen.</p>
-    </footer>
-  </div>
-
-  <script src="c3.js"></script>
-</body>
-</html>
+  <footer id="site-footer" class="container">
+    <p>&copy; 49ers Car Culture C

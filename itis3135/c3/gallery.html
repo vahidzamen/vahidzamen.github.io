@@ -1,94 +1,62 @@
 <!DOCTYPE html>
-<!-- Gallery page -->
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>49ers Car Culture Club (C3) | Gallery</title>
-
-  <link rel="stylesheet" href="default.css" />
+  <link rel="stylesheet" href="../styles/default.css" />
 </head>
 <body>
-  <div id="page-container">
-    <header id="site-header">
-      <h1 class="site-title">49ers Car Culture Club (C3)</h1>
-      <p class="tagline">Highlights from recent meets and cruises.</p>
+  <header class="site-header">
+    <div class="container">
+      <h1>C3 Gallery</h1>
+      <p class="tagline">Photos from meets and cruises.</p>
 
-      <nav class="primary-nav" aria-label="Main navigation">
+      <nav class="primary-nav" aria-label="Main">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="events.html">Events</a>
         <a href="gallery.html" aria-current="page">Gallery</a>
         <a href="join.html">Join</a>
       </nav>
-    </header>
+    </div>
+  </header>
 
-    <main id="gallery-main">
-      <section class="card">
-        <h2>Photo Gallery</h2>
-        <p>
-          A glimpse at some of our favorite moments. Want your car featured here? Join the club
-          and come out to a meet!
-        </p>
+  <main class="container">
+    <section class="card">
+      <h2>Photos</h2>
 
-        <!-- Responsive image grid -->
-        <div class="gallery-grid">
-          <figure>
-            <img src="../images/when-sunrise.jpg" alt="Cars in a row at sunrise" />
-            <figcaption>Early morning lineup before a campus cruise.</figcaption>
-          </figure>
+      <div class="gallery-grid">
+        <figure>
+          <img src="images/g1.jpg" alt="Car meet photo 1" />
+          <figcaption>Campus meet</figcaption>
+        </figure>
+        <figure>
+          <img src="images/g2.jpg" alt="Car meet photo 2" />
+          <figcaption>Night cruise</figcaption>
+        </figure>
+        <figure>
+          <img src="images/g3.jpg" alt="Car meet photo 3" />
+          <figcaption>Photo day</figcaption>
+        </figure>
+        <figure>
+          <img src="images/g4.jpg" alt="Car meet photo 4" />
+          <figcaption>Weekend hangout</figcaption>
+        </figure>
+      </div>
+    </section>
 
-          <figure>
-            <img src="../images/where-spot.jpg" alt="Cars parked at a scenic overlook" />
-            <figcaption>Our go-to photo spot just off campus.</figcaption>
-          </figure>
+    <section class="card">
+      <h2>Random Photo</h2>
+      <button class="btn" id="random-photo-btn" type="button">Show Random Photo</button>
+      <img id="random-photo-image" src="images/g1.jpg" alt="Random club photo" />
+      <p id="random-photo-caption">Click the button to see a different photo.</p>
+    </section>
+  </main>
 
-          <figure>
-            <img src="../images/what-cars.JPG" alt="Cars parked at a campus meet" />
-            <figcaption>What we drive.</figcaption>
-          </figure>
-
-          <figure>
-            <img src="../images/who-community.jpg" alt="Group of students standing around a car talking" />
-            <figcaption>C3 members catching up after a meet.</figcaption>
-          </figure>
-
-          <figure>
-            <img src="../images/how-garage.jpg" alt="Members working in a garage" />
-            <figcaption>Learning basic maintenance at Garage Day.</figcaption>
-          </figure>
-
-          <figure>
-            <img src="../images/why-enjoy.jpg" alt="Members smiling inside a car" />
-            <figcaption>Because driving should be fun.</figcaption>
-          </figure>
-        </div>
-      </section>
-
-      <section class="card">
-        <h2>Random Car Photo</h2>
-        <p>Click the button to see a random photo from our gallery.</p>
-
-        <img
-          id="random-photo-image"
-          src="../images/when-sunrise.jpg"
-          alt="Early morning lineup before a campus cruise."
-        />
-
-        <p id="random-photo-caption">
-          Early morning lineup before a campus cruise.
-        </p>
-
-        <button type="button" class="button" id="random-photo-btn">
-          Show another photo
-        </button>
-      </section>
-    </main>
-
-    <footer id="site-footer">
-      <p>&copy; <span id="year"></span> 49ers Car Culture Club (C3). Site by Vahid Zamen.</p>
-    </footer>
-  </div>
+  <footer id="site-footer" class="container">
+    <p>&copy; 49ers Car Culture Club. Built for ITIS 3135.</p>
+  </footer>
 
   <script src="c3.js"></script>
 </body>

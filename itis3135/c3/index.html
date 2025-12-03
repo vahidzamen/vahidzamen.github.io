@@ -5,128 +5,89 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>49ers Car Culture Club (C3) | Home</title>
-  <link rel="stylesheet" href="default.css" />
+  <link rel="stylesheet" href="../styles/default.css" />
 </head>
 <body>
-  <div id="page-container">
-    <!-- Site header -->
-    <header id="site-header">
-      <h1 class="site-title">49ers Car Culture Club (C3)</h1>
+  <header class="site-header">
+    <div class="container">
+      <h1>49ers Car Culture Club (C3)</h1>
       <p class="tagline">A student club for anyone who loves cars at UNC Charlotte.</p>
-    
-      <nav class="primary-nav" aria-label="Main navigation">
+
+      <nav class="primary-nav" aria-label="Main">
         <a href="index.html" aria-current="page">Home</a>
         <a href="about.html">About</a>
         <a href="events.html">Events</a>
         <a href="gallery.html">Gallery</a>
         <a href="join.html">Join</a>
       </nav>
-    </header>    
+    </div>
+  </header>
 
-    <main>
-      <!-- Hero / intro -->
-      <section class="card hero">
-        <div class="hero-text">
-          <h2>Welcome to C3</h2>
-          <p class="lead">
-            The 49ers Car Culture Club is a friendly place for car fans of all kinds. It does not
-            matter if you daily a stock commuter, have a full build, or just like looking at cars —
-            everyone is welcome.
-          </p>
-          <p>
-            We host meets, cruises, workshops, and photo days during the semester. Check the Events
-            page for dates and times, then come hang out with other people who get just as excited
-            about cars as you do.
-          </p>
-
-          <p class="cta-row">
-            <a class="button" href="events.html">See upcoming events</a>
-            <a class="button button-outline" href="join.html">Join the club</a>
-          </p>
-        </div>
-
-        <div class="hero-image">
-          <img
-            src="../images/when-sunrise.jpg"
-            alt="Cars parked at sunrise near campus."
-          />
-        </div>
-      </section>
-
-      <!-- What is C3? overview -->
-      <section class="card">
-        <h2>What is C3?</h2>
+  <main class="container">
+    <section class="hero">
+      <div class="hero-text">
+        <h2>Welcome to C3</h2>
         <p>
-          C3 is built around six simple questions: <strong>who, what, where, when, why, and how.</strong>
-          Together, they explain what our club is all about.
+          The 49ers Car Culture Club is a friendly place for car fans of all kinds.
+          It does not matter if you daily a stock commuter, have a full build, or just like
+          looking at cars — everyone is welcome.
+        </p>
+        <p>
+          We host meets, cruises, workshops, and photo days during the semester.
+          Check the Events page for dates and times, then come hang out with other people who
+          get just as excited about cars as you do.
         </p>
 
-        <div class="grid grid-two">
-          <article class="mini-card">
-            <h3>Who</h3>
-            <p>UNC Charlotte students, alumni, and friends who enjoy cars and car culture.</p>
-          </article>
-
-          <article class="mini-card">
-            <h3>What</h3>
-            <p>Casual meets, cruises, tech nights, maintenance workshops, and photo days.</p>
-          </article>
-
-          <article class="mini-card">
-            <h3>Where</h3>
-            <p>On campus near the Student Union and CRI Deck, plus local Charlotte spots.</p>
-          </article>
-
-          <article class="mini-card">
-            <h3>When</h3>
-            <p>At least one event per month during fall and spring, plus bonus meets.</p>
-          </article>
-
-          <article class="mini-card">
-            <h3>Why</h3>
-            <p>A relaxed, safe community around cars and driving — no ego, just people who love cars.</p>
-          </article>
-
-          <article class="mini-card">
-            <h3>How</h3>
-            <p>Fill out the Join form, follow our announcements, then come say hi at a meet.</p>
-          </article>
+        <div class="cta-row">
+          <a class="btn" href="events.html">See upcoming events</a>
+          <a class="btn btn-outline" href="join.html">Join the club</a>
         </div>
-      </section>
+      </div>
 
-      <!-- Gallery preview -->
-      <section class="card">
-        <h2>Scenes from C3</h2>
-        <p>Some of the kind of moments you’ll see on the Gallery page.</p>
+      <div class="hero-image">
+        <img src="images/hero.jpg" alt="Cars lined up at a meet" />
+      </div>
+    </section>
 
-        <div class="grid gallery-preview">
-          <figure>
-            <img src="../images/what-cars.JPG" alt="Line of cars at a campus meet." />
-            <figcaption>What we drive.</figcaption>
-          </figure>
+    <section class="card">
+      <h2>What is C3?</h2>
+      <p>
+        C3 is built around six simple questions: <strong>who, what, where, when, why,</strong> and
+        <strong>how</strong>. Together, they explain what our club is all about.
+      </p>
 
-          <figure>
-            <img src="../images/who-community.jpg" alt="Members talking beside their cars." />
-            <figcaption>Who makes the club.</figcaption>
-          </figure>
+      <h3>Who</h3>
+      <p>UNC Charlotte students, alumni, and friends who enjoy cars and car culture.</p>
 
-          <figure>
-            <img src="../images/where-spot.jpg" alt="Car parked on a rooftop with city skyline." />
-            <figcaption>Where we like to meet.</figcaption>
-          </figure>
-        </div>
+      <h3>What</h3>
+      <p>Casual meets, cruises, tech nights, maintenance workshops, and photo days.</p>
 
-        <p class="center">
-          <a class="button button-outline" href="gallery.html">View full gallery</a>
-        </p>
-      </section>
-    </main>
+      <h3>Where</h3>
+      <p>On campus near the Student Union and CRI Deck, plus local Charlotte spots.</p>
 
-    <footer id="site-footer">
-      <p>&copy; <span id="year"></span> 49ers Car Culture Club (C3). Site by Vahid Zamen.</p>
-    </footer>
-  </div>
+      <h3>When</h3>
+      <p>At least one event per month during fall and spring, plus bonus meets.</p>
 
-  <script src="c3.js"></script>
+      <h3>Why</h3>
+      <p>A relaxed, safe community around cars and driving — no ego, just people who love cars.</p>
+
+      <h3>How</h3>
+      <p>Fill out the Join form, follow our announcements, then come say hi at a meet.</p>
+    </section>
+
+    <section class="card">
+      <h2>Scenes from C3</h2>
+      <p>Some of the kind of moments you’ll see on the Gallery page.</p>
+      <div class="gallery-preview">
+        <img src="images/scene1.jpg" alt="Car meet photo" />
+        <img src="images/scene2.jpg" alt="Cars parked together" />
+        <img src="images/scene3.jpg" alt="Night cruise photo" />
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer" class="container">
+    <p>&copy; 49ers Car Culture Club. Built for ITIS 3135.</p>
+  </footer>
 </body>
 </html>
