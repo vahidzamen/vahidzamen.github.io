@@ -127,30 +127,30 @@ function setupRandomGalleryPhoto() {
     return; // Not on gallery page
   }
 
-  // Only using approved images from the images/ folder
+  // Only using approved images from the images folder (one level up)
   var photos = [
     {
-      src: "images/when-sunrise.jpg",
+      src: "../images/when-sunrise.jpg",
       text: "Early morning lineup before a campus cruise."
     },
     {
-      src: "images/where-spot.jpg",
+      src: "../images/where-spot.jpg",
       text: "Our go-to rooftop photo spot."
     },
     {
-      src: "images/who-community.jpg",
+      src: "../images/who-community.jpg",
       text: "C3 members hanging out after a campus meet."
     },
     {
-      src: "images/how-garage.jpg",
+      src: "../images/how-garage.jpg",
       text: "Learning basic maintenance at Garage Day."
     },
     {
-      src: "images/why-enjoy.jpg",
+      src: "../images/why-enjoy.jpg",
       text: "Because driving should be fun."
     },
     {
-      src: "images/what-cars.JPG",
+      src: "../images/what-cars.JPG",
       text: "Lineup of cars at a campus meet."
     }
   ];
