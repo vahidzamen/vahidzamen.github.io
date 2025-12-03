@@ -466,27 +466,3 @@ footer a,
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   }
 }
-/* ---------- CLIENT PAGE CUSTOM STYLES ---------- */
-
-/* Dark teal hero section for client page */
-.hero-client {
-  background: linear-gradient(135deg, #0b1120, #03312e);
-  border: 1px solid #0f4d4a;
-}
-
-/* Center images inside client page */
-#client-main img,
-.hero-client img {
-  border-radius: 12px;
-  box-shadow: var(--shadow);
-}
-
-/* Center text for non-hero sections */
-.center {
-  text-align: center;
-}
-
-/* Extra breathing room */
-.hero-client .hero-text {
-  padding-bottom: 1rem;
-}
