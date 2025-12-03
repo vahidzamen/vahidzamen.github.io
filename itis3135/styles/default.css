@@ -482,3 +482,42 @@ section h3 {
     max-width: 100%;
   }
 }
+/* Center the top extra links row (the one with Crappy Page, Mascot Company, etc.) */
+#top-links,
+.top-links,
+.secondary-nav,
+nav.secondary-nav,
+header nav:last-of-type {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem 1rem;
+  text-align: center;
+  margin: 0.8rem auto 1.2rem;
+  width: 100%;
+}
+
+/* If those links are just plain <a> inside a paragraph/div */
+#top-links a,
+.top-links a,
+.secondary-nav a {
+  display: inline-block;
+}
+
+/* Center footer links row */
+#site-footer .footer-links,
+#site-footer nav,
+#site-footer p:first-of-type {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+/* Make footer links sit nicely in one centered line */
+#site-footer .footer-links a,
+#site-footer nav a,
+#site-footer p:first-of-type a {
+  display: inline-block;
+  margin: 0 0.3rem;
+}
