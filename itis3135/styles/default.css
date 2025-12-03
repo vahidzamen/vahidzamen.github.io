@@ -316,3 +316,115 @@ main {
     max-width: 100%;
   }
 }
+
+/* Make nav show current page a little clearer */
+.primary-nav a[aria-current="page"] {
+  background: var(--accent-soft);
+  border: 1px solid var(--accent);
+  color: var(--text);
+}
+
+/* Slight hover lift on cards */
+.card:hover {
+  transform: translateY(-2px);
+  transition: 0.15s ease;
+}
+
+/* Better spacing for headings inside cards */
+.card h2,
+.card h3 {
+  margin-top: 0;
+}
+
+/* Join form polish */
+#join-form label {
+  font-weight: 600;
+  margin-top: 0.4rem;
+}
+
+#join-form input,
+#join-form select,
+#join-form textarea {
+  transition: border 0.15s ease, box-shadow 0.15s ease;
+}
+
+#join-form input:focus,
+#join-form select:focus,
+#join-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+/* Checkbox group spacing */
+#join-form fieldset.form-group {
+  border: 1px solid var(--border);
+  padding: 0.8rem;
+  border-radius: 10px;
+  background: #0a0f1a;
+}
+
+#join-form fieldset.form-group label {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-weight: 400;
+}
+
+/* Small text for counter */
+.small-text {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 0.2rem;
+}
+
+/* Form status messages */
+.form-status {
+  margin-top: 0.8rem;
+  font-weight: 600;
+}
+
+.form-status-success {
+  color: #34d399;
+}
+
+.form-status-error {
+  color: #f87171;
+}
+
+/* Events filter active button */
+.filter-active {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+/* Event cards feel a bit more alive */
+.event-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  transition: 0.15s ease;
+}
+
+/* Gallery captions cleaner */
+.gallery-grid figcaption {
+  padding: 0.6rem 0.75rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+  background: #020617;
+  border-top: 1px solid var(--border);
+}
+
+/* Random photo section nicer centered */
+#random-photo-image {
+  margin: 1rem auto;
+  max-width: 700px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+#random-photo-caption {
+  text-align: center;
+  color: var(--muted);
+  margin-bottom: 0.8rem;
+}
