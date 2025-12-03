@@ -17,12 +17,11 @@
   --font-main: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
     sans-serif;
 
-  /* extras used later */
   --card: #111827;
   --line: #1f2937;
 }
 
-/* -------- Reset-ish -------- */
+/* -------- Reset -------- */
 *,
 *::before,
 *::after {
@@ -42,6 +41,15 @@ body {
   line-height: 1.6;
 }
 
+/* -------- Global Image Handling -------- */
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
 /* -------- Page container -------- */
 #page-container {
   min-height: 100vh;
@@ -52,7 +60,7 @@ body {
   flex-direction: column;
 }
 
-/* -------- Global link style -------- */
+/* -------- Links -------- */
 a {
   color: var(--accent);
   text-decoration: none;
@@ -63,12 +71,7 @@ a:focus {
   text-decoration: underline;
 }
 
-a:focus-visible {
-  outline: 2px dashed var(--accent);
-  outline-offset: 3px;
-}
-
-/* -------- Branding / header band -------- */
+/* -------- Header band -------- */
 #site-header {
   margin-top: 1.5rem;
   margin-bottom: 2rem;
@@ -89,19 +92,16 @@ a:focus-visible {
   color: var(--muted);
 }
 
-/* Headings */
+/* -------- Headings -------- */
+
+h1 {
+  text-align: center;
+}
+
 h2 {
+  text-align: center;
   font-size: clamp(1.35rem, 2vw + 0.75rem, 1.9rem);
-  margin: 0 0 0.75rem;
-}
-
-h3 {
-  margin-top: 0;
-}
-
-/* Helper heading classes (avoid qualified headings) */
-.heading-tight {
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.75rem;
 }
 
 .heading-centered {
@@ -109,39 +109,28 @@ h3 {
   margin-bottom: 0.9rem;
 }
 
-/* ---------------- NAVIGATION ---------------- */
+.heading-tight {
+  margin-bottom: 0.25rem;
+}
+
+/* -------- Navigation -------- */
 .primary-nav {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  gap: 0.75rem 1.25rem;
   justify-content: center;
+  gap: 0.75rem 1.25rem;
   margin-top: 1rem;
   border-top: 1px solid var(--border);
   padding-top: 0.8rem;
 }
 
 .primary-nav a {
-  color: var(--text);
-  text-decoration: none;
   padding: 0.3rem 0.9rem;
   border-radius: 999px;
   font-size: 0.95rem;
-  background: transparent;
-  transition:
-    background 150ms ease,
-    color 150ms ease,
-    transform 120ms ease;
 }
 
-.primary-nav a:hover,
-.primary-nav a:focus {
-  background: var(--accent-soft);
-  color: var(--text);
-  transform: translateY(-1px);
-}
-
-.primary-nav a[aria-current="page"] {
+.primary-nav a:hover {
   background: var(--accent-soft);
 }
 
@@ -153,38 +142,27 @@ main {
 .lead {
   color: var(--muted);
   max-width: 60ch;
-  margin-bottom: 1.25rem;
+  margin: 0 auto 1.25rem;
+  text-align: center;
 }
 
-.hero-text p {
-  color: var(--muted);
-}
-
-/* -------- Buttons (used for CTAs + filters) -------- */
-.btn,
-.button {
+/* -------- Buttons -------- */
+.button,
+.btn {
   display: inline-block;
-  margin-top: 0.75rem;
   padding: 0.6rem 1.1rem;
   border-radius: 999px;
   background: var(--accent);
   color: #022c22;
-  text-decoration: none;
   font-weight: 600;
-  border: 1px solid var(--accent);
   cursor: pointer;
-  font-size: 0.95rem;
-  transition:
-    filter 120ms ease,
-    transform 120ms ease,
-    opacity 120ms ease;
+  border: 1px solid var(--accent);
+  transition: 0.15s;
 }
 
-.btn:hover,
-.btn:focus,
 .button:hover,
-.button:focus {
-  filter: brightness(1.05);
+.btn:hover {
+  filter: brightness(1.1);
   transform: translateY(-1px);
 }
 
@@ -193,27 +171,25 @@ main {
   color: var(--accent);
 }
 
-/* Active filter button on events page */
-.filter-active {
-  background: #22c55e;
+/* -------- Hero layout -------- */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: center;
 }
 
-/* -------- Hero image -------- */
+/* Hero Image (scaled smaller) */
 .hero-image img {
-  max-width: 100%;
+  width: 100%;
+  max-width: 550px;
+  margin: 0 auto;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   border: 1px solid var(--border);
 }
 
 /* -------- Cards & grids -------- */
-.grid {
-  display: grid;
-  gap: 1rem;
-  margin-top: 1.25rem;
-}
-
-/* Main card blocks */
 .card {
   background: var(--panel);
   border-radius: var(--radius);
@@ -224,16 +200,14 @@ main {
   margin: 0 auto 1.5rem;
 }
 
-.card ul {
-  padding-left: 1.1rem;
-  margin: 0.4rem 0 0;
+.grid {
+  display: grid;
+  gap: 1rem;
 }
 
-/* Simple two-column grid for WHO / WHAT / WHERE section */
+/* Two-column card layout */
 .grid-two {
-  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
 }
 
 /* Mini cards */
@@ -241,18 +215,11 @@ main {
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 0.75rem 0.85rem;
+  padding: 0.75rem;
 }
 
-/* Hero layout inside a card (image + text) */
-.hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-  gap: 1.5rem;
-  align-items: center;
-}
+/* -------- Gallery -------- */
 
-/* -------- Gallery cards -------- */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -261,7 +228,6 @@ main {
 }
 
 .gallery-grid figure {
-  margin: 0;
   background: #020617;
   border-radius: 12px;
   border: 1px solid var(--border);
@@ -271,107 +237,43 @@ main {
 
 .gallery-grid img {
   width: 100%;
-  display: block;
+  height: 240px;
   object-fit: cover;
+  border-radius: 0;
 }
 
-.gallery-grid figcaption {
-  padding: 0.75rem 0.9rem;
-  font-size: 0.92rem;
-  color: var(--muted);
-}
-
-/* Gallery preview on home page */
-.gallery-preview {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.gallery-preview figure {
-  margin: 0;
-  background: #020617;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  overflow: hidden;
-  box-shadow: var(--shadow);
-}
-
-/* -------- Contact / join forms (shared) -------- */
-.contact-form {
+/* -------- Contact & Join forms -------- */
+.contact-form,
+#join-form {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
 }
 
-.contact-form label {
-  font-weight: 600;
-}
-
-/* Shared input/select/textarea styles */
 .contact-form input,
 .contact-form select,
 .contact-form textarea,
 #join-form input,
 #join-form select,
 #join-form textarea {
+  padding: 0.6rem;
   border-radius: 8px;
-  border: 1px solid var(--border);
   background: #020617;
-  color: var(--text);
-  padding: 0.5rem 0.6rem;
-  font: inherit;
-}
-
-.contact-form input:focus,
-.contact-form select:focus,
-.contact-form textarea:focus,
-#join-form input:focus,
-#join-form select:focus,
-#join-form textarea:focus {
-  outline: 2px solid var(--accent);
-  outline-offset: 1px;
-}
-
-/* Fieldset groups on join pages */
-.form-group {
-  border-radius: 10px;
   border: 1px solid var(--border);
-  padding: 0.7rem 0.8rem 0.85rem;
-  margin-top: 0.5rem;
+  color: var(--text);
 }
 
-.form-group legend {
-  font-size: 0.95rem;
+#join-form .button {
+  margin-top: 0.8rem;
 }
 
-/* Form status messages */
-.form-status {
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-}
-
-.form-status-success {
-  color: #bbf7d0;
-}
-
-.form-status-error {
-  color: #fecaca;
-}
-
-/* Optional small helper text */
-.small-text {
-  font-size: 0.85rem;
-  color: #9ca3af;
-}
-
-/* -------- Events styles -------- */
+/* -------- Events -------- */
 #event-filter {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.7rem;
-  margin-top: 0.8rem;
+  margin-top: 1rem;
 }
 
 .event-grid {
@@ -385,8 +287,7 @@ main {
   background: #020617;
   border-radius: 12px;
   border: 1px solid var(--border);
-  padding: 0.9rem 1rem 1.1rem;
-  box-shadow: var(--shadow);
+  padding: 0.9rem 1rem;
 }
 
 .event-meta {
@@ -395,74 +296,23 @@ main {
 }
 
 /* -------- Footer -------- */
-footer,
 #site-footer {
   margin-top: auto;
+  text-align: center;
   padding: 1.2rem 2rem;
   background: #020617;
+  border-radius: 10px;
   color: var(--muted);
-  text-align: center;
-  font-size: 0.95rem;
-}
-
-footer a,
-#site-footer a {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-/* ---------------- JOIN PAGE LAYOUT & STYLE ---------------- */
-
-#join-main {
-  max-width: var(--max-width);
-  margin: 0 auto 2.5rem;
-  padding: 1.5rem 1rem 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-/* Intro + form cards centered like other pages */
-#join-main .card {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-/* Intro card with a soft accent strip */
-#join-main .card:first-of-type {
-  background: linear-gradient(135deg, #0b1120, #022c22);
-  border-color: #047857;
-}
-
-#join-main .card:first-of-type p {
-  margin-bottom: 0.6rem;
-}
-
-/* Form layout */
-#join-form {
-  display: grid;
-  gap: 0.75rem;
-}
-
-#join-form label {
-  font-weight: 600;
-  font-size: 0.95rem;
-}
-
-/* Submit button centered */
-#join-form .button {
-  justify-self: center;
-  margin-top: 0.6rem;
-  padding-inline: 1.6rem;
 }
 
 /* -------- Responsive -------- */
-@media (min-width: 720px) {
-  #page-container {
-    padding: 2rem 1.5rem 2.8rem;
+@media (max-width: 720px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
   }
 
-  .grid {
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  .hero-image img {
+    max-width: 100%;
   }
 }
