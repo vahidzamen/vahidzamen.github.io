@@ -1,85 +1,111 @@
 <!DOCTYPE html>
+<!--
+  File: join.html
+  Site: 49ers Car Culture Club (C3)
+  Author: Vahid Zamen
+  Description: Join page with membership interest form.
+-->
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Join C3</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>49ers Car Culture Club (C3) | Join</title>
+
   <link rel="stylesheet" href="default.css" />
+  <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 </head>
-
 <body>
-<div id="page-container">
+  <div id="page-container">
+    <header id="site-header">
+      <h1 class="site-title">49ers Car Culture Club (C3)</h1>
+      <p class="tagline">Ready to join the crew? Start here.</p>
 
-  <!-- HEADER -->
-  <header>
-    <div class="brand">
-      <div class="logo-mark">C3</div>
-      <h1 class="site-title">Join the Crew</h1>
-    </div>
+      <nav class="primary-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="events.html">Events</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="join.html" aria-current="page">Join</a>
+      </nav>
+    </header>
 
-    <nav class="primary-nav">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="events.html">Events</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="join.html" aria-current="page">Join</a>
-    </nav>
-  </header>
+    <main id="join-main">
+      <!-- Intro text -->
+      <section class="card">
+        <h2>Join the 49ers Car Culture Club</h2>
+        <p>
+          Fill out the form below to let us know you're interested in joining C3. We’ll follow up
+          with meeting times, event announcements, and ways to get involved.
+        </p>
+        <p><strong>Note:</strong> This is a demo form for a class project and does not submit to a live server.</p>
+      </section>
 
-  <!-- MAIN -->
-  <main>
+      <!-- Membership form -->
+      <section class="card">
+        <h2>Interest Form</h2>
 
-    <section class="card">
-      <h2>Interest Form</h2>
-      <p>Fill this out to get involved with C3. We'll contact you with meet times and event announcements.</p>
+        <!-- The form action is left blank on purpose for this assignment -->
+        <form id="join-form" action="#" method="post">
+          <!-- Name -->
+          <label for="name">Full Name:</label>
+          <input id="name" name="name" type="text" required />
 
-      <form id="join-form">
+          <!-- Email -->
+          <label for="email">UNC Charlotte Email:</label>
+          <input id="email" name="email" type="email" required />
 
-        <label>Full Name:
-          <input type="text" required />
-        </label>
-
-        <label>UNC Charlotte Email:
-          <input type="email" required />
-        </label>
-
-        <label>Status:
-          <select>
-            <option>Select one…</option>
-            <option>Freshman</option>
-            <option>Sophomore</option>
-            <option>Junior</option>
-            <option>Senior</option>
-            <option>Graduate Student</option>
+          <!-- Student status -->
+          <label for="status">Status:</label>
+          <select id="status" name="status" required>
+            <option value="">Select one…</option>
+            <option value="undergrad">Undergraduate Student</option>
+            <option value="grad">Graduate Student</option>
+            <option value="alumni">Alumni</option>
+            <option value="other">Other / Friend of C3</option>
           </select>
-        </label>
 
-        <fieldset class="form-group">
-          <legend>What are you most interested in?</legend>
-          <label><input type="checkbox" /> Car meets & cruises</label>
-          <label><input type="checkbox" /> Wrenching / maintenance</label>
-          <label><input type="checkbox" /> Photography & Media</label>
-          <label><input type="checkbox" /> Motorsports & Track</label>
-        </fieldset>
+          <!-- Interests checkboxes -->
+          <fieldset class="form-group">
+            <legend>What are you most interested in?</legend>
+            <label>
+              <input type="checkbox" name="interest" value="meets" />
+              Car meets &amp; cruises
+            </label>
+            <label>
+              <input type="checkbox" name="interest" value="wrenching" />
+              Wrenching / learning maintenance
+            </label>
+            <label>
+              <input type="checkbox" name="interest" value="photography" />
+              Car photography &amp; media
+            </label>
+            <label>
+              <input type="checkbox" name="interest" value="motorsports" />
+              Motorsports &amp; track days
+            </label>
+          </fieldset>
 
-        <label>Your Car (optional):
-          <input type="text" placeholder="Year, Make, Model" />
-        </label>
+          <!-- Optional car field -->
+          <label for="car">Your Car (optional):</label>
+          <input id="car" name="car" type="text" placeholder="Year, Make, Model" />
 
-        <label>Tell us about your interests:
-          <textarea rows="5"></textarea>
-        </label>
+          <!-- Message -->
+          <label for="message">Tell us a bit about your car interests:</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
 
-        <button class="button">Submit Interest</button>
-      </form>
-    </section>
+          <button type="submit" class="button">Submit Interest</button>
+        </form>
+      </section>
+    </main>
 
-  </main>
+    <footer id="site-footer">
+      <p>&copy; <span id="year">2025</span> 49ers Car Culture Club (C3). Site by Vahid Zamen.</p>
+    </footer>
+  </div>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2025 49ers Car Culture Club (C3). Site by Vahid Zamen.
-  </footer>
-
-</div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script src="c3.js"></script>
 </body>
 </html>
