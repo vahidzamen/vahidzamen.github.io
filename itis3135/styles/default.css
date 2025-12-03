@@ -39,17 +39,23 @@ body {
   line-height: 1.6;
 }
 
-/* -------- Layout -------- */
-header,
-main,
-footer {
+/* -------- Page container (for pages that use #page-container) -------- */
+#page-container {
+  min-height: 100vh;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 1.25rem 1rem;
+  padding: 1.5rem 1rem 2.5rem;
+  display: flex;
+  flex-direction: column;
 }
 
-header {
-  padding-top: 1.75rem;
+/* Fallback for pages without #page-container (like about.html/events.html) */
+body > header,
+body > main,
+body > footer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 /* -------- Global link style -------- */
@@ -68,10 +74,22 @@ a:focus-visible {
   outline-offset: 3px;
 }
 
-/* -------- Branding -------- */
+/* -------- Branding / header band (basketball-style) -------- */
+#site-header,
+body > header {
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem 2rem 1.4rem;
+  background: var(--panel);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
 .brand {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.85rem;
   margin-bottom: 0.75rem;
 }
@@ -89,24 +107,25 @@ a:focus-visible {
   letter-spacing: 1px;
 }
 
-/* Headings */
+.site-title,
 h1 {
   font-size: clamp(1.5rem, 2vw + 1rem, 2.25rem);
   margin: 0;
 }
 
+.tagline {
+  margin: 0.4rem 0 0;
+  color: var(--muted);
+}
+
+/* Headings */
 h2 {
   font-size: clamp(1.35rem, 2vw + 0.75rem, 1.9rem);
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.75rem;
 }
 
 h3 {
   margin-top: 0;
-}
-
-.tagline {
-  margin: 0.1rem 0 0;
-  color: var(--muted);
 }
 
 /* ---------------- NAVIGATION ---------------- */
@@ -116,25 +135,28 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.5rem 1rem;
+  gap: 0.75rem 1.25rem;
+  justify-content: center;
 }
 
 .primary-nav {
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   border-top: 1px solid var(--border);
-  padding-top: 0.5rem;
+  padding-top: 0.8rem;
 }
 
 .primary-nav a,
 .secondary-nav a {
   color: var(--text);
   text-decoration: none;
-  margin-right: 0.35rem;
-  padding: 0.25rem 0.7rem;
+  padding: 0.3rem 0.9rem;
   border-radius: 999px;
   font-size: 0.95rem;
   background: transparent;
-  transition: background 150ms ease, color 150ms ease, transform 120ms ease;
+  transition:
+    background 150ms ease,
+    color 150ms ease,
+    transform 120ms ease;
 }
 
 .primary-nav a:hover,
@@ -158,7 +180,11 @@ h3 {
   border: 1px solid var(--border);
 }
 
-/* -------- Main text helper -------- */
+/* -------- Main content layout -------- */
+main {
+  margin-bottom: 2.5rem;
+}
+
 .lead {
   color: var(--muted);
   max-width: 60ch;
@@ -169,7 +195,7 @@ h3 {
   color: var(--muted);
 }
 
-/* -------- Buttons -------- */
+/* -------- Buttons (used for CTAs + filters) -------- */
 .btn,
 .button {
   display: inline-block;
@@ -183,7 +209,10 @@ h3 {
   border: 1px solid var(--accent);
   cursor: pointer;
   font-size: 0.95rem;
-  transition: filter 120ms ease, transform 120ms ease, opacity 120ms ease;
+  transition:
+    filter 120ms ease,
+    transform 120ms ease,
+    opacity 120ms ease;
 }
 
 .btn:hover,
@@ -194,7 +223,6 @@ h3 {
   transform: translateY(-1px);
 }
 
-/* Outline variation */
 .button-outline {
   background: transparent;
   color: var(--accent);
@@ -213,19 +241,22 @@ h3 {
   border: 1px solid var(--border);
 }
 
-/* -------- Cards & grids -------- */
+/* -------- Cards & grids (centered like demo) -------- */
 .grid {
   display: grid;
   gap: 1rem;
   margin-top: 1.25rem;
 }
 
+/* Main card blocks (like teal hero + content sections) */
 .card {
   background: var(--panel);
   border-radius: var(--radius);
   border: 1px solid var(--border);
-  padding: 1rem 1.1rem;
+  padding: 1.3rem 1.4rem;
   box-shadow: var(--shadow);
+  max-width: 950px;
+  margin: 0 auto 1.5rem;
 }
 
 .card ul {
@@ -233,14 +264,14 @@ h3 {
   margin: 0.4rem 0 0;
 }
 
-/* Simple two-column grid for the WHO/WHAT/WHERE/etc section */
+/* Simple two-column grid for WHO / WHAT / WHERE section */
 .grid-two {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1rem;
 }
 
-/* Mini cards inside the What is C3 section */
+/* Mini cards inside “What is C3” style sections */
 .mini-card {
   background: var(--card);
   border: 1px solid var(--line);
@@ -248,7 +279,7 @@ h3 {
   padding: 0.75rem 0.85rem;
 }
 
-/* -------- Hero layout -------- */
+/* Hero layout inside a card (image + text) */
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
@@ -256,33 +287,50 @@ h3 {
   align-items: center;
 }
 
-/* -------- Gallery -------- */
+/* -------- Gallery cards (basketball-style row) -------- */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1.5rem;
 }
 
 .gallery-grid figure {
   margin: 0;
+  background: #020617;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  box-shadow: var(--shadow);
 }
 
 .gallery-grid img {
   width: 100%;
   display: block;
-  border-radius: 10px;
-  margin-bottom: 0.5rem;
+  object-fit: cover;
 }
 
-/* Simple gallery preview grid */
+.gallery-grid figcaption {
+  padding: 0.75rem 0.9rem;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+/* Simple gallery preview grid (used on home page “Scenes from C3”) */
 .gallery-preview {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   gap: 1rem;
+  margin-top: 1rem;
 }
 
 .gallery-preview figure {
   margin: 0;
+  background: #020617;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  box-shadow: var(--shadow);
 }
 
 /* -------- Contact / join forms -------- */
@@ -312,6 +360,18 @@ h3 {
 .contact-form textarea:focus {
   outline: 2px solid var(--accent);
   outline-offset: 1px;
+}
+
+/* Fieldset groups on join page */
+.form-group {
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  padding: 0.7rem 0.8rem 0.85rem;
+  margin-top: 0.5rem;
+}
+
+.form-group legend {
+  font-size: 0.95rem;
 }
 
 /* Form status messages */
@@ -346,25 +406,41 @@ h3 {
   box-sizing: border-box;
 }
 
-/* -------- Footer -------- */
-footer {
-  border-top: 1px solid var(--border);
-  margin-top: 1.5rem;
-  padding-bottom: 2rem;
-  font-size: 0.95rem;
-  color: var(--muted);
-  text-align: center;
+/* -------- Events filter row -------- */
+#event-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 0.8rem;
 }
 
-footer a {
+/* -------- Footer (solid bar like demo) -------- */
+footer,
+#site-footer {
+  margin-top: auto;
+  padding: 1.2rem 2rem;
+  background: #020617;
+  color: var(--muted);
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+footer a,
+#site-footer a {
   color: var(--accent);
   text-decoration: none;
 }
 
 /* -------- Responsive -------- */
 @media (min-width: 720px) {
-  .hero {
-    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  #page-container {
+    padding: 2rem 1.5rem 2.8rem;
+  }
+
+  body > header,
+  body > main,
+  body > footer {
+    padding: 0 1.5rem;
   }
 
   .grid {
