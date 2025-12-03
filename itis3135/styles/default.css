@@ -344,25 +344,32 @@ main {
   font-weight: 600;
 }
 
+/* Shared input/select/textarea styles for BOTH contact + join forms */
 .contact-form input,
 .contact-form select,
-.contact-form textarea {
+.contact-form textarea,
+#join-form input,
+#join-form select,
+#join-form textarea {
   border-radius: 8px;
   border: 1px solid var(--border);
   background: #020617;
   color: var(--text);
-  padding: 0.45rem 0.6rem;
+  padding: 0.5rem 0.6rem;
   font: inherit;
 }
 
 .contact-form input:focus,
 .contact-form select:focus,
-.contact-form textarea:focus {
+.contact-form textarea:focus,
+#join-form input:focus,
+#join-form select:focus,
+#join-form textarea:focus {
   outline: 2px solid var(--accent);
   outline-offset: 1px;
 }
 
-/* Fieldset groups on join page */
+/* Fieldset groups on join/contact pages */
 .form-group {
   border-radius: 10px;
   border: 1px solid var(--border);
@@ -445,5 +452,92 @@ footer a,
 
   .grid {
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  }
+}
+
+/* ---------------- JOIN PAGE LAYOUT & STYLE ---------------- */
+
+#join-main {
+  max-width: var(--max-width);
+  margin: 0 auto 2.5rem;
+  padding: 1.5rem 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Intro + form cards centered like other pages */
+#join-main .card {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Intro card with a soft accent strip */
+#join-main .card:first-of-type {
+  background: linear-gradient(135deg, #0b1120, #022c22);
+  border-color: #047857;
+}
+
+#join-main .card:first-of-type p {
+  margin-bottom: 0.6rem;
+}
+
+/* Section titles centered */
+#join-main h2 {
+  text-align: center;
+  margin-bottom: 0.9rem;
+}
+
+/* Form layout */
+#join-form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+/* Put labels above inputs and make them pop a bit */
+#join-form label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* Fieldset for checkboxes */
+#join-form .form-group {
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #020617;
+  padding: 0.75rem 0.9rem 0.9rem;
+  display: grid;
+  gap: 0.45rem;
+}
+
+#join-form .form-group legend {
+  padding: 0 0.2rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+#join-form .form-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 400;
+}
+
+/* Submit button centered */
+#join-form .button {
+  justify-self: center;
+  margin-top: 0.6rem;
+  padding-inline: 1.6rem;
+}
+
+/* Slightly nicer spacing on big screens */
+@media (min-width: 720px) {
+  #join-main {
+    padding-inline: 1.5rem;
+  }
+
+  /* Name / email / status as a simple grid row */
+  #join-form {
+    max-width: 760px;
   }
 }
