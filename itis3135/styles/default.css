@@ -302,11 +302,11 @@ main {
   font-weight: 600;
   margin-top: 0.4rem;
 }
-
 #join-form input:focus,
 #join-form select:focus,
 #join-form textarea:focus {
-  outline: none;
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
   border-color: var(--accent);
   box-shadow: 0 0 0 3px var(--accent-soft);
 }
