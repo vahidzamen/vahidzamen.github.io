@@ -14,12 +14,11 @@
   --radius: 14px;
   --shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
   --max-width: 1100px;
-  --font-main: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
-    sans-serif;
-
+  --font-main: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   --card: #111827;
   --line: #1f2937;
 }
+
 
 /* -------- Reset -------- */
 *,
