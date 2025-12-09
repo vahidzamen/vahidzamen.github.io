@@ -10,92 +10,107 @@
 <body>
   <div data-include="components/header.html"></div>
 
-  <main>
-    <h2>Introduction Viewer (JSON)</h2>
-    <p>
-      This page pulls student introductions from a shared JSON file, lets you
-      search by name, toggle which details are visible, and step through
-      each matching student like a slideshow.
-    </p>
+  <main id="page-container">
+    <!-- Page heading / hero -->
+    <header class="card">
+      <h2 class="heading-tight">Introduction Viewer</h2>
+      <p class="lead">
+        Browse JSON-based student introductions. Use the search box and filters to
+        narrow the list, then flip through each matching introduction using the
+        slideshow controls.
+      </p>
+    </header>
 
-    <!-- Controls row -->
-    <section class="intro-controls" aria-labelledby="controls-heading">
-      <h3 id="controls-heading">Viewer Controls</h3>
+    <!-- Main layout: controls on the left, viewer on the right -->
+    <section class="card" aria-labelledby="viewer-shell-heading">
+      <h3 id="viewer-shell-heading" class="heading-tight">Browse Introductions</h3>
 
-      <!-- Search -->
-      <div class="intro-control-block">
-        <h4>Search</h4>
-        <label for="search-name"><strong>Search by name</strong></label>
-        <input
-          id="search-name"
-          type="text"
-          placeholder="Type first or last name…"
-        />
-        <p class="small-note">
-          Matching introductions: <span id="results-count">0</span>
-        </p>
-      </div>
+      <div class="intro-layout grid grid-two">
+        <!-- LEFT COLUMN: search + filters -->
+        <div class="intro-controls-column">
+          <section class="intro-controls" aria-labelledby="controls-heading">
+            <h4 id="controls-heading" class="intro-card-heading">Search &amp; Filters</h4>
 
-      <!-- Checkboxes -->
-      <div class="intro-control-block">
-        <h4>Display Options</h4>
-        <p><strong>Show fields:</strong></p>
-        <div class="filters-grid">
-          <label>
-            <input type="checkbox" data-section="name" checked />
-            Name
-          </label>
-          <label>
-            <input type="checkbox" data-section="mascot" checked />
-            Mascot
-          </label>
-          <label>
-            <input type="checkbox" data-section="image" checked />
-            Image
-          </label>
-          <label>
-            <input type="checkbox" data-section="personalStatement" checked />
-            Personal Statement
-          </label>
-          <label>
-            <input type="checkbox" data-section="backgrounds" checked />
-            Backgrounds
-          </label>
-          <label>
-            <input type="checkbox" data-section="classes" checked />
-            Classes
-          </label>
-          <label>
-            <input type="checkbox" data-section="extras" checked />
-            Computer / Extras
-          </label>
-          <label>
-            <input type="checkbox" data-section="quote" checked />
-            Quote
-          </label>
-          <label>
-            <input type="checkbox" data-section="links" checked />
-            Links
-          </label>
+            <!-- Search -->
+            <div class="intro-control-block">
+              <label for="search-name"><strong>Search by name</strong></label>
+              <input
+                id="search-name"
+                type="search"
+                placeholder="Type first, last, or preferred name…"
+              />
+              <p class="small-note">
+                Matching introductions:
+                <span id="results-count">0</span>
+              </p>
+            </div>
+
+            <!-- Checkboxes -->
+            <div class="intro-control-block">
+              <p><strong>Show fields:</strong></p>
+              <div class="filters-grid">
+                <label>
+                  <input type="checkbox" data-section="name" checked />
+                  Name
+                </label>
+                <label>
+                  <input type="checkbox" data-section="mascot" checked />
+                  Mascot
+                </label>
+                <label>
+                  <input type="checkbox" data-section="image" checked />
+                  Image
+                </label>
+                <label>
+                  <input type="checkbox" data-section="personalStatement" checked />
+                  Personal Statement
+                </label>
+                <label>
+                  <input type="checkbox" data-section="backgrounds" checked />
+                  Backgrounds
+                </label>
+                <label>
+                  <input type="checkbox" data-section="classes" checked />
+                  Classes
+                </label>
+                <label>
+                  <input type="checkbox" data-section="extras" checked />
+                  Computer / Extras
+                </label>
+                <label>
+                  <input type="checkbox" data-section="quote" checked />
+                  Quote
+                </label>
+                <label>
+                  <input type="checkbox" data-section="links" checked />
+                  Links
+                </label>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- RIGHT COLUMN: slideshow + current intro -->
+        <div class="intro-viewer-column">
+          <section class="intro-viewer" aria-labelledby="current-intro-heading">
+            <h4 id="current-intro-heading" class="intro-card-heading">
+              Current Introduction
+            </h4>
+
+            <!-- Slideshow controls -->
+            <div class="slideshow-controls">
+              <button id="prev-intro" type="button">&laquo; Previous</button>
+              <span id="slide-position">0 of 0</span>
+              <button id="next-intro" type="button">Next &raquo;</button>
+            </div>
+
+            <!-- JS fills this article with the selected intro -->
+            <article id="intro-card" class="intro-card">
+              <p class="small-note">No introductions loaded yet.</p>
+            </article>
+          </section>
         </div>
       </div>
-    </section>
-
-    <!-- Slideshow + current intro -->
-    <section class="intro-viewer" aria-labelledby="viewer-heading">
-      <h3 id="viewer-heading">Current Introduction</h3>
-
-      <div class="slideshow-controls">
-        <button id="prev-intro" type="button">« Previous</button>
-        <span id="slide-position">0 of 0</span>
-        <button id="next-intro" type="button">Next »</button>
-      </div>
-
-      <article id="intro-card" class="intro-card">
-        <h4>Student Details</h4>
-        <!-- JS fills this -->
-        <p class="small-note">No introductions loaded yet.</p>
-      </article>
     </section>
   </main>
 
