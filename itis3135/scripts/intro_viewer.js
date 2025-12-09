@@ -15,7 +15,7 @@
     var introCard = document.getElementById("intro-card");
     var prevBtn = document.getElementById("prev-intro");
     var nextBtn = document.getElementById("next-intro");
-    var filterCheckboxes = document.querySelectorAll('[data-section]');
+    var filterCheckboxes = document.querySelectorAll("[data-section]");
   
     if (
       !searchInput ||
@@ -28,8 +28,27 @@
       return; // safety
     }
   
+    // ====== Helpers (define BEFORE use so linter is happy) ======
+    function escapeHTML(str) {
+      return String(str || "").replace(/[&<>"']/g, function (s) {
+        var map = {
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#39;"
+        };
+        return map[s] || s;
+      });
+    }
+  
+    function escapeAttr(str) {
+      // also escape double-quotes for attribute context
+      return escapeHTML(str).replace(/"/g, "&quot;");
+    }
+  
     // ====== State ======
-    var allStudents = [];     // full array from JSON
+    var allStudents = []; // full array from JSON
     var filteredStudents = []; // after search filter
     var currentIndex = 0;
   
@@ -48,7 +67,7 @@
       // Update counter and slide text
       resultsCount.textContent = String(total);
       slidePosition.textContent =
-        total === 0 ? "0 of 0" : (currentIndex + 1) + " of " + total;
+        total === 0 ? "0 of 0" : currentIndex + 1 + " of " + total;
   
       // Disable buttons if no or single result
       prevBtn.disabled = total <= 1;
@@ -78,7 +97,9 @@
             "</h3>" +
             (filters.mascot
               ? '<p class="muted">' +
-                escapeHTML((s.mascotAdjective || "") + " " + (s.mascotAnimal || "")) +
+                escapeHTML(
+                  (s.mascotAdjective || "") + " " + (s.mascotAnimal || "")
+                ) +
                 "</p>"
               : "") +
           "</header>"
@@ -88,7 +109,9 @@
         parts.push(
           '<header class="intro-header">' +
             '<p class="muted">' +
-            escapeHTML((s.mascotAdjective || "") + " " + (s.mascotAnimal || "")) +
+            escapeHTML(
+              (s.mascotAdjective || "") + " " + (s.mascotAnimal || "")
+            ) +
             "</p>" +
           "</header>"
         );
@@ -193,8 +216,7 @@
         );
       }
   
-      // Quote (optional – your JSON does not currently store a quote, but
-      // this hook is here if you extend it later)
+      // Quote (optional – only if you later add quoteText/quoteAuthor into JSON)
       if (filters.quote && s.quoteText) {
         parts.push(
           '<section class="intro-section">' +
@@ -212,7 +234,9 @@
       if (
         filters.links &&
         Array.isArray(s.links) &&
-        s.links.some(function (lnk) { return lnk && lnk.href; })
+        s.links.some(function (lnk) {
+          return lnk && lnk.href;
+        })
       ) {
         parts.push('<section class="intro-section"><h4>Links</h4><ul>');
         s.links.forEach(function (lnk) {
@@ -230,24 +254,6 @@
       }
   
       introCard.innerHTML = parts.join("\n") || "<p>No content selected.</p>";
-    }
-  
-    // ====== Helpers ======
-    function escapeHTML(str) {
-      return String(str || "").replace(/[&<>"']/g, function (s) {
-        var map = {
-          "&": "&amp;",
-          "<": "&lt;",
-          ">": "&gt;",
-          '"': "&quot;",
-          "'": "&#39;"
-        };
-        return map[s] || s;
-      });
-    }
-  
-    function escapeAttr(str) {
-      return escapeHTML(str).replace(/"/g, "&quot;");
     }
   
     // ====== Filtering & search ======
@@ -286,7 +292,8 @@
   
     prevBtn.addEventListener("click", function () {
       if (filteredStudents.length === 0) return;
-      currentIndex = (currentIndex - 1 + filteredStudents.length) % filteredStudents.length;
+      currentIndex =
+        (currentIndex - 1 + filteredStudents.length) % filteredStudents.length;
       renderCurrent();
     });
   
