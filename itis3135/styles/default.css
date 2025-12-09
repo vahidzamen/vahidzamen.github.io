@@ -14,11 +14,11 @@
   --radius: 14px;
   --shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
   --max-width: 1100px;
-  --font-main: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  --font-main: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
   --card: #111827;
   --line: #1f2937;
 }
-
 
 /* -------- Reset -------- */
 *,
@@ -41,7 +41,6 @@ body {
 }
 
 /* -------- Global Image Handling -------- */
-
 img {
   max-width: 100%;
   height: auto;
@@ -92,7 +91,6 @@ a:focus {
 }
 
 /* -------- Headings -------- */
-
 h1 {
   text-align: center;
 }
@@ -122,11 +120,22 @@ h2 {
   border-top: 1px solid var(--border);
   padding-top: 0.8rem;
 }
+
+.primary-nav a {
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+}
+
+.primary-nav a:hover {
+  background: var(--accent-soft);
+}
+
 /* Secondary navigation */
 .secondary-nav {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;   /* Centers the links */
+  justify-content: center;
   gap: 0.75rem 1.25rem;
   margin-top: 1rem;
   border-top: 1px solid var(--border);
@@ -140,15 +149,6 @@ h2 {
 }
 
 .secondary-nav a:hover {
-  background: var(--accent-soft);
-}
-.primary-nav a {
-  padding: 0.3rem 0.9rem;
-  border-radius: 999px;
-  font-size: 0.95rem;
-}
-
-.primary-nav a:hover {
   background: var(--accent-soft);
 }
 
@@ -237,7 +237,6 @@ main {
 }
 
 /* -------- Gallery -------- */
-
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -285,91 +284,25 @@ main {
   margin-top: 0.8rem;
 }
 
-/* -------- Events -------- */
-#event-filter {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.7rem;
-  margin-top: 1rem;
-}
-
-.event-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1rem;
-  margin-top: 1.2rem;
-}
-
-.event-card {
-  background: #020617;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  padding: 0.9rem 1rem;
-}
-
-.event-meta {
-  font-size: 0.9rem;
-  color: var(--muted);
-}
-
-/* -------- Footer -------- */
-#site-footer {
-  margin-top: auto;
-  text-align: center;
-  padding: 1.2rem 2rem;
-  background: #020617;
-  border-radius: 10px;
-  color: var(--muted);
-}
-
-/* -------- Responsive -------- */
-@media (max-width: 720px) {
-  .hero {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .hero-image img {
-    max-width: 100%;
-  }
-}
-
-/* Make nav show current page a little clearer */
-.primary-nav a[aria-current="page"] {
-  background: var(--accent-soft);
-  border: 1px solid var(--accent);
-  color: var(--text);
-}
-
-/* Slight hover lift on cards */
-.card:hover {
-  transform: translateY(-2px);
-  transition: 0.15s ease;
-}
-
-/* Better spacing for headings inside cards */
-.card h2,
-.card h3 {
-  margin-top: 0;
-}
-
-/* Join form polish */
+/* Join form labels */
 #join-form label {
   font-weight: 600;
   margin-top: 0.4rem;
 }
 
+/* Smooth focus transitions */
 #join-form input,
 #join-form select,
 #join-form textarea {
   transition: border 0.15s ease, box-shadow 0.15s ease;
 }
 
+/* Accessible focus styles */
 #join-form input:focus,
 #join-form select:focus,
 #join-form textarea:focus {
-  outline: none;
+  outline: 2px solid var(--accent-soft);
+  outline-offset: 2px;
   border-color: var(--accent);
   box-shadow: 0 0 0 3px var(--accent-soft);
 }
@@ -410,6 +343,34 @@ main {
   color: #f87171;
 }
 
+/* -------- Events -------- */
+#event-filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+.event-card {
+  background: #020617;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  padding: 0.9rem 1rem;
+}
+
+.event-meta {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
 /* Events filter active button */
 .filter-active {
   background: transparent;
@@ -417,9 +378,44 @@ main {
   border: 1px solid var(--accent);
 }
 
-/* Event cards feel a bit more alive */
+/* Event cards hover */
 .event-card:hover {
   border-color: var(--accent);
+  transform: translateY(-2px);
+  transition: 0.15s ease;
+}
+
+/* -------- Footer -------- */
+#site-footer {
+  margin-top: auto;
+  text-align: center;
+  padding: 1.2rem 2rem;
+  background: #020617;
+  border-radius: 10px;
+  color: var(--muted);
+}
+
+/* -------- Responsive -------- */
+@media (max-width: 720px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-image img {
+    max-width: 100%;
+  }
+}
+
+/* Make nav show current page a little clearer */
+.primary-nav a[aria-current="page"] {
+  background: var(--accent-soft);
+  border: 1px solid var(--accent);
+  color: var(--text);
+}
+
+/* Slight hover lift on cards */
+.card:hover {
   transform: translateY(-2px);
   transition: 0.15s ease;
 }
@@ -445,4 +441,75 @@ main {
   text-align: center;
   color: var(--muted);
   margin-bottom: 0.8rem;
+}
+
+/* -------- Intro Viewer (JSON) styles -------- */
+.intro-controls {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.intro-control-block {
+  background: var(--panel);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+}
+
+.filters-grid {
+  display: grid;
+  gap: 0.25rem 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  font-size: 0.9rem;
+}
+
+.intro-viewer {
+  background: var(--panel);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border);
+}
+
+.slideshow-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.slideshow-controls button {
+  padding: 0.3rem 0.8rem;
+}
+
+#slide-position {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.intro-card figure {
+  margin: 0 0 1rem 0;
+  text-align: center;
+}
+
+.intro-card img {
+  max-width: 260px;
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto 0.4rem auto;
+}
+
+.intro-card .intro-section {
+  margin-bottom: 0.9rem;
+}
+
+.intro-card h4 {
+  margin-bottom: 0.3rem;
+}
+
+.small-note {
+  font-size: 0.85rem;
+  opacity: 0.8;
 }
