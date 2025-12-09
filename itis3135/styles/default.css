@@ -2,24 +2,6 @@
    Global design for 49ers Car Culture Club (C3)
 */
 
-/* ---- Base tokens ---- */
-:root {
-  --bg: #0b0e14;
-  --panel: #111827;
-  --muted: #6b7280;
-  --text: #f9fafb;
-  --accent: #10b981;
-  --accent-soft: rgba(16, 185, 129, 0.15);
-  --border: #1f2937;
-  --radius: 14px;
-  --shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
-  --max-width: 1100px;
-  --font-main: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
-    sans-serif;
-  --card: #111827;
-  --line: #1f2937;
-}
-
 /* -------- Reset -------- */
 *,
 *::before,
@@ -34,9 +16,10 @@ body {
 
 body {
   margin: 0;
-  background: radial-gradient(circle at top left, #111827, #020617 55%, #000);
-  color: var(--text);
-  font-family: var(--font-main);
+  background: radial-gradient(circle at top left, #111827, #020617 55%, #000000);
+  color: #f9fafb;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
   line-height: 1.6;
 }
 
@@ -51,7 +34,7 @@ img {
 /* -------- Page container -------- */
 #page-container {
   min-height: 100vh;
-  max-width: var(--max-width);
+  max-width: 1100px;
   margin: 0 auto;
   padding: 1.5rem 1rem 2.5rem;
   display: flex;
@@ -60,7 +43,7 @@ img {
 
 /* -------- Links -------- */
 a {
-  color: var(--accent);
+  color: #10b981;
   text-decoration: none;
 }
 
@@ -74,9 +57,9 @@ a:focus {
   margin-top: 1.5rem;
   margin-bottom: 2rem;
   padding: 1.5rem 2rem 1.4rem;
-  background: var(--panel);
+  background: #111827;
   border-radius: 18px;
-  box-shadow: var(--shadow);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
   text-align: center;
 }
 
@@ -87,7 +70,7 @@ a:focus {
 
 .tagline {
   margin: 0.4rem 0 0;
-  color: var(--muted);
+  color: #6b7280;
 }
 
 /* -------- Headings -------- */
@@ -117,7 +100,7 @@ h2 {
   justify-content: center;
   gap: 0.75rem 1.25rem;
   margin-top: 1rem;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid #1f2937;
   padding-top: 0.8rem;
 }
 
@@ -128,7 +111,7 @@ h2 {
 }
 
 .primary-nav a:hover {
-  background: var(--accent-soft);
+  background: rgba(16, 185, 129, 0.15);
 }
 
 /* Secondary navigation */
@@ -138,7 +121,7 @@ h2 {
   justify-content: center;
   gap: 0.75rem 1.25rem;
   margin-top: 1rem;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid #1f2937;
   padding-top: 0.8rem;
 }
 
@@ -149,7 +132,7 @@ h2 {
 }
 
 .secondary-nav a:hover {
-  background: var(--accent-soft);
+  background: rgba(16, 185, 129, 0.15);
 }
 
 /* -------- Main content layout -------- */
@@ -158,7 +141,7 @@ main {
 }
 
 .lead {
-  color: var(--muted);
+  color: #6b7280;
   max-width: 60ch;
   margin: 0 auto 1.25rem;
   text-align: center;
@@ -170,11 +153,11 @@ main {
   display: inline-block;
   padding: 0.6rem 1.1rem;
   border-radius: 999px;
-  background: var(--accent);
+  background: #10b981;
   color: #022c22;
   font-weight: 600;
   cursor: pointer;
-  border: 1px solid var(--accent);
+  border: 1px solid #10b981;
   transition: 0.15s;
 }
 
@@ -186,7 +169,7 @@ main {
 
 .button-outline {
   background: transparent;
-  color: var(--accent);
+  color: #10b981;
 }
 
 /* -------- Hero layout -------- */
@@ -202,18 +185,18 @@ main {
   width: 100%;
   max-width: 550px;
   margin: 0 auto;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  border: 1px solid #1f2937;
 }
 
 /* -------- Cards & grids -------- */
 .card {
-  background: var(--panel);
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
+  background: #111827;
+  border-radius: 14px;
+  border: 1px solid #1f2937;
   padding: 1.3rem 1.4rem;
-  box-shadow: var(--shadow);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
   max-width: 950px;
   margin: 0 auto 1.5rem;
 }
@@ -230,9 +213,9 @@ main {
 
 /* Mini cards */
 .mini-card {
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
+  background: #111827;
+  border: 1px solid #1f2937;
+  border-radius: 14px;
   padding: 0.75rem;
 }
 
@@ -247,9 +230,9 @@ main {
 .gallery-grid figure {
   background: #020617;
   border-radius: 12px;
-  border: 1px solid var(--border);
+  border: 1px solid #1f2937;
   overflow: hidden;
-  box-shadow: var(--shadow);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
 .gallery-grid img {
@@ -257,6 +240,14 @@ main {
   height: 240px;
   object-fit: cover;
   border-radius: 0;
+}
+
+.gallery-grid figcaption {
+  padding: 0.6rem 0.75rem;
+  font-size: 0.95rem;
+  color: #6b7280;
+  background: #020617;
+  border-top: 1px solid #1f2937;
 }
 
 /* -------- Contact & Join forms -------- */
@@ -276,8 +267,8 @@ main {
   padding: 0.6rem;
   border-radius: 8px;
   background: #020617;
-  border: 1px solid var(--border);
-  color: var(--text);
+  border: 1px solid #1f2937;
+  color: #f9fafb;
 }
 
 #join-form .button {
@@ -301,15 +292,15 @@ main {
 #join-form input:focus,
 #join-form select:focus,
 #join-form textarea:focus {
-  outline: 2px solid var(--accent-soft);
+  outline: 2px solid rgba(16, 185, 129, 0.15);
   outline-offset: 2px;
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-soft);
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
 }
 
 /* Checkbox group spacing */
 #join-form fieldset.form-group {
-  border: 1px solid var(--border);
+  border: 1px solid #1f2937;
   padding: 0.8rem;
   border-radius: 10px;
   background: #0a0f1a;
@@ -325,7 +316,7 @@ main {
 /* Small text for counter */
 .small-text {
   font-size: 0.9rem;
-  color: var(--muted);
+  color: #6b7280;
   margin-top: 0.2rem;
 }
 
@@ -362,25 +353,25 @@ main {
 .event-card {
   background: #020617;
   border-radius: 12px;
-  border: 1px solid var(--border);
+  border: 1px solid #1f2937;
   padding: 0.9rem 1rem;
 }
 
 .event-meta {
   font-size: 0.9rem;
-  color: var(--muted);
+  color: #6b7280;
 }
 
 /* Events filter active button */
 .filter-active {
   background: transparent;
-  color: var(--accent);
-  border: 1px solid var(--accent);
+  color: #10b981;
+  border: 1px solid #10b981;
 }
 
 /* Event cards hover */
 .event-card:hover {
-  border-color: var(--accent);
+  border-color: #10b981;
   transform: translateY(-2px);
   transition: 0.15s ease;
 }
@@ -392,7 +383,7 @@ main {
   padding: 1.2rem 2rem;
   background: #020617;
   border-radius: 10px;
-  color: var(--muted);
+  color: #6b7280;
 }
 
 /* -------- Responsive -------- */
@@ -409,9 +400,9 @@ main {
 
 /* Make nav show current page a little clearer */
 .primary-nav a[aria-current="page"] {
-  background: var(--accent-soft);
-  border: 1px solid var(--accent);
-  color: var(--text);
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid #10b981;
+  color: #f9fafb;
 }
 
 /* Slight hover lift on cards */
@@ -420,26 +411,17 @@ main {
   transition: 0.15s ease;
 }
 
-/* Gallery captions cleaner */
-.gallery-grid figcaption {
-  padding: 0.6rem 0.75rem;
-  font-size: 0.95rem;
-  color: var(--muted);
-  background: #020617;
-  border-top: 1px solid var(--border);
-}
-
 /* Random photo section nicer centered */
 #random-photo-image {
   margin: 1rem auto;
   max-width: 700px;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
+  border: 1px solid #1f2937;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
 }
 
 #random-photo-caption {
   text-align: center;
-  color: var(--muted);
+  color: #6b7280;
   margin-bottom: 0.8rem;
 }
 
@@ -451,10 +433,10 @@ main {
 }
 
 .intro-control-block {
-  background: var(--panel);
+  background: #111827;
   border-radius: 10px;
   padding: 0.75rem 1rem;
-  border: 1px solid var(--border);
+  border: 1px solid #1f2937;
 }
 
 .filters-grid {
@@ -465,10 +447,10 @@ main {
 }
 
 .intro-viewer {
-  background: var(--panel);
+  background: #111827;
   border-radius: 12px;
   padding: 1rem 1.25rem;
-  border: 1px solid var(--border);
+  border: 1px solid #1f2937;
 }
 
 .slideshow-controls {
@@ -501,11 +483,13 @@ main {
   margin: 0 auto 0.4rem auto;
 }
 
-.intro-card .intro-section {
+.intro-card-section {
   margin-bottom: 0.9rem;
 }
 
-.intro-card h4 {
+/* instead of .intro-card h4 (to avoid qualified heading warning),
+   add class="intro-card-heading" to headings inside the card if needed */
+.intro-card-heading {
   margin-bottom: 0.3rem;
 }
 
