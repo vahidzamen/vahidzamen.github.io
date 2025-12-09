@@ -19,9 +19,12 @@
     </p>
 
     <!-- Controls row -->
-    <section class="intro-controls">
+    <section class="intro-controls" aria-labelledby="controls-heading">
+      <h3 id="controls-heading">Viewer Controls</h3>
+
       <!-- Search -->
       <div class="intro-control-block">
+        <h4>Search</h4>
         <label for="search-name"><strong>Search by name</strong></label>
         <input
           id="search-name"
@@ -35,6 +38,7 @@
 
       <!-- Checkboxes -->
       <div class="intro-control-block">
+        <h4>Display Options</h4>
         <p><strong>Show fields:</strong></p>
         <div class="filters-grid">
           <label>
@@ -78,14 +82,17 @@
     </section>
 
     <!-- Slideshow + current intro -->
-    <section class="intro-viewer">
+    <section class="intro-viewer" aria-labelledby="viewer-heading">
+      <h3 id="viewer-heading">Current Introduction</h3>
+
       <div class="slideshow-controls">
-        <button id="prev-intro" type="button">&laquo; Previous</button>
+        <button id="prev-intro" type="button">« Previous</button>
         <span id="slide-position">0 of 0</span>
-        <button id="next-intro" type="button">Next &raquo;</button>
+        <button id="next-intro" type="button">Next »</button>
       </div>
 
       <article id="intro-card" class="intro-card">
+        <h4>Student Details</h4>
         <!-- JS fills this -->
         <p class="small-note">No introductions loaded yet.</p>
       </article>
